@@ -1,4 +1,4 @@
-# gita-swadhyay
+# gita-swadhyay - chapter 1 to 7 
 Self-study work on Shrimad Bhagavad Gita
 
 # गीता स्वाध्याय — अध्याय १ ते ७
