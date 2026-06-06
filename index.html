@@ -353,6 +353,54 @@ body {
 }
 .filter-clear:hover { color: #F5C87A; border-color: #F5C87A; }
 
+/* combined filter status bar */
+.filter-bar-title {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 16px;
+  color: #F5C87A;
+  margin-right: 4px;
+}
+.filter-bar-sep { color: rgba(245,200,122,0.4); margin: 0 3px; }
+.filter-bar-sub { font-size: 12px; color: #C9B080; margin-left: 2px; }
+.cp-count {
+  display: inline-block;
+  margin-left: 6px;
+  background: rgba(26,16,5,0.18);
+  color: var(--ink);
+  font-size: 10.5px;
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 9px;
+  vertical-align: middle;
+  line-height: 1.65;
+  letter-spacing: 0.3px;
+}
+/* active button वर badge उलट रंग */
+.ch-split.active .ch-split-label .cp-count,
+.cp-btn.active .cp-count {
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+}
+/* empty button */
+.cp-btn.cp-empty {
+  opacity: 0.32;
+  cursor: default;
+}
+.cp-btn.cp-empty:hover {
+  background: transparent;
+  border-color: rgba(184,134,11,0.25);
+  color: inherit;
+}
+.ch-split-label.cp-empty {
+  opacity: 0.32;
+  cursor: default;
+}
+.ch-split-label.cp-empty:hover {
+  background: transparent;
+  color: inherit;
+}
+
 /* hide/show via filter */
 .concept.hidden { display: none; }
 .entry.entry-hidden { display: none; }
@@ -446,8 +494,10 @@ body.ch-filtered .footer { display: none; }
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px 12px;
+  background: #1A1005;
   color: #F0DDB0;
   flex-shrink: 0;
+  border-bottom: 2px solid rgba(240,221,176,0.15);
 }
 #mm-header-title { font-size: 17px; font-weight: 700; font-family: 'Tiro Devanagari Sanskrit', serif; }
 #mm-header-sub { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(240,221,176,0.65); margin-top: 2px; }
@@ -616,11 +666,11 @@ body.ch-filtered .footer { display: none; }
       <button class="ch-split-mm" onclick="mmOpen(3)" title="मानस-चित्र पाहा">🗺</button>
     </div>
     <div class="ch-split" data-ch="4">
-      <button class="ch-split-label" onclick="filterChapter(4)">४ · ज्ञान</button>
+      <button class="ch-split-label" onclick="filterChapter(4)">४ · ज्ञानकर्मसंन्यासयोग</button>
       <button class="ch-split-mm" onclick="mmOpen(4)" title="मानस-चित्र पाहा">🗺</button>
     </div>
     <div class="ch-split" data-ch="5">
-      <button class="ch-split-label" onclick="filterChapter(5)">५ · संन्यास</button>
+      <button class="ch-split-label" onclick="filterChapter(5)">५ · कर्मसंन्यासयोग</button>
       <button class="ch-split-mm" onclick="mmOpen(5)" title="मानस-चित्र पाहा">🗺</button>
     </div>
     <div class="ch-split" data-ch="6">
@@ -656,12 +706,13 @@ body.ch-filtered .footer { display: none; }
 
 <!-- ── FILTER STATUS BAR ── -->
 <div class="filter-bar" id="filter-bar">
-  <span id="filter-text"></span>
+  <span id="filter-title" class="filter-bar-title"></span>
+  <span id="filter-sub" class="filter-bar-sub"></span>
   <button class="filter-clear" onclick="clearAll()">✕ सर्व दाखवा</button>
 </div>
 
-<!-- ── CHAPTER SUMMARY (shown in chapter mode) ── -->
-<div class="ch-summary" id="ch-summary">
+<!-- ── CHAPTER SUMMARY — merged into filter-bar ── -->
+<div class="ch-summary" id="ch-summary" style="display:none">
   <div class="ch-summary-title" id="ch-summary-title"></div>
   <div class="ch-summary-sub" id="ch-summary-sub"></div>
 </div>
@@ -1338,35 +1389,94 @@ body.ch-filtered .footer { display: none; }
 <div class="concept" data-cid="7" id="concept-7">
   <div class="concept-head"><span class="concept-sk">इन्द्रिय</span><span class="concept-num">संकल्पना ०७</span></div>
   <div class="concept-tagline">कासवासारखे आवरण्यापासून ते मनाच्या पूर्ण अधीन होईपर्यंत इंद्रियसंयमाची चढती शिडी.</div>
-  <div class="entry" data-ch="2" data-cid="7" data-verse="यदा संहरते चायं कूर्मोऽङ्गानीव सर्वशः ।&#10;इन्द्रियाणीन्द्रियार्थेभ्यः तस्य प्रज्ञा प्रतिष्ठिता ॥ [२.५८]&#10;यततो ह्यपि कौन्तेय पुरुषस्य विपश्चितः ।&#10;इन्द्रियाणि प्रमाथीनि हरन्ति प्रसभं मनः ॥ [२.६०]">
-    <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.५८, २.६०</div></div>
-    <div class="entry-body"><div class="samjna">कूर्मोऽङ्गानीव सर्वशः / प्रमाथीनि हरन्ति प्रसभं मनः</div><div class="vyakhya">कासव अंग आत ओढतो तसे इंद्रिये आवरावी; पण प्रयत्न करूनही ती बळाने मन ओढतात.</div><span class="angle-tag">कासव — withdrawal</span></div>
+
+  <!-- अध्याय १ -->
+  <div class="entry" data-ch="1" data-cid="7" data-verse="दृष्ट्वेमं स्वजनं कृष्ण युयुत्सुं समुपस्थितम् ।&#10;सीदन्ति मम गात्राणि मुखं च परिशुष्यति ॥ [१.२८–२९]">
+    <div class="entry-ch"><span class="ch-badge b1">अ.१</span><div class="shlok-ref">१.२८–२९</div></div>
+    <div class="entry-body"><div class="samjna">सीदन्ति मम गात्राणि — इंद्रिये गळतात</div><div class="vyakhya">अर्जुनाची इंद्रिये शोकाने शिथिल — शरीर, डोळे, तोंड सगळे अनियंत्रित. इंद्रियनिग्रहाच्या शिक्षणाची सुरुवात इथेच. अनियंत्रित इंद्रिये = विषाद.</div><span class="angle-tag">इंद्रियांचे अनियंत्रण</span></div>
   </div>
-  <div class="entry" data-ch="3" data-cid="7" data-verse="यस्त्विन्द्रियाणि मनसा नियम्यारभतेऽर्जुन ।&#10;कर्मेन्द्रियैः कर्मयोगमसक्तः स विशिष्यते ॥ [३.६]&#10;तस्मात्त्वमिन्द्रियाण्यादौ नियम्य भरतर्षभ ।&#10;पाप्मानं प्रजहि ह्येनं ज्ञानविज्ञाननाशनम् ॥ [३.४१]">
-    <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.६, ३.४१</div></div>
-    <div class="entry-body"><div class="samjna">इन्द्रियाणि प्रमाथीनि / तस्मात्त्वमिन्द्रियाण्यादौ नियम्य</div><div class="vyakhya">इंद्रिये उपद्रवी शत्रू; म्हणून सर्वांत आधी त्यांना आवर — क्रम महत्त्वाचा.</div><span class="angle-tag">इंद्रिये = शत्रू</span></div>
+
+  <!-- अध्याय २ -->
+  <div class="entry" data-ch="2" data-cid="7" data-verse="यदा संहरते चायं कूर्मोऽङ्गानीव सर्वशः ।&#10;इन्द्रियाणीन्द्रियार्थेभ्यः तस्य प्रज्ञा प्रतिष्ठिता ॥ [२.५८]">
+    <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.५८</div></div>
+    <div class="entry-body"><div class="samjna">कूर्मोऽङ्गानीव सर्वशः — कासव उपमा</div><div class="vyakhya">कासव जसे सर्व अंग आत ओढतो, तसे जो सर्व इंद्रिये त्यांच्या विषयांपासून खेचून वश करतो — त्याचीच प्रज्ञा स्थिर. इंद्रियसंयमाचे हे पहिले व्यावहारिक चित्र.</div><span class="angle-tag">कूर्म = इंद्रियसंयम</span></div>
   </div>
+  <div class="entry" data-ch="2" data-cid="7" data-verse="यततो ह्यपि कौन्तेय पुरुषस्य विपश्चितः ।&#10;इन्द्रियाणि प्रमाथीनि हरन्ति प्रसभं मनः ॥ [२.६०]">
+    <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.६०</div></div>
+    <div class="entry-body"><div class="samjna">इन्द्रियाणि प्रमाथीनि हरन्ति प्रसभं मनः</div><div class="vyakhya">प्रयत्न करणाऱ्या बुद्धिमान माणसाचीही ही प्रबळ, मथून टाकणारी 'इंद्रिये' (प्रमाथीनि) त्याच्या मनाला बळजबरीने भोगांकडे खेचतात — इंद्रियांचे हे भयंकर बल.</div><span class="angle-tag">इन्द्रियाणि प्रमाथीनि</span></div>
+  </div>
+  <div class="entry" data-ch="2" data-cid="7" data-verse="इन्द्रियाणां हि चरतां यन्मनोऽनुविधीयते ।&#10;तदस्य हरति प्रज्ञां वायुर्नावमिवाम्भसि ॥ [२.६७]">
+    <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.६७–६८</div></div>
+    <div class="entry-body"><div class="samjna">वायुर्नावमिवाम्भसि — वाऱ्याने नाव भरकटते</div><div class="vyakhya">विषयात भरकटणाऱ्या 'इंद्रियांच्या' मागे मन धावले की प्रज्ञा हिरावली जाते — जसा वादळी वारा नावेला भरकटवतो. म्हणून सर्व इंद्रिये रोखणाऱ्याचीच प्रज्ञा स्थिर.</div><span class="angle-tag">इंद्रिय → मन → प्रज्ञानाश</span></div>
+  </div>
+
+  <!-- अध्याय ३ -->
+  <div class="entry" data-ch="3" data-cid="7" data-verse="कर्मेन्द्रियाणि संयम्य य आस्ते मनसा स्मरन् ।&#10;इन्द्रियार्थान्विमूढात्मा मिथ्याचारः स उच्यते ॥ [३.०६]">
+    <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.०६</div></div>
+    <div class="entry-body"><div class="samjna">मिथ्याचारः — बाहेरून इंद्रिये आवरणारा ढोंगी</div><div class="vyakhya">जो बाहेरून कर्मेंद्रिये आवरतो, पण मनात 'इंद्रियांच्या भोगांचे' चिंतन करत राहतो — तो विमूढ ढोंगी (मिथ्याचार). बाह्य संयम + आंतरिक आसक्ती = फसवणूक.</div><span class="angle-tag">मिथ्याचार — ढोंगी संयम</span></div>
+  </div>
+  <div class="entry" data-ch="3" data-cid="7" data-verse="यस्त्विन्द्रियाणि मनसा नियम्यारभतेऽर्जुन ।&#10;कर्मेन्द्रियैः कर्मयोगमसक्तः स विशिष्यते ॥ [३.०७]">
+    <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.०७</div></div>
+    <div class="entry-body"><div class="samjna">मनसा इंद्रियाणि नियम्य — मनाद्वारे इंद्रिये वश</div><div class="vyakhya">जो 'मनाद्वारे इंद्रिये वश करतो' आणि अनासक्त होऊन कर्मेंद्रियांद्वारे कर्मयोग करतो — तोच श्रेष्ठ. खरा संयम = मनाद्वारे, बाहेरून नव्हे.</div><span class="angle-tag">मनसा नियम्य — खरा संयम</span></div>
+  </div>
+  <div class="entry" data-ch="3" data-cid="7" data-verse="इन्द्रियस्येन्द्रियस्यार्थे रागद्वेषौ व्यवस्थितौ ।&#10;तयोर्न वशमागच्छेत् तौ ह्यस्य परिपन्थिनौ ॥ [३.३४]">
+    <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.३४</div></div>
+    <div class="entry-body"><div class="samjna">इन्द्रियस्येन्द्रियस्यार्थे रागद्वेषौ व्यवस्थितौ</div><div class="vyakhya">प्रत्येक 'इंद्रियाचा' त्याच्या विशिष्ट विषयाशी नैसर्गिक राग-द्वेष आधीच ठरलेला — साधकाने या दोन्हींच्या आहारी जाऊ नये, हे प्रगतीचे शत्रू आहेत.</div><span class="angle-tag">इंद्रिय-विषय राग-द्वेष</span></div>
+  </div>
+  <div class="entry" data-ch="3" data-cid="7" data-verse="इन्द्रियाणि मनो बुद्धिरस्याधिष्ठानमुच्यते ।&#10;इन्द्रियाणि पराण्याहुरिन्द्रियेभ्यः परं मनः ।&#10;मनसस्तु परा बुद्धिः यो बुद्धेः परतस्तु सः ॥ [३.४०, ३.४२]">
+    <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.४०, ३.४२</div></div>
+    <div class="entry-body"><div class="samjna">इन्द्रियाणि पराण्याहुः / मनसस्तु परा बुद्धिः</div><div class="vyakhya">काम इंद्रिये, मन आणि बुद्धीत लपतो. 'इंद्रिये' शरीरापेक्षा श्रेष्ठ, मन इंद्रियांपेक्षा, बुद्धी मनापेक्षा, आत्मा बुद्धीपेक्षा — ही उतरंड लक्षात ठेवा.</div><span class="angle-tag">इंद्रिय-मन-बुद्धी उतरंड</span></div>
+  </div>
+  <div class="entry" data-ch="3" data-cid="7" data-verse="तस्मात्त्वमिन्द्रियाण्यादौ नियम्य भरतर्षभ ।&#10;पाप्मानं प्रजहि ह्येनं ज्ञानविज्ञाननाशनम् ॥ [३.४१]">
+    <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.४१</div></div>
+    <div class="entry-body"><div class="samjna">इन्द्रियाण्यादौ नियम्य — प्रथम इंद्रिये नियम्</div><div class="vyakhya">म्हणून 'सर्वांत आधी इंद्रिये नियम्' (इन्द्रियाण्यादौ नियम्य) — क्रम महत्त्वाचा. ज्ञान-विज्ञानाचा नाश करणाऱ्या या शत्रूला प्रथम इंद्रियनिग्रहाने रोका.</div><span class="angle-tag">इंद्रिये = प्रथम नियम्</span></div>
+  </div>
+
+  <!-- अध्याय ४ -->
   <div class="entry" data-ch="4" data-cid="7" data-verse="श्रोत्रादीनीन्द्रियाण्यन्ये संयमाग्निषु जुह्वति ।&#10;शब्दादीन्विषयानन्य इन्द्रियाग्निषु जुह्वति ॥ [४.२६]&#10;सर्वाणीन्द्रियकर्माणि प्राणकर्माणि चापरे ।&#10;आत्मसंयमयोगाग्नौ जुह्वति ज्ञानदीपिते ॥ [४.२७]">
     <div class="entry-ch"><span class="ch-badge b4">अ.४</span><div class="shlok-ref">४.२६–२७</div></div>
-    <div class="entry-body"><div class="samjna">श्रोत्रादीनीन्द्रियाण्यन्ये संयमाग्निषु जुह्वति</div><div class="vyakhya">कोणी इंद्रिये संयमाग्नीत अर्पण करतात — इंद्रिये आता शत्रू नव्हे, यज्ञसामग्री.</div><span class="angle-tag">इंद्रिये = यज्ञसामग्री</span></div>
+    <div class="entry-body"><div class="samjna">इन्द्रियाग्निषु / आत्मसंयमयोगाग्नौ</div><div class="vyakhya">कोणी 'इंद्रिये संयमाग्नीत' अर्पण करतात; कोणी सर्व 'इंद्रियकर्मे आत्मसंयम योगाग्नीत' होम करतात. इंद्रिये आता शत्रू नव्हे — यज्ञसामग्री.</div><span class="angle-tag">इंद्रिये = यज्ञसामग्री</span></div>
+  </div>
+
+  <!-- अध्याय ५ -->
+  <div class="entry" data-ch="5" data-cid="7" data-verse="इन्द्रियाणीन्द्रियार्थेषु वर्तन्त इति धारयन् ॥&#10;[५.०९]">
+    <div class="entry-ch"><span class="ch-badge b5">अ.५</span><div class="shlok-ref">५.०९</div></div>
+    <div class="entry-body"><div class="samjna">इन्द्रियाणीन्द्रियार्थेषु वर्तन्त — अलिप्ततेचे सूत्र</div><div class="vyakhya">'इंद्रियेच आपापल्या विषयांमध्ये वावरत आहेत' — हे धारण करून तत्त्वज्ञ "मी काही करत नाही" मानतो. हे गीतेचे अलिप्ततेचे मूळ सूत्र — इंद्रिये करतात, आत्मा साक्षी.</div><span class="angle-tag">इन्द्रियाणि वर्तन्त — अलिप्तता</span></div>
   </div>
   <div class="entry" data-ch="5" data-cid="7" data-verse="स्पर्शान्कृत्वा बहिर्बाह्यान् चक्षुश्चैवान्तरे भ्रुवोः ।&#10;प्राणापानौ समौ कृत्वा नासाभ्यन्तरचारिणौ ॥ [५.२७]">
     <div class="entry-ch"><span class="ch-badge b5">अ.५</span><div class="shlok-ref">५.२७</div></div>
-    <div class="entry-body"><div class="samjna">स्पर्शान् कृत्वा बहिर्बाह्यान्...नासाभ्यन्तरचारिणौ</div><div class="vyakhya">बाह्य विषय बाहेर ठेवून, दृष्टी भ्रूमध्यात, प्राण नियंत्रित — इंद्रिये आत वळवली.</div><span class="angle-tag">इंद्रिये आत — प्राणायाम</span></div>
+    <div class="entry-body"><div class="samjna">स्पर्शान् कृत्वा बहिर्बाह्यान् — विषय बाहेर ठेवणे</div><div class="vyakhya">बाह्य विषय बाहेर ठेवून, दृष्टी भ्रूमध्यात, प्राण-अपान नियंत्रित — इंद्रिये आत वळवण्याचे प्रत्यक्ष ध्यानसाधनेचे कोडिंग.</div><span class="angle-tag">इंद्रिये आत — प्राणायाम</span></div>
   </div>
-  <div class="entry" data-ch="6" data-cid="7" data-verse="संकल्पप्रभवान्कामान् त्यक्त्वा सर्वानशेषतः ।&#10;मनसैवेन्द्रियग्रामं विनियम्य समन्ततः ॥ [६.२४]&#10;शनैः शनैरुपरमेत् बुद्ध्या धृतिगृहीतया ।&#10;आत्मसंस्थं मनः कृत्वा न किञ्चिदपि चिन्तयेत् ॥ [६.२५]&#10;यतो यतो निश्चरति मनश्चञ्चलमस्थिरम् ।&#10;ततस्ततो नियम्यैतद् आत्मन्येव वशं नयेत् ॥ [६.२६]">
-    <div class="entry-ch"><span class="ch-badge b6">अ.६</span><div class="shlok-ref">६.२४–२६</div></div>
-    <div class="entry-body"><div class="samjna">सर्वतो विनियम्यैतद् मनः...आत्मन्येव वशं नयेत्</div><div class="vyakhya">मन जिथे जिथे भटकेल तिथून आवरून आत्म्यात स्थिर करावे — इंद्रिये मनाच्या अधीन.</div><span class="angle-tag">मनाच्या अधीन</span></div>
+
+  <!-- अध्याय ६ -->
+  <div class="entry" data-ch="6" data-cid="7" data-verse="संकल्पप्रभवान्कामान् त्यक्त्वा सर्वानशेषतः ।&#10;मनसैवेन्द्रियग्रामं विनियम्य समन्ततः ॥ [६.२४]&#10;शनैः शनैरुपरमेत् बुद्ध्या धृतिगृहीतया ।&#10;आत्मसंस्थं मनः कृत्वा न किञ्चिदपि चिन्तयेत् ॥ [६.२५]">
+    <div class="entry-ch"><span class="ch-badge b6">अ.६</span><div class="shlok-ref">६.२४–२५</div></div>
+    <div class="entry-body"><div class="samjna">मनसैवेन्द्रियग्रामं विनियम्य — मनाने इंद्रिये वश</div><div class="vyakhya">'मनाद्वारे इंद्रियसमुदायाला' (इन्द्रियग्रामम्) सर्व बाजूंनी आवरून, धैर्याने युक्त बुद्धीने मनाला आत्म्यात स्थिर करा — इंद्रिये आता मनाच्या अधीन.</div><span class="angle-tag">इन्द्रियग्राम — मनाच्या अधीन</span></div>
   </div>
-  <div class="entry" data-ch="1" data-cid="7" data-verse="दृष्ट्वेमं स्वजनं कृष्ण युयुत्सुं समुपस्थितम् ।&#10;सीदन्ति मम गात्राणि मुखं च परिशुष्यति ॥ [१.२८–२९]">
-    <div class="entry-ch"><span class="ch-badge b1">अ.१</span><div class="shlok-ref">१.२८–२९</div></div>
-    <div class="entry-body"><div class="samjna">सीदन्ति मम गात्राणि — इंद्रिये गळतात</div><div class="vyakhya">अर्जुनाची इंद्रिये शोकाने शिथिल — शरीर, डोळे, तोंड सगळे अनियंत्रित. इंद्रियनिग्रहाच्या शिक्षणाची सुरुवात इथेच.</div><span class="angle-tag">इंद्रियांचे अनियंत्रण</span></div>
+  <div class="entry" data-ch="6" data-cid="7" data-verse="यतो यतो निश्चरति मनश्चञ्चलमस्थिरम् ।&#10;ततस्ततो नियम्यैतद् आत्मन्येव वशं नयेत् ॥ [६.२६]">
+    <div class="entry-ch"><span class="ch-badge b6">अ.६</span><div class="shlok-ref">६.२६</div></div>
+    <div class="entry-body"><div class="samjna">यतो यतो निश्चरति मनः — मन जिथे भटकेल</div><div class="vyakhya">चंचल मन जिथे जिथे भटकेल, तिथून परत आत्म्यात आणावे — सतत अभ्यास. इंद्रिये → मन → आत्मा हा क्रम साधण्याची सतत साधना.</div><span class="angle-tag">मन आत्म्यात — सतत अभ्यास</span></div>
   </div>
-  <div class="entry" data-ch="7" data-cid="7" data-verse="रसोऽहमप्सु कौन्तेय प्रभास्मि शशिसूर्ययोः ।&#10;प्रणवः सर्ववेदेषु शब्दः खे पौरुषं नृषु ॥ [७.८]">
-    <div class="entry-ch"><span class="ch-badge b7">अ.७</span><div class="shlok-ref">७.८</div></div>
-    <div class="entry-body"><div class="samjna">रसोऽहमप्सु — पाण्यातील रस मीच</div><div class="vyakhya">इंद्रियांना जे अनुभव येतात — रस, प्रकाश, शब्द — त्यांचे मूळ ईश्वरच. इंद्रिये ईश्वरापर्यंत पोहोचण्याचे द्वार.</div><span class="angle-tag">इंद्रिय = ईश्वरप्रवेश</span></div>
+
+  <!-- अध्याय ७ -->
+  <div class="entry" data-ch="7" data-cid="7" data-verse="रसोऽहमप्सु कौन्तेय प्रभास्मि शशिसूर्ययोः ।&#10;प्रणवः सर्ववेदेषु शब्दः खे पौरुषं नृषु ॥ [७.०८]">
+    <div class="entry-ch"><span class="ch-badge b7">अ.७</span><div class="shlok-ref">७.०८</div></div>
+    <div class="entry-body"><div class="samjna">रसोऽहमप्सु — पाण्यातील रस मीच</div><div class="vyakhya">इंद्रियांना जे अनुभव येतात — रस, प्रकाश, शब्द — त्यांचे मूळ ईश्वरच. इंद्रिये ईश्वरापर्यंत पोहोचण्याचे द्वार — संयमित इंद्रिये ईश्वरदर्शनाचे माध्यम.</div><span class="angle-tag">इंद्रिय = ईश्वरप्रवेश</span></div>
   </div>
-  <div class="pattern-box"><div class="pattern-head">प्रवाह</div><div class="arrow-row"><span class="arr-item">कासव</span><span class="arr">→</span><span class="arr-item">शत्रू</span><span class="arr">→</span><span class="arr-item">यज्ञसामग्री</span><span class="arr">→</span><span class="arr-item">आत वळवली</span><span class="arr">→</span><span class="arr-item">मनाच्या अधीन</div></div>
+
+  <div class="pattern-box">
+    <div class="pattern-head">प्रवाह — इंद्रियसंयमाची शिडी</div>
+    <div class="arrow-row">
+      <span class="arr-item">अनियंत्रित (१)</span><span class="arr">→</span>
+      <span class="arr-item">कासव — withdrawal (२.५८)</span><span class="arr">→</span>
+      <span class="arr-item">प्रमाथीनि — मन खेचतात (२.६०)</span><span class="arr">→</span>
+      <span class="arr-item">मनसा नियम्य — मिथ्याचार नव्हे (३)</span><span class="arr">→</span>
+      <span class="arr-item">यज्ञसामग्री (४)</span><span class="arr">→</span>
+      <span class="arr-item">इंद्रिये आत + अलिप्त (५)</span><span class="arr">→</span>
+      <span class="arr-item">इन्द्रियग्राम वश (६)</span><span class="arr">→</span>
+      <span class="arr-item">ईश्वरद्वार (७)</span>
+    </div>
+  </div>
 </div>
 
 <div class="concept" data-cid="8" id="concept-8">
@@ -1439,67 +1549,110 @@ body.ch-filtered .footer { display: none; }
   <div class="concept-tagline">साधकाचे नित्य वैरी — विषयचिंतनातून जन्मतात आणि संपूर्ण विवेकाचा नाश करतात.</div>
 
   <!-- अध्याय १ -->
+  <div class="entry" data-ch="1" data-cid="9" data-verse="यावदेतान्निरीक्षेऽहं योद्धुकामानवस्थितान् ।&#10;[१.२२]">
+    <div class="entry-ch"><span class="ch-badge b1">अ.१</span><div class="shlok-ref">१.२२</div></div>
+    <div class="entry-body"><div class="samjna">योद्धुकामान् — युद्धाची इच्छा असलेले</div><div class="vyakhya">इथे 'काम' शब्द 'इच्छा' या अर्थाने — "युद्धाच्या इच्छेने उभे असलेल्यांना पाहतो." काम = तटस्थ इच्छा. गीतेत कामाचा हा पहिला तटस्थ वापर — नंतर तो शत्रू आणि दिव्य दोन्ही रूपात येतो.</div><span class="angle-tag">योद्धुकाम — इच्छा = तटस्थ</span></div>
+  </div>
   <div class="entry" data-ch="1" data-cid="9" data-verse="मम देहे गात्राणि परिदह्यते — क्रोध नव्हे शोक ।&#10;न काङ्क्षे विजयं कृष्ण न च राज्यं सुखानि च ॥ [१.३२–३३]">
     <div class="entry-ch"><span class="ch-badge b1">अ.१</span><div class="shlok-ref">१.३२–३३</div></div>
-    <div class="entry-body"><div class="samjna">न काङ्क्षे विजयं — कामनेचा विलोपभास</div><div class="vyakhya">अर्जुनाला वरकरणी कामनेचा त्याग वाटतो, पण मुळात हे शोक-मोहाचे रूप आहे — खरे काम-क्रोध नाहीत. मोहातून आलेला वैराग्याचा आभास हे गीतेचे प्रस्थानबिंदू.</div><span class="angle-tag">शोक = छुपा काम</span></div>
+    <div class="entry-body"><div class="samjna">न काङ्क्षे विजयं — कामनेचा विलोपभास</div><div class="vyakhya">अर्जुनाला वरकरणी कामनेचा त्याग वाटतो, पण मुळात हे शोक-मोहाचे रूप आहे — खरा कामत्याग नाही. मोहातून आलेला वैराग्याचा आभास हे गीतेचे प्रस्थानबिंदू.</div><span class="angle-tag">शोक = छुपा काम</span></div>
   </div>
 
   <!-- अध्याय २ -->
+  <div class="entry" data-ch="2" data-cid="9" data-verse="कामात्मानः स्वर्गपरा जन्मकर्मफलप्रदाम् ।&#10;[२.४३]">
+    <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.४३</div></div>
+    <div class="entry-body"><div class="samjna">कामात्मानः — ज्यांचे मन कामनांत अडकलेले</div><div class="vyakhya">'ज्यांचे मन केवळ भोगांमध्ये अडकलेले आहे' (कामात्मानः), त्यांची बुद्धी फक्त संसारात अडकवणाऱ्या सकाम क्रियांचाच उपदेश करते. कामात्मन् = बुद्धीचे सर्वात मोठे बंधन.</div><span class="angle-tag">कामात्मानः — अडकलेली बुद्धी</span></div>
+  </div>
+  <div class="entry" data-ch="2" data-cid="9" data-verse="प्रजहाति यदा कामान्सर्वान्पार्थ मनोगतान् ।&#10;आत्मन्येवात्मना तुष्टः स्थितप्रज्ञस्तदोच्यते ॥ [२.५५]">
+    <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.५५</div></div>
+    <div class="entry-body"><div class="samjna">प्रजहाति यदा कामान्सर्वान् — सर्व कामनांचा त्याग</div><div class="vyakhya">स्थितप्रज्ञाचे पहिले लक्षण — 'मनातील सर्व कामनांचा पूर्णपणे त्याग' आणि आत्म्यातच संतुष्ट राहणे. सर्व कामनांचा त्याग = मुक्तीची पहिली पायरी.</div><span class="angle-tag">सर्वकामत्याग — स्थितप्रज्ञाचे लक्षण</span></div>
+  </div>
   <div class="entry" data-ch="2" data-cid="9" data-verse="वीतरागभयक्रोधः स्थितधीर्मुनिरुच्यते ॥&#10;[२.५६]">
     <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.५६</div></div>
-    <div class="entry-body"><div class="samjna">वीतरागभयक्रोधः स्थितधीर्मुनि</div><div class="vyakhya">दुःखात अस्वस्थ नाही, सुखाची इच्छा नाही, आणि 'राग, भय आणि क्रोध' पूर्णपणे नष्ट झालेले — असा मननशील साधक 'स्थितप्रज्ञ मुनी'. हे क्रोधमुक्तीचे ध्येयचित्र.</div><span class="angle-tag">वीतक्रोधः — स्थितप्रज्ञाचे लक्षण</span></div>
+    <div class="entry-body"><div class="samjna">वीतरागभयक्रोधः स्थितधीर्मुनि</div><div class="vyakhya">दुःखात अस्वस्थ नाही, सुखाची इच्छा नाही, 'राग, भय आणि क्रोध' पूर्णपणे नष्ट — हा 'स्थितप्रज्ञ मुनी'. हे काम-क्रोध दोन्हींच्या मुक्तीचे ध्येयचित्र.</div><span class="angle-tag">वीतरागक्रोधः — ध्येयचित्र</span></div>
   </div>
   <div class="entry" data-ch="2" data-cid="9" data-verse="ध्यायतो विषयान्पुंसः सङ्गस्तेषूपजायते ।&#10;सङ्गात्सञ्जायते कामः कामात्क्रोधोऽभिजायते ॥ [२.६२]&#10;क्रोधाद्भवति सम्मोहः सम्मोहात्स्मृतिविभ्रमः ।&#10;स्मृतिभ्रंशाद् बुद्धिनाशः बुद्धिनाशात्प्रणश्यति ॥ [२.६३]">
     <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.६२–६३</div></div>
-    <div class="entry-body"><div class="samjna">कामात् क्रोधोऽभिजायते / क्रोधाद्भवति सम्मोहः...बुद्धिनाशात् प्रणश्यति</div><div class="vyakhya">विषयचिंतन → आसक्ती → काम → अडथळ्यास 'क्रोध' → संमोह → स्मृतिभ्रंश → बुद्धिनाश → पूर्ण पतन. ही गीतेची प्रसिद्ध पतनसाखळी — क्रोध हा मध्यवर्ती दुवा.</div><span class="angle-tag">पतनसाखळी — क्रोध केंद्रस्थ</span></div>
+    <div class="entry-body"><div class="samjna">कामात् क्रोधोऽभिजायते / क्रोधाद् सम्मोहः...बुद्धिनाशात् प्रणश्यति</div><div class="vyakhya">विषयचिंतन → आसक्ती → 'काम' → अडथळ्यास 'क्रोध' → संमोह → स्मृतिभ्रंश → बुद्धिनाश → पूर्ण पतन. गीतेची प्रसिद्ध पतनसाखळी — काम हे पहिले कारण, क्रोध हा मध्यवर्ती दुवा.</div><span class="angle-tag">पतनसाखळी — काम आरंभ</span></div>
+  </div>
+  <div class="entry" data-ch="2" data-cid="9" data-verse="तद्वत्कामा यं प्रविशन्ति सर्वे स शान्तिमाप्नोति न कामकामी ॥&#10;[२.७०–७१]">
+    <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.७०–७१</div></div>
+    <div class="entry-body"><div class="samjna">कामा यं प्रविशन्ति...स शान्तिमाप्नोति / न कामकामी</div><div class="vyakhya">चारी बाजूंनी नद्या येऊन अथांग समुद्रात विलीन होतात — तसे सर्व भोग ज्या संयमी पुरुषात विकार न करता विलीन होतात, तोच शांती प्राप्त करतो. 'कामकामी' (भोगांची इच्छा करणारा) कधीही शांती मिळवत नाही.</div><span class="angle-tag">कामा विलीन — न कामकामी</span></div>
   </div>
 
   <!-- अध्याय ३ -->
-  <div class="entry" data-ch="3" data-cid="9" data-verse="काम एष क्रोध एष रजोगुणसमुद्भवः ।&#10;महाशनो महापाप्मा विद्ध्येनमिह वैरिणम् ॥ [३.३७]&#10;आवृतं ज्ञानमेतेन ज्ञानिनो नित्यवैरिणा ।&#10;कामरूपेण कौन्तेय दुष्पूरेणानलेन च ॥ [३.३९]">
+  <div class="entry" data-ch="3" data-cid="9" data-verse="अनेन प्रसविष्यध्वमेष वोऽस्त्विष्टकामधुक् ॥&#10;[३.१०]">
+    <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.१०</div></div>
+    <div class="entry-body"><div class="samjna">इष्टकामधुक् — योग्य इच्छा पूर्ण करणारा</div><div class="vyakhya">प्रजापतींनी यज्ञासह प्रजा निर्माण करताना सांगितले — हा यज्ञ तुमच्या 'योग्य इच्छा (इष्ट काम) पूर्ण करणारा कामधेनू समान' आहे. काम = धर्मसंमत इच्छा पूर्ण होण्याचे माध्यम — येथे सकारात्मक.</div><span class="angle-tag">इष्टकामधुक् — धर्मसंमत काम</span></div>
+  </div>
+  <div class="entry" data-ch="3" data-cid="9" data-verse="काम एष क्रोध एष रजोगुणसमुद्भवः ।&#10;महाशनो महापाप्मा विद्ध्येनमिह वैरिणम् ॥ [३.३७]&#10;कामरूपेण कौन्तेय दुष्पूरेणानलेन च ॥ [३.३९]">
     <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.३७, ३.३९</div></div>
-    <div class="entry-body"><div class="samjna">काम एष क्रोध एष रजोगुणसमुद्भवः / ज्ञानिनो नित्यवैरिणा</div><div class="vyakhya">काम आणि क्रोध हे 'रजोगुणापासून' जन्मलेले, कधीही न तृप्त होणारा (महाशनो) महापाप्मा शत्रू. हा ज्ञानी पुरुषाचेही ज्ञान झाकतो — म्हणून 'नित्यवैरी'.</div><span class="angle-tag">रजोगुणजन्य — नित्यवैरी अग्नी</span></div>
+    <div class="entry-body"><div class="samjna">काम एष रजोगुणसमुद्भवः / कामरूपेण दुष्पूरेणानलेन</div><div class="vyakhya">'काम' आणि क्रोध रजोगुणापासून जन्मलेले, कधीही न तृप्त होणारे (दुष्पूरेण) — अग्नीसारखे (अनलेन) तूप टाकल्याने अधिक पेटतात. हा ज्ञानी माणसाचेही ज्ञान झाकतो.</div><span class="angle-tag">दुष्पूरेणानलेन — अतृप्त अग्नी</span></div>
   </div>
   <div class="entry" data-ch="3" data-cid="9" data-verse="एवं बुद्धेः परं बुद्ध्वा संस्तभ्यात्मानमात्मना ।&#10;जहि शत्रुं महाबाहो कामरूपं दुरासदम् ॥ [३.४३]">
     <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.४३</div></div>
-    <div class="entry-body"><div class="samjna">बुद्धेः परं बुद्ध्वा जहि शत्रुं कामरूपं</div><div class="vyakhya">आत्मा बुद्धीहूनही श्रेष्ठ हे जाणून, त्या आत्मबळाने स्वतःला स्थिर करा आणि या कामरूपी दुर्जय शत्रूला मारा. आत्मज्ञानच काम-क्रोधावरील अंतिम उपाय.</div><span class="angle-tag">आत्मबळाने काम-क्रोध जिंकणे</span></div>
+    <div class="entry-body"><div class="samjna">जहि शत्रुं कामरूपं दुरासदम्</div><div class="vyakhya">आत्मा बुद्धीहूनही श्रेष्ठ हे जाणून, त्या आत्मबळाने स्वतःला स्थिर करा आणि या 'कामरूपी' दुर्जय शत्रूला मारा. आत्मज्ञानच काम-क्रोधावरील अंतिम उपाय.</div><span class="angle-tag">कामरूपं दुरासदम् — जिंका</span></div>
   </div>
 
   <!-- अध्याय ४ -->
+  <div class="entry" data-ch="4" data-cid="9" data-verse="यस्य सर्वे समारम्भाः कामसङ्कल्पवर्जिताः ।&#10;ज्ञानाग्निदग्धकर्माणं तमाहुः पण्डितं बुधाः ॥ [४.१९]">
+    <div class="entry-ch"><span class="ch-badge b4">अ.४</span><div class="shlok-ref">४.१९</div></div>
+    <div class="entry-body"><div class="samjna">कामसङ्कल्पवर्जिताः — कामसंकल्पविरहित</div><div class="vyakhya">ज्या साधकाचे सर्व कर्म आणि संकल्प 'कामनाविरहित' (कामसङ्कल्पवर्जित) असतात — त्याला ज्ञानाग्नी भस्म करतो, त्यालाच 'पंडित' म्हणतात. काम = संकल्पाचे मूळ.</div><span class="angle-tag">कामसङ्कल्पवर्जित — पंडित</span></div>
+  </div>
   <div class="entry" data-ch="4" data-cid="9" data-verse="वीतरागभयक्रोधा मन्मया मामुपाश्रिताः ।&#10;बहवो ज्ञानतपसा पूता मद्भावमागताः ॥ [४.१०]">
     <div class="entry-ch"><span class="ch-badge b4">अ.४</span><div class="shlok-ref">४.१०</div></div>
-    <div class="entry-body"><div class="samjna">वीतरागभयक्रोधा — राग-भय-क्रोध नष्ट</div><div class="vyakhya">ज्यांचे 'आसक्ती, भय आणि क्रोध पूर्णपणे नष्ट झाले आहेत', जे माझ्याशी एकरूप झाले — असे अनेक साधक ज्ञानरूपी तपाने पवित्र होऊन माझ्या स्वरूपाला प्राप्त झाले. क्रोधमुक्तीचे हे ऐतिहासिक उदाहरण.</div><span class="angle-tag">वीतरागभयक्रोधाः — मुक्त झालेले</span></div>
+    <div class="entry-body"><div class="samjna">वीतरागभयक्रोधा — राग-भय-क्रोध नष्ट</div><div class="vyakhya">'आसक्ती, भय आणि क्रोध' नष्ट झालेले अनेक साधक ज्ञानतपाने पवित्र होऊन माझ्या स्वरूपाला प्राप्त झाले. काम-क्रोधमुक्तीचे ऐतिहासिक उदाहरण.</div><span class="angle-tag">वीतरागभयक्रोधाः — सिद्ध उदाहरण</span></div>
   </div>
 
   <!-- अध्याय ५ -->
+  <div class="entry" data-ch="5" data-cid="9" data-verse="अयुक्तः कामकारेण फले सक्तो निबध्यते ॥&#10;[५.१२]">
+    <div class="entry-ch"><span class="ch-badge b5">अ.५</span><div class="shlok-ref">५.१२</div></div>
+    <div class="entry-body"><div class="samjna">कामकारेण फले सक्तः — कामनेच्या प्रेरणेने फलासक्त</div><div class="vyakhya">जो ईश्वराशी जोडलेला नाही, तो अयुक्त पुरुष 'कामनेच्या प्रेरणेने' (कामकारेण) फळात आसक्त होऊन कर्माच्या बंधनात कायमचा अडकतो. काम = बंधनाचे इंधन.</div><span class="angle-tag">कामकारेण — बंधनाचे इंधन</span></div>
+  </div>
   <div class="entry" data-ch="5" data-cid="9" data-verse="शक्नोतीहैव यः सोढुं प्राक्शरीरविमोक्षणात् ।&#10;कामक्रोधोद्भवं वेगं स युक्तः स सुखी नरः ॥ [५.२३]">
     <div class="entry-ch"><span class="ch-badge b5">अ.५</span><div class="shlok-ref">५.२३</div></div>
-    <div class="entry-body"><div class="samjna">कामक्रोधोद्भवं वेगं सोढुं — वेग सहन करणे</div><div class="vyakhya">शरीर सोडण्यापूर्वीच जो काम-'क्रोधापासून उत्पन्न होणाऱ्या भयानक वेगाला' (adrenaline surge) सहन करण्यास समर्थ होतो — तोच खरा योगी आणि सुखी. वेग पहिल्या लाटेवरच थांबवणे हे सूत्र.</div><span class="angle-tag">कामक्रोधवेग सहन — वेळेत थांबवणे</span></div>
+    <div class="entry-body"><div class="samjna">कामक्रोधोद्भवं वेगं — वेग सहन</div><div class="vyakhya">शरीर सोडण्यापूर्वीच 'काम-क्रोधापासून उत्पन्न होणाऱ्या भयानक वेगाला' सहन करणारा — तोच खरा योगी आणि सुखी. वेग पहिल्या लाटेवरच थांबवणे हे सूत्र.</div><span class="angle-tag">कामक्रोधवेग सहन</span></div>
   </div>
-  <div class="entry" data-ch="5" data-cid="9" data-verse="कामक्रोधविमुक्तानां यतीनां यतचेतसाम् ।&#10;अभितो ब्रह्मनिर्वाणं वर्तते विदितात्मनाम् ॥ [५.२६]">
-    <div class="entry-ch"><span class="ch-badge b5">अ.५</span><div class="shlok-ref">५.२६</div></div>
-    <div class="entry-body"><div class="samjna">कामक्रोधविमुक्तानां — काम-क्रोधातून पूर्ण मुक्त</div><div class="vyakhya">'काम आणि क्रोधापासून पूर्णपणे मुक्त', मनावर ताबा मिळवलेल्या आत्मज्ञानी संन्याशांसाठी सर्व बाजूंनी केवळ ब्रह्मनिर्वाणच (परम शांती) वास करते. काम-क्रोधमुक्ती = ब्रह्मनिर्वाण.</div><span class="angle-tag">काम-क्रोधमुक्ती = ब्रह्मनिर्वाण</span></div>
+  <div class="entry" data-ch="5" data-cid="9" data-verse="कामक्रोधविमुक्तानां यतीनां यतचेतसाम् ।&#10;अभितो ब्रह्मनिर्वाणं वर्तते विदितात्मनाम् ॥ [५.२६]&#10;विगतेच्छाभयक्रोधो यः सदा मुक्त एव सः ॥ [५.२८]">
+    <div class="entry-ch"><span class="ch-badge b5">अ.५</span><div class="shlok-ref">५.२६, ५.२८</div></div>
+    <div class="entry-body"><div class="samjna">कामक्रोधविमुक्तानां / विगतेच्छाभयक्रोधः — नित्यमुक्त</div><div class="vyakhya">'काम-क्रोधापासून पूर्ण मुक्त' संन्याशांना ब्रह्मनिर्वाण. 'इच्छा-भय-क्रोध विगत' झालेला नित्यमुक्तच. काम-क्रोधमुक्ती = ब्रह्मनिर्वाण.</div><span class="angle-tag">काम-क्रोधमुक्ती = ब्रह्मनिर्वाण</span></div>
   </div>
-  <div class="entry" data-ch="5" data-cid="9" data-verse="विगतेच्छाभयक्रोधो यः सदा मुक्त एव सः ॥&#10;[५.२८]">
-    <div class="entry-ch"><span class="ch-badge b5">अ.५</span><div class="shlok-ref">५.२८</div></div>
-    <div class="entry-body"><div class="samjna">विगतेच्छाभयक्रोधः — इच्छा-भय-क्रोध गेलेला</div><div class="vyakhya">इंद्रिये, मन आणि बुद्धी वश करून 'इच्छा, भीती आणि क्रोध यांपासून पूर्णपणे मुक्त' होणारा नित्य मुक्तच आहे. हे काम-क्रोधाचे अंतिम निर्मूलन.</div><span class="angle-tag">विगतक्रोधः — नित्यमुक्त</span></div>
+
+  <!-- अध्याय ६ -->
+  <div class="entry" data-ch="6" data-cid="9" data-verse="निःस्पृहः सर्वकामेभ्यो युक्त इत्युच्यते तदा ॥&#10;[६.१८]">
+    <div class="entry-ch"><span class="ch-badge b6">अ.६</span><div class="shlok-ref">६.१८</div></div>
+    <div class="entry-body"><div class="samjna">निःस्पृहः सर्वकामेभ्यो — सर्व कामांपासून निःस्पृह</div><div class="vyakhya">जेव्हा चित्त आत्म्यात स्थिरावते आणि साधक 'सर्व भोगांच्या इच्छांपासून' (सर्वकामेभ्यो) निःस्पृह होतो — तेव्हा तो 'योगयुक्त' झाला. कामनिवृत्ती = योगाची परमावस्था.</div><span class="angle-tag">निःस्पृहः सर्वकामेभ्यो</span></div>
+  </div>
+  <div class="entry" data-ch="6" data-cid="9" data-verse="सङ्कल्पप्रभवान्कामांस्त्यक्त्वा सर्वानशेषतः ।&#10;[६.२४]">
+    <div class="entry-ch"><span class="ch-badge b6">अ.६</span><div class="shlok-ref">६.२४</div></div>
+    <div class="entry-body"><div class="samjna">सङ्कल्पप्रभवान्कामान् त्यक्त्वा — संकल्पजन्य कामना सोडणे</div><div class="vyakhya">'संकल्पामुळे उत्पन्न होणाऱ्या सर्व कामनांचा पूर्णपणे (अशेषतः) त्याग' करून मनाद्वारे इंद्रिये रोखावीत. काम = संकल्पाचे उत्पादन — संकल्पत्याग = कामनाशक.</div><span class="angle-tag">सङ्कल्पप्रभवान् काम — मुळापासून</span></div>
   </div>
 
   <!-- अध्याय ७ -->
+  <div class="entry" data-ch="7" data-cid="9" data-verse="बलं बलवतां चाहं कामरागविवर्जितम् ।&#10;धर्माविरुद्धो भूतेषु कामोऽस्मि भरतर्षभ ॥ [७.११]">
+    <div class="entry-ch"><span class="ch-badge b7">अ.७</span><div class="shlok-ref">७.११</div></div>
+    <div class="entry-body"><div class="samjna">धर्माविरुद्धो भूतेषु कामोऽस्मि — धर्मसंमत काम मीच</div><div class="vyakhya">भगवंत कामाचे दिव्य रूप सांगतात — 'सर्व प्राण्यांत धर्माला अनुकूल असलेला काम मीच आहे!' स्वार्थी काम = शत्रू (३.३७); पवित्र कौटुंबिक-सृष्टीचा काम = ईश्वराचे रूप. काम = द्विधा रूप.</div><span class="angle-tag">धर्माविरुद्धो काम = ईश्वर</span></div>
+  </div>
+  <div class="entry" data-ch="7" data-cid="9" data-verse="कामैस्तैस्तैर्हृतज्ञानाः प्रपद्यन्तेऽन्यदेवताः ।&#10;लभते च ततः कामान्मयैव विहितान्हि तान् ॥ [७.२०, ७.२२]">
+    <div class="entry-ch"><span class="ch-badge b7">अ.७</span><div class="shlok-ref">७.२०, ७.२२</div></div>
+    <div class="entry-body"><div class="samjna">हृतज्ञानाः कामैः / लभते कामान् मयैव विहितान्</div><div class="vyakhya">'सांसारिक कामनांनी ज्ञान हिरावलेले' लोक इतर देवतांकडे धाव घेतात — आणि त्यांना जे 'इच्छित (काम) मिळतात ते वास्तवात मीच ठरवून दिलेले.' काम = ईश्वराच्या नियंत्रणात असलेली शक्ती.</div><span class="angle-tag">हृतज्ञानाः / कामान् मयैव विहितान्</span></div>
+  </div>
   <div class="entry" data-ch="7" data-cid="9" data-verse="इच्छाद्वेषसमुत्थेन द्वन्द्वमोहेन भारत ।&#10;सर्वभूतानि सम्मोहं सर्गे यान्ति परन्तप ॥ [७.२७]">
     <div class="entry-ch"><span class="ch-badge b7">अ.७</span><div class="shlok-ref">७.२७</div></div>
-    <div class="entry-body"><div class="samjna">इच्छाद्वेषसमुत्थेन द्वन्द्वमोहेन</div><div class="vyakhya">काम-क्रोधाचे मूळ रूप = 'इच्छा (काम) आणि द्वेष (क्रोध)'. हेच द्वंद्वमोहाचे उद्गम — संपूर्ण जगाच्या अज्ञानाचे कारण. सृष्टीच्या आरंभापासूनच हे बंधन.</div><span class="angle-tag">इच्छा-द्वेष = द्वंद्वमोहाचे मूळ</span></div>
+    <div class="entry-body"><div class="samjna">इच्छाद्वेषसमुत्थेन द्वन्द्वमोहेन</div><div class="vyakhya">काम-क्रोधाचे मूळ = 'इच्छा (काम) आणि द्वेष (क्रोध)'. हेच द्वंद्वमोहाचे उद्गम — सृष्टीच्या आरंभापासूनच संपूर्ण जगाच्या अज्ञानाचे कारण.</div><span class="angle-tag">इच्छा-द्वेष = विश्वमोहाचे मूळ</span></div>
   </div>
 
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — काम-क्रोधाचा आलेख</div>
     <div class="arrow-row">
-      <span class="arr-item">शोक = छुपा काम (१)</span><span class="arr">→</span>
-      <span class="arr-item">वीतक्रोधः = ध्येय (२.५६)</span><span class="arr">→</span>
-      <span class="arr-item">पतनसाखळी (२.६२–६३)</span><span class="arr">→</span>
-      <span class="arr-item">रजोगुणजन्य — नित्यवैरी (३)</span><span class="arr">→</span>
-      <span class="arr-item">वीतरागभयक्रोधाः — मुक्त उदाहरण (४)</span><span class="arr">→</span>
+      <span class="arr-item">तटस्थ इच्छा (१.२२)</span><span class="arr">→</span>
+      <span class="arr-item">कामात्मानः (२.४३)</span><span class="arr">→</span>
+      <span class="arr-item">सर्वकामत्याग (२.५५)</span><span class="arr">→</span>
+      <span class="arr-item">पतनसाखळी (२.६२)</span><span class="arr">→</span>
+      <span class="arr-item">रजोगुण — दुष्पूर अग्नी (३)</span><span class="arr">→</span>
+      <span class="arr-item">कामसंकल्पवर्जित (४)</span><span class="arr">→</span>
       <span class="arr-item">वेग सहन → ब्रह्मनिर्वाण (५)</span><span class="arr">→</span>
-      <span class="arr-item">इच्छा-द्वेष = विश्वमोहाचे मूळ (७)</span>
+      <span class="arr-item">धर्माविरुद्धो काम = ईश्वर (७.११)</span>
     </div>
   </div>
 </div>
@@ -1725,35 +1878,93 @@ body.ch-filtered .footer { display: none; }
 <div class="concept" data-cid="13" id="concept-13">
   <div class="concept-head"><span class="concept-sk">आत्मा</span><span class="concept-num">संकल्पना १३ · नवीन</span></div>
   <div class="concept-tagline">देहापलीकडे असलेला अविनाशी, अजन्मा, नित्य साक्षी — गीतेच्या संपूर्ण उपदेशाचा आधारस्तंभ.</div>
-  <div class="entry" data-ch="1" data-cid="13" data-verse="कथं भीष्ममहं सङ्ख्ये द्रोणं च मधुसूदन ।&#10;इषुभिः प्रतियोत्स्यामि पूजार्हावरिसूदन ॥ [१.२६]&#10;दृष्ट्वा तु पाण्डवानीकं व्यूढं दुर्योधनस्तदा ।&#10;अर्जुन उवाच — देहबुद्धीने पाहणाऱ्या अर्जुनाचे विषाद [१.२८–४७]">
+
+  <!-- अध्याय १ -->
+  <div class="entry" data-ch="1" data-cid="13" data-verse="दृष्ट्वा तु पाण्डवानीकं व्यूढं दुर्योधनस्तदा ।&#10;अर्जुन उवाच — देहबुद्धीने पाहणाऱ्या अर्जुनाचे विषाद [१.२८–४७]">
     <div class="entry-ch"><span class="ch-badge b1">अ.१</span><div class="shlok-ref">१.२८–४७</div></div>
-    <div class="entry-body"><div class="samjna">देहबुद्धी — अर्जुनाचा मूळ भ्रम</div><div class="vyakhya">अर्जुन स्वजनांना देह म्हणून पाहतो — आत्मतत्त्वाचे विस्मरण हाच विषादाचे मूळ. गीतेचा उपदेश या भ्रमाचे निरसन करण्यासाठी.</div><span class="angle-tag">देहबुद्धी = भ्रम</span></div>
+    <div class="entry-body"><div class="samjna">देहबुद्धी — अर्जुनाचा मूळ भ्रम</div><div class="vyakhya">अर्जुन स्वजनांना देह म्हणून पाहतो — आत्मतत्त्वाचे विस्मरण हाच विषादाचे मूळ. गीतेचा उपदेश या भ्रमाचे निरसन करण्यासाठी. 'देहबुद्धी' = आत्मभ्रमाचा प्रारंभ.</div><span class="angle-tag">देहबुद्धी = आत्मभ्रम</span></div>
   </div>
+
+  <!-- अध्याय २ -->
   <div class="entry" data-ch="2" data-cid="13" data-verse="न जायते म्रियते वा कदाचिन् नायं भूत्वा भविता वा न भूयः ।&#10;अजो नित्यः शाश्वतोऽयं पुराणो न हन्यते हन्यमाने शरीरे ॥ [२.२०]&#10;नैनं छिन्दन्ति शस्त्राणि नैनं दहति पावकः ।&#10;न चैनं क्लेदयन्त्यापो न शोषयति मारुतः ॥ [२.२३]">
     <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.१९–२३</div></div>
-    <div class="entry-body"><div class="samjna">न जायते म्रियते — अजन्मा अविनाशी</div><div class="vyakhya">आत्मा जन्मत नाही, मरत नाही — शस्त्र छेदत नाही, अग्नी जाळत नाही, पाणी भिजवत नाही, वारा वाळवत नाही. हा देहापेक्षा संपूर्ण वेगळा.</div><span class="angle-tag">अविनाशी तत्त्व</span></div>
+    <div class="entry-body"><div class="samjna">न जायते म्रियते — अजन्मा अविनाशी</div><div class="vyakhya">आत्मा जन्मत नाही, मरत नाही — शस्त्र छेदत नाही, अग्नी जाळत नाही, पाणी भिजवत नाही, वारा वाळवत नाही. हे आत्म्याचे मूळ स्वरूप — देहापेक्षा संपूर्ण वेगळे.</div><span class="angle-tag">अविनाशी — चार नकार</span></div>
   </div>
-  <div class="entry" data-ch="3" data-cid="13" data-verse="उद्धरेदात्मनात्मानं नात्मानमवसादयेत् ।&#10;आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ॥ [६.५]&#10;[अध्याय ३ — प्रकृती करते, आत्मा साक्षी]&#10;इन्द्रियाणि पराण्याहुः इन्द्रियेभ्यः परं मनः ।&#10;मनसस्तु परा बुद्धिः यो बुद्धेः परतस्तु सः ॥ [३.४२]">
+  <div class="entry" data-ch="2" data-cid="13" data-verse="निर्द्वन्द्वो नित्यसत्त्वस्थो निर्योगक्षेम आत्मवान् ।&#10;[२.४५]">
+    <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.४५</div></div>
+    <div class="entry-body"><div class="samjna">आत्मवान् — नित्य आत्मस्वरूपात स्थित</div><div class="vyakhya">सुख-दुःखादी द्वंद्वांच्या पलीकडे जाऊन, योग-क्षेमाची चिंता सोडून 'आत्मवान्' (नित्य आत्मस्वरूपात स्थित) हो. 'आत्मवान्' = संसारातील सर्वोच्च स्थिती.</div><span class="angle-tag">आत्मवान् — स्वरूपस्थिती</span></div>
+  </div>
+  <div class="entry" data-ch="2" data-cid="13" data-verse="आत्मन्येवात्मना तुष्टः स्थितप्रज्ञस्तदोच्यते ॥&#10;[२.५५]">
+    <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.५५</div></div>
+    <div class="entry-body"><div class="samjna">आत्मन्येवात्मना तुष्टः — आत्म्याद्वारे आत्म्यातच संतुष्ट</div><div class="vyakhya">स्थितप्रज्ञाचे मुख्य लक्षण — 'आत्मन्यात्मना' (स्वतःच्या आत्म्याद्वारे स्वतःच्याच आत्म्यामध्ये) पूर्णपणे संतुष्ट. बाह्य सुखावर अवलंबन नाही — आत्मा हाच सुखाचे मूळ.</div><span class="angle-tag">आत्मन्येव तुष्टः — स्वयंपूर्ण</span></div>
+  </div>
+  <div class="entry" data-ch="2" data-cid="13" data-verse="आत्मवश्यैर्विधेयात्मा प्रसादमधिगच्छति ॥&#10;[२.६४]">
+    <div class="entry-ch"><span class="ch-badge b2">अ.२</span><div class="shlok-ref">२.६४</div></div>
+    <div class="entry-body"><div class="samjna">आत्मवश्यैः — आत्म्याच्या ताब्यात असलेल्या इंद्रियांनी</div><div class="vyakhya">ज्याने मन जिंकले असा साधक राग-द्वेषमुक्त होऊन 'आत्मवश्यैः' (आत्म्याच्या पूर्ण ताब्यात असलेल्या) इंद्रियांद्वारे संसारात वावरत असतानाही प्रसाद (परम शांती) प्राप्त करतो.</div><span class="angle-tag">आत्मवश्य — आत्म्याच्या ताब्यात</span></div>
+  </div>
+
+  <!-- अध्याय ३ -->
+  <div class="entry" data-ch="3" data-cid="13" data-verse="आत्मन्येव च सन्तुष्टस्तस्य कार्यं न विद्यते ॥&#10;[३.१७]">
+    <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.१७</div></div>
+    <div class="entry-body"><div class="samjna">आत्मन्येव सन्तुष्टः — आत्म्यातच संतुष्ट</div><div class="vyakhya">जो केवळ 'आत्म्यामध्येच नित्य रममाण आणि संतुष्ट' असतो, त्या महात्म्याला संसारात स्वतःसाठी कोणतेही कर्तव्य शिल्लक राहत नाही — त्याचे सर्व कर्म नैसर्गिकपणे ईश्वरी कार्य बनते.</div><span class="angle-tag">आत्मतृप्त — कर्तव्यमुक्त</span></div>
+  </div>
+  <div class="entry" data-ch="3" data-cid="13" data-verse="इन्द्रियाणि पराण्याहुः इन्द्रियेभ्यः परं मनः ।&#10;मनसस्तु परा बुद्धिः यो बुद्धेः परतस्तु सः ॥ [३.४२]">
     <div class="entry-ch"><span class="ch-badge b3">अ.३</span><div class="shlok-ref">३.४२</div></div>
-    <div class="entry-body"><div class="samjna">यो बुद्धेः परतस्तु सः — बुद्धीहून श्रेष्ठ तो आत्मा</div><div class="vyakhya">इंद्रिये < मन < बुद्धी < आत्मा — ही उतरंड. आत्मा सर्वांहून श्रेष्ठ, सर्वांचा द्रष्टा. काम-क्रोध आत्म्याला नाही, बुद्धीला आहेत.</div><span class="angle-tag">आत्मा = सर्वश्रेष्ठ</span></div>
+    <div class="entry-body"><div class="samjna">यो बुद्धेः परतस्तु सः — बुद्धीहून श्रेष्ठ आत्मा</div><div class="vyakhya">इंद्रिये < मन < बुद्धी < आत्मा — ही उतरंड. 'आत्मा' सर्वांहून श्रेष्ठ, सर्वांचा साक्षी द्रष्टा. काम-क्रोध आत्म्याला नाही — फक्त बुद्धीपर्यंत आहेत.</div><span class="angle-tag">आत्मा = सर्वश्रेष्ठ साक्षी</span></div>
   </div>
-  <div class="entry" data-ch="4" data-cid="13" data-verse="अजोऽपि सन्नव्ययात्मा भूतानामीश्वरोऽपि सन् ।&#10;प्रकृतिं स्वामधिष्ठाय सम्भवाम्यात्ममायया ॥ [४.६]">
-    <div class="entry-ch"><span class="ch-badge b4">अ.४</span><div class="shlok-ref">४.६</div></div>
-    <div class="entry-body"><div class="samjna">अजोऽपि सन्नव्ययात्मा — अजन्मा अव्यय आत्मा</div><div class="vyakhya">भगवंत स्वतःच्या अव्यय आत्मस्वरूपाबद्दल सांगतात — जन्म नाही, नाश नाही, तरी प्रकृतीच्या आधाराने अवतरतो. आत्मा हेच ईश्वराचे मूळ स्वरूप.</div><span class="angle-tag">परमात्मा = आत्मा</span></div>
+
+  <!-- अध्याय ४ -->
+  <div class="entry" data-ch="4" data-cid="13" data-verse="अजोऽपि सन्नव्ययात्मा भूतानामीश्वरोऽपि सन् ।&#10;प्रकृतिं स्वामधिष्ठाय सम्भवाम्यात्ममायया ॥ [४.०६]">
+    <div class="entry-ch"><span class="ch-badge b4">अ.४</span><div class="shlok-ref">४.०६</div></div>
+    <div class="entry-body"><div class="samjna">अव्ययात्मा — अव्यय आत्मा</div><div class="vyakhya">भगवंत स्वतःच्या 'अव्यय आत्मस्वरूपा'बद्दल सांगतात — जन्म नाही, नाश नाही, तरी प्रकृतीच्या आधाराने अवतरतो. परमात्मा = आत्म्याचेच परमोच्च रूप.</div><span class="angle-tag">अव्ययात्मा — परमात्मा</span></div>
   </div>
-  <div class="entry" data-ch="5" data-cid="13" data-verse="ब्रह्मण्याधाय कर्माणि सङ्गं त्यक्त्वा करोति यः ।&#10;लिप्यते न स पापेन पद्मपत्रमिवाम्भसा ॥ [५.१०]&#10;विद्याविनयसम्पन्ने ब्राह्मणे गवि हस्तिनि ।&#10;शुनि चैव श्वपाके च पण्डिताः समदर्शिनः ॥ [५.१८]">
+  <div class="entry" data-ch="4" data-cid="13" data-verse="आत्मसंयमयोगाग्नौ जुह्वति ज्ञानदीपिते ॥&#10;[४.२७]">
+    <div class="entry-ch"><span class="ch-badge b4">अ.४</span><div class="shlok-ref">४.२७</div></div>
+    <div class="entry-body"><div class="samjna">आत्मसंयमयोगाग्नौ — आत्मसंयम योगरूपी अग्नी</div><div class="vyakhya">प्रगत योगी सर्व इंद्रिये आणि प्राण 'ज्ञानप्रदीप्त आत्मसंयम योगरूपी अग्नीमध्ये' होम करतात. 'आत्मसंयम' = स्वतःच्या आत्मस्वरूपाशी जोडणी हेच साधन.</div><span class="angle-tag">आत्मसंयमयोग — अग्नी</span></div>
+  </div>
+  <div class="entry" data-ch="4" data-cid="13" data-verse="आत्मवन्तं न कर्माणि निबध्नन्ति धनञ्जय ॥&#10;[४.४१]">
+    <div class="entry-ch"><span class="ch-badge b4">अ.४</span><div class="shlok-ref">४.४१</div></div>
+    <div class="entry-body"><div class="samjna">आत्मवन्तम् न कर्माणि निबध्नन्ति</div><div class="vyakhya">'नित्य आत्मस्वरूपाचे भान असलेल्या (आत्मवन्तम्)' जागृत पुरुषाला कर्मे कधीही बांधू शकत नाहीत. आत्मवान् = कर्माचे बंधन नाहीसे होण्याचे सूत्र.</div><span class="angle-tag">आत्मवन्तम् — कर्मबंधमुक्त</span></div>
+  </div>
+
+  <!-- अध्याय ५ -->
+  <div class="entry" data-ch="5" data-cid="13" data-verse="विद्याविनयसम्पन्ने ब्राह्मणे गवि हस्तिनि ।&#10;शुनि चैव श्वपाके च पण्डिताः समदर्शिनः ॥ [५.१८]">
     <div class="entry-ch"><span class="ch-badge b5">अ.५</span><div class="shlok-ref">५.१८</div></div>
-    <div class="entry-body"><div class="samjna">पण्डिताः समदर्शिनः — ज्ञानी सर्वत्र एकच आत्मा पाहतो</div><div class="vyakhya">ज्ञानी पुरुष ब्राह्मण, गाय, हत्ती, कुत्रा, चांडाळ — सर्वांत एकाच आत्मतत्त्वाला पाहतो. हे समदर्शन आत्मज्ञानाचे फळ.</div><span class="angle-tag">सर्वत्र एकच आत्मा</span></div>
+    <div class="entry-body"><div class="samjna">पण्डिताः समदर्शिनः — सर्वत्र एकच आत्मा</div><div class="vyakhya">ज्ञानी पुरुष ब्राह्मण, गाय, हत्ती, कुत्रा, चांडाळ — सर्वांत 'एकाच आत्मतत्त्वाला' पाहतो. हे 'समदर्शन' आत्मज्ञानाचे सर्वोच्च फळ — सर्व प्राण्यांत एकच आत्मा.</div><span class="angle-tag">समदर्शन — एकच आत्मा</span></div>
   </div>
-  <div class="entry" data-ch="6" data-cid="13" data-verse="उद्धरेदात्मनात्मानं नात्मानमवसादयेत् ।&#10;आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ॥ [६.५]&#10;यदा विनियतं चित्तमात्मन्येवावतिष्ठते ।&#10;निःस्पृहः सर्वकामेभ्यो युक्त इत्युच्यते तदा ॥ [६.१८]">
-    <div class="entry-ch"><span class="ch-badge b6">अ.६</span><div class="shlok-ref">६.५, ६.१८</div></div>
-    <div class="entry-body"><div class="samjna">आत्मैव ह्यात्मनो बन्धुः — आत्माच आत्म्याचा मित्र</div><div class="vyakhya">आत्मा स्वतःचा उद्धार स्वतःच करतो — मित्र आणि शत्रू दोन्ही आत्माच. चित्त आत्म्यात स्थिर झाले की युक्त.</div><span class="angle-tag">आत्मा = मित्र / शत्रू</span></div>
+
+  <!-- अध्याय ६ -->
+  <div class="entry" data-ch="6" data-cid="13" data-verse="उद्धरेदात्मनात्मानं नात्मानमवसादयेत् ।&#10;आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ॥ [६.०५]">
+    <div class="entry-ch"><span class="ch-badge b6">अ.६</span><div class="shlok-ref">६.०५</div></div>
+    <div class="entry-body"><div class="samjna">आत्मैव ह्यात्मनो बन्धुः / आत्मैव रिपुः</div><div class="vyakhya">माणसाने स्वतःच स्वतःचा उद्धार करावा — 'हा आत्मा (स्वतःचे मन/स्वरूप) च स्वतःचा मित्र आणि स्वतःचाच शत्रू.' जर मन ताब्यात असेल तर मित्र, नसेल तर शत्रू. ध्यानयोगाचा पाया.</div><span class="angle-tag">आत्मा = मित्र / शत्रू</span></div>
   </div>
-  <div class="entry" data-ch="7" data-cid="13" data-verse="मत्तः परतरं नान्यत् किञ्चिदस्ति धनञ्जय ।&#10;मयि सर्वमिदं प्रोतं सूत्रे मणिगणा इव ॥ [७.७]&#10;जरामरणमोक्षाय मामाश्रित्य यतन्ति ये ।&#10;ते ब्रह्म तद्विदुः कृत्स्नम् अध्यात्मं कर्म च अखिलम् ॥ [७.२९]">
-    <div class="entry-ch"><span class="ch-badge b7">अ.७</span><div class="shlok-ref">७.७, ७.२९</div></div>
-    <div class="entry-body"><div class="samjna">मत्तः परतरं नान्यत् — माझ्याहून श्रेष्ठ काही नाही</div><div class="vyakhya">परमात्मा हाच सर्वव्यापी आत्मतत्त्व — सूत्रात मण्यांसारखे सर्व जग त्यात ओवलेले. अध्यात्म जाणणे म्हणजे आत्म्याचे स्वरूप जाणणे.</div><span class="angle-tag">परमात्मा = विश्वआत्मा</span></div>
+  <div class="entry" data-ch="6" data-cid="13" data-verse="आत्मसंस्थं मनः कृत्वा न किञ्चिदपि चिन्तयेत् ॥&#10;[६.२५]">
+    <div class="entry-ch"><span class="ch-badge b6">अ.६</span><div class="shlok-ref">६.२५</div></div>
+    <div class="entry-body"><div class="samjna">आत्मसंस्थं मनः — मन आत्म्यात पूर्ण स्थिर</div><div class="vyakhya">ध्यानाचे परमोच्च कोडिंग — धैर्याने युक्त बुद्धीच्या साहाय्याने मनाला हळूहळू 'आत्मसंस्थं' (केवळ आत्म्यामध्येच पूर्णपणे स्थिर) करावे आणि त्या अवस्थेत इतर काहीचेही चिंतन करू नये.</div><span class="angle-tag">आत्मसंस्थम् — ध्यानाचे परमोच्च</span></div>
   </div>
-  <div class="pattern-box"><div class="pattern-head">प्रवाह</div><div class="arrow-row"><span class="arr-item">देहभ्रम (१)</span><span class="arr">→</span><span class="arr-item">अविनाशी (२)</span><span class="arr">→</span><span class="arr-item">सर्वश्रेष्ठ (३)</span><span class="arr">→</span><span class="arr-item">परमात्मा (४)</span><span class="arr">→</span><span class="arr-item">समदर्शन (५)</span><span class="arr">→</span><span class="arr-item">मित्र/शत्रू (६)</span><span class="arr">→</span><span class="arr-item">विश्वआत्मा (७)</span></div></div>
+  <div class="entry" data-ch="6" data-cid="13" data-verse="आत्मौपम्येन सर्वत्र समं पश्यति योऽर्जुन ।&#10;सुखं वा यदि वा दुःखं स योगी परमो मतः ॥ [६.३२]">
+    <div class="entry-ch"><span class="ch-badge b6">अ.६</span><div class="shlok-ref">६.३२</div></div>
+    <div class="entry-body"><div class="samjna">आत्मौपम्येन — स्वतःच्या आत्म्याप्रमाणेच</div><div class="vyakhya">'आत्मौपम्येन' (स्वतःच्या उपमेने) सर्वांचे सुख-दुःख स्वतःसारखेच मानणारा — तोच सर्वश्रेष्ठ योगी. आत्मज्ञानाचे अंतिम सामाजिक फळ = सर्वांत स्वतःला पाहणे.</div><span class="angle-tag">आत्मौपम्य — परमोच्च</span></div>
+  </div>
+
+  <!-- अध्याय ७ -->
+  <div class="entry" data-ch="7" data-cid="13" data-verse="मत्तः परतरं नान्यत् किञ्चिदस्ति धनञ्जय ।&#10;मयि सर्वमिदं प्रोतं सूत्रे मणिगणा इव ॥ [७.०७]&#10;जरामरणमोक्षाय मामाश्रित्य यतन्ति ये ।&#10;ते ब्रह्म तद्विदुः कृत्स्नम् अध्यात्मं कर्म च अखिलम् ॥ [७.२९]">
+    <div class="entry-ch"><span class="ch-badge b7">अ.७</span><div class="shlok-ref">७.०७, ७.२९</div></div>
+    <div class="entry-body"><div class="samjna">मत्तः परतरं नान्यत् / अध्यात्मं — विश्वआत्मा</div><div class="vyakhya">परमात्मा हाच सर्वव्यापी आत्मतत्त्व — सूत्रात मण्यांसारखे सर्व जग त्यात ओवलेले. जे जरा-मृत्यूपासून मुक्तीसाठी शरण येतात ते 'अध्यात्म' (आत्म्याचे संपूर्ण विज्ञान) जाणतात.</div><span class="angle-tag">परमात्मा = विश्वआत्मा</span></div>
+  </div>
+
+  <div class="pattern-box">
+    <div class="pattern-head">प्रवाह — आत्म्याचा आलेख</div>
+    <div class="arrow-row">
+      <span class="arr-item">देहबुद्धी भ्रम (१)</span><span class="arr">→</span>
+      <span class="arr-item">अविनाशी (२.२०)</span><span class="arr">→</span>
+      <span class="arr-item">आत्मवान् + आत्मतृप्त (२.४५, ३.१७)</span><span class="arr">→</span>
+      <span class="arr-item">आत्मवन्तम् — कर्ममुक्त (४.४१)</span><span class="arr">→</span>
+      <span class="arr-item">समदर्शन (५.१८)</span><span class="arr">→</span>
+      <span class="arr-item">आत्मसंस्थम् + आत्मौपम्य (६)</span><span class="arr">→</span>
+      <span class="arr-item">विश्वआत्मा (७.०७)</span>
+    </div>
+  </div>
 </div>
 
 <div class="concept" data-cid="14" id="concept-14">
@@ -1978,21 +2189,25 @@ const chNames = {
 // ─── filter by chapter (now additive — allows intersection) ──────────────────
 function filterChapter(ch) {
   activeCh = ch;
-  // all-btn
   document.querySelector('.ch-btn.all-btn').classList.toggle('active', ch === 0);
-  // split buttons
   document.querySelectorAll('.ch-split').forEach(s => {
     s.classList.toggle('active', parseInt(s.dataset.ch) === ch);
   });
+  updateChCounts(0);   // ch select केल्यावर ch counts साफ
+  updateCpCounts(ch);  // cp buttons वर counts दाखव
   applyFilter();
 }
 
 // ─── filter by concept ───────────────────────────────────────────────────────
 function filterConcept(cp) {
+  const btn = document.querySelector('.cp-btn[data-cp="' + cp + '"]');
+  if (btn && btn.classList.contains('cp-empty')) return; // empty असेल तर ignore
   activeCp = cp;
   document.querySelectorAll('.cp-btn').forEach(b => {
     b.classList.toggle('active', parseInt(b.dataset.cp) === cp);
   });
+  updateCpCounts(0);   // cp select केल्यावर cp counts साफ
+  updateChCounts(cp);  // ch buttons वर counts दाखव
   applyFilter();
 }
 
@@ -2002,38 +2217,92 @@ function clearAll() {
   document.querySelectorAll('.ch-split').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.cp-btn').forEach(b => b.classList.remove('active'));
   document.querySelector('.cp-btn[data-cp="0"]').classList.add('active');
+  updateCpCounts(0);
+  updateChCounts(0);
   applyFilter();
+}
+
+// अध्याय select केल्यावर संकल्पना buttons वर श्लोकसंख्या badge
+function updateCpCounts(ch) {
+  document.querySelectorAll('.cp-btn[data-cp]').forEach(btn => {
+    const cp = parseInt(btn.dataset.cp);
+    const old = btn.querySelector('.cp-count');
+    if (old) old.remove();
+    btn.classList.remove('cp-empty');
+    if (ch === 0) return;
+    if (cp === 0) {
+      // 'सर्व' — एकूण count
+      const total = document.querySelectorAll('.entry[data-ch="' + ch + '"]').length;
+      const b = document.createElement('span');
+      b.className = 'cp-count'; b.textContent = total;
+      btn.appendChild(b);
+      return;
+    }
+    const count = document.querySelectorAll('.entry[data-ch="' + ch + '"][data-cid="' + cp + '"]').length;
+    if (count === 0) {
+      btn.classList.add('cp-empty');
+    } else {
+      const b = document.createElement('span');
+      b.className = 'cp-count'; b.textContent = count;
+      btn.appendChild(b);
+    }
+  });
+}
+
+// संकल्पना select केल्यावर अध्याय buttons वर श्लोकसंख्या badge
+function updateChCounts(cp) {
+  const allBtn = document.querySelector('.ch-btn.all-btn');
+  const oldAll = allBtn.querySelector('.cp-count');
+  if (oldAll) oldAll.remove();
+  allBtn.classList.remove('cp-empty');
+
+  document.querySelectorAll('.ch-split').forEach(split => {
+    const ch = parseInt(split.dataset.ch);
+    const label = split.querySelector('.ch-split-label');
+    const old = label.querySelector('.cp-count');
+    if (old) old.remove();
+    label.classList.remove('cp-empty');
+    if (cp === 0) return;
+    const count = document.querySelectorAll('.entry[data-ch="' + ch + '"][data-cid="' + cp + '"]').length;
+    if (count === 0) {
+      label.classList.add('cp-empty');
+    } else {
+      const b = document.createElement('span');
+      b.className = 'cp-count'; b.textContent = count;
+      label.appendChild(b);
+    }
+  });
+  if (cp > 0) {
+    const total = document.querySelectorAll('.entry[data-cid="' + cp + '"]').length;
+    const b = document.createElement('span');
+    b.className = 'cp-count'; b.textContent = total;
+    allBtn.appendChild(b);
+  }
 }
 
 // ─── apply filter — supports intersection (ch + concept together) ─────────────
 function applyFilter() {
   const concepts = document.querySelectorAll('.concept[data-cid]');
   const entries  = document.querySelectorAll('.entry[data-ch]');
-  const filterBar = document.getElementById('filter-bar');
-  const filterText = document.getElementById('filter-text');
-  const chSummary = document.getElementById('ch-summary');
-  const chSummaryTitle = document.getElementById('ch-summary-title');
-  const chSummarySub = document.getElementById('ch-summary-sub');
+  const filterBar   = document.getElementById('filter-bar');
+  const filterTitle = document.getElementById('filter-title');
+  const filterSub   = document.getElementById('filter-sub');
 
   // reset all
   concepts.forEach(c => c.classList.remove('hidden'));
   entries.forEach(e => { e.classList.remove('entry-hidden', 'entry-faded'); });
   document.body.classList.remove('ch-filtered');
   filterBar.classList.remove('visible');
-  chSummary.classList.remove('visible');
 
-  if (activeCh === 0 && activeCp === 0) return; // show all
+  if (activeCh === 0 && activeCp === 0) return;
 
   let count = 0;
 
   if (activeCh > 0 && activeCp > 0) {
-    // ── INTERSECTION mode: both chapter AND concept selected ──
+    // ── INTERSECTION: अध्याय × संकल्पना ──
     document.body.classList.add('ch-filtered');
     concepts.forEach(cBlock => {
-      if (parseInt(cBlock.dataset.cid) !== activeCp) {
-        cBlock.classList.add('hidden');
-        return;
-      }
+      if (parseInt(cBlock.dataset.cid) !== activeCp) { cBlock.classList.add('hidden'); return; }
       const cEntries = cBlock.querySelectorAll('.entry[data-ch]');
       let hasVisible = false;
       cEntries.forEach(e => {
@@ -2042,16 +2311,15 @@ function applyFilter() {
       });
       if (!hasVisible) cBlock.classList.add('hidden');
     });
-    const cpName = document.querySelector('.cp-btn[data-cp="' + activeCp + '"]')?.textContent || '';
+    const cpName = document.querySelector('.cp-btn[data-cp="' + activeCp + '"]')?.textContent.replace(/\d+/g,'').trim() || '';
     filterBar.classList.add('visible');
-    filterText.innerHTML = '<b>' + (chNames[activeCh]||'') + '</b> × <b>' + cpName + '</b> — ' + count + ' श्लोक';
-    chSummary.classList.add('visible');
-    chSummaryTitle.textContent = (chNames[activeCh]||'') + ' · ' + cpName;
-    chSummarySub.textContent = count + ' श्लोक संदर्भ';
+    filterTitle.innerHTML = (chNames[activeCh]||'') + ' <span class="filter-bar-sep">×</span> ' + cpName;
+    filterSub.textContent = count + ' श्लोक';
 
   } else if (activeCh > 0) {
-    // ── Chapter only ──
+    // ── अध्याय फक्त ──
     document.body.classList.add('ch-filtered');
+    let cpCount = 0;
     concepts.forEach(cBlock => {
       const cEntries = cBlock.querySelectorAll('.entry[data-ch]');
       let hasVisible = false;
@@ -2060,21 +2328,22 @@ function applyFilter() {
         else { e.classList.add('entry-hidden'); }
       });
       if (!hasVisible) cBlock.classList.add('hidden');
+      else cpCount++;
     });
     filterBar.classList.add('visible');
-    filterText.innerHTML = '<b>' + (chNames[activeCh]||'') + '</b> — संकल्पना';
-    chSummary.classList.add('visible');
-    chSummaryTitle.textContent = chNames[activeCh] || '';
-    chSummarySub.textContent = count + ' श्लोक संदर्भ · ' + document.querySelectorAll('.concept[data-cid]:not(.hidden)').length + ' संकल्पना';
+    filterTitle.textContent = chNames[activeCh] || '';
+    filterSub.textContent = count + ' श्लोक · ' + cpCount + ' संकल्पना';
 
   } else if (activeCp > 0) {
-    // ── Concept only ──
+    // ── संकल्पना फक्त ──
     concepts.forEach(cBlock => {
       if (parseInt(cBlock.dataset.cid) !== activeCp) cBlock.classList.add('hidden');
+      else cBlock.querySelectorAll('.entry[data-ch]').forEach(() => count++);
     });
-    const cpName = document.querySelector('.cp-btn[data-cp="' + activeCp + '"]')?.textContent || '';
+    const cpName = document.querySelector('.cp-btn[data-cp="' + activeCp + '"]')?.textContent.replace(/\d+/g,'').trim() || '';
     filterBar.classList.add('visible');
-    filterText.innerHTML = '<b>' + cpName + '</b> संकल्पना — वेगवेगळ्या अध्यायांत';
+    filterTitle.textContent = cpName;
+    filterSub.textContent = count + ' श्लोक · अध्याय १ ते ७';
   }
 }
 
@@ -4837,7 +5106,7 @@ const mmDetails = {
   },
 };
 
-const mmChColors = {1:'#8a1a1a',2:'#5a1a6a',3:'#1a6b3a',4:'#7a2a00',5:'#5a1a6a',6:'#1a6b3a',7:'#b85a00'};
+const mmChColors = {1:'#8a1a1a',2:'#1a4a8a',3:'#1a6b3a',4:'#7a2a00',5:'#5a1a6a',6:'#b85a00',7:'#1a5a6b'};
 const mmChNames  = {1:'अर्जुनविषादयोग',2:'सांख्ययोग',3:'कर्मयोग',4:'ज्ञानकर्मसंन्यासयोग',5:'कर्मसंन्यासयोग',6:'आत्मसंयमयोग',7:'ज्ञानविज्ञानयोग'};
 
 let mmActiveCh = 0, mmActiveCard = 0;
