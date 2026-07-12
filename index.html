@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>गीता स्वाध्याय · अध्याय १ ते ८ · संकल्पना प्रवाह</title>
+<title>गीता स्वाध्याय · अध्याय १ ते ९ · संकल्पना प्रवाह</title>
 <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 
@@ -26,6 +26,7 @@
   --c6: #B85A00; --c6-bg: rgba(184,90,0,0.12);
   --c7: #1A5A6B; --c7-bg: rgba(26,90,107,0.10);
   --c8: #3A1A8A; --c8-bg: rgba(58,26,138,0.10);
+  --c9: #8A1A5A; --c9-bg: rgba(138,26,90,0.10);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -145,6 +146,12 @@ body {
 .ch-split[data-ch="8"].active .ch-split-label,
 .ch-split[data-ch="8"].active .ch-split-mm { background: #3A1A8A; color: #fff; }
 
+.ch-split[data-ch="9"] { border-color: rgba(138,26,90,0.4); }
+.ch-split[data-ch="9"] .ch-split-label,
+.ch-split[data-ch="9"] .ch-split-mm { color: #8A1A5A; background: rgba(138,26,90,0.08); }
+.ch-split[data-ch="9"].active .ch-split-label,
+.ch-split[data-ch="9"].active .ch-split-mm { background: #8A1A5A; color: #fff; }
+
 /* ── CHAPTER LEGEND ── */
 .ch-legend {
   display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
@@ -195,6 +202,7 @@ body {
 .b6 { background: var(--c6-bg); color: var(--c6); }
 .b7 { background: var(--c7-bg); color: var(--c7); }
 .b8 { background: var(--c8-bg); color: var(--c8); }
+.b9 { background: var(--c9-bg); color: var(--c9); }
 .shlok-ref { font-size: 11px; letter-spacing: 0.8px; color: var(--muted); margin-top: 3px; }
 .samjna { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 15px; line-height: 1.7; margin-bottom: 3px; color: var(--deep); }
 .vyakhya { font-size: 15px; color: var(--ink); margin-bottom: 4px; }
@@ -647,11 +655,11 @@ body.ch-filtered .footer { display: none; }
 
 <!-- ── HEADER ── -->
 <div class="masthead">
-  <div class="masthead-sub">गीता स्वाध्याय · अध्याय १ ते ८ · मूळ प्रवाह · संकल्पना प्रवाह</div>
-  <div class="masthead-title">संकल्पना प्रवाह — अध्याय १ ते ८</div>
+  <div class="masthead-sub">गीता स्वाध्याय · अध्याय १ ते ९ · मूळ प्रवाह · संकल्पना प्रवाह</div>
+  <div class="masthead-title">संकल्पना प्रवाह — अध्याय १ ते ९</div>
   <div class="masthead-note">१४ संकल्पना · अध्याय किंवा संकल्पना निवडा · दोन्ही एकत्र निवडा · श्लोकावर hover करा</div>
   <div class="masthead-frame">
-    <b>चौकट:</b> अध्याय १ = रोगनिदान (अर्जुनविषाद) · अध्याय २–६ = चिकित्सा · अध्याय ७ = ईश्वरज्ञान · अध्याय ८ = प्रयाण-विद्या (चिकित्सेची अंतिम कसोटी). खालील प्रत्येक संकल्पना ही चिकित्सेची एक रेषा आहे.
+    <b>चौकट:</b> अध्याय १ = रोगनिदान (अर्जुनविषाद) · अध्याय २–६ = चिकित्सा · अध्याय ७ = ईश्वरज्ञान · अध्याय ८ = प्रयाण-विद्या (चिकित्सेची अंतिम कसोटी) · अध्याय ९ = राजविद्या (भक्तीचे सुलभ राजरहस्य). खालील प्रत्येक संकल्पना ही चिकित्सेची एक रेषा आहे.
   </div>
 </div>
 
@@ -692,6 +700,10 @@ body.ch-filtered .footer { display: none; }
     <div class="ch-split" data-ch="8">
       <button class="ch-split-label" onclick="filterChapter(8)">८ · अक्षरब्रह्म</button>
       <button class="ch-split-mm" onclick="mmOpen(8)" title="मानस-चित्र पाहा">🗺</button>
+    </div>
+    <div class="ch-split" data-ch="9">
+      <button class="ch-split-label" onclick="filterChapter(9)">९ · राजविद्या</button>
+      <button class="ch-split-mm" onclick="mmOpen(9)" title="मानस-चित्र पाहा">🗺</button>
     </div>
   </div>
   <div class="ctrl-row">
@@ -919,6 +931,20 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">भूतभावोद्भवकरो विसर्गः कर्मसंज्ञितः</div><div class="vyakhya">चराचर सृष्टीला आणि भूतांच्या भावांना जन्म देणारा 'विसर्ग' (सर्जक त्याग/अर्पण) म्हणजेच कर्म — गीतेतील कर्माची सर्वोच्च, वैश्विक व्याख्या. यज्ञीय अर्पण हाच कर्माचा मूळ अर्थ, हे ३.१४–१५ च्या सृष्टिचक्राचे उत्तर-रूप.</div><span class="angle-tag">कर्माची वैश्विक व्याख्या</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="1" data-verse="न च मां तानि कर्माणि निबध्नन्ति धनञ्जय ।&#10;उदासीनवदासीनमसक्तं तेषु कर्मसु ॥ [९.०९]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.०९</div></div>
+    <div class="entry-body"><div class="samjna">न च मां तानि कर्माणि निबध्नन्ति / उदासीनवत्</div><div class="vyakhya">सृष्टिनिर्मितीची एवढी प्रचंड कर्मे करूनही ती मला बांधत नाहीत — कारण मी त्यांत आसक्तिरहित, उदासीनासारखा असतो. निष्काम कर्माचे ईश्वरी मूळरूप: कर्तेपण आहे, बंधन नाही.</div><span class="angle-tag">उदासीन कर्ता — बंधनातीत</span></div>
+  </div>
+  <div class="entry" data-ch="9" data-cid="1" data-verse="यत्करोषि यदश्नासि यज्जुहोषि ददासि यत् ।&#10;यत्तपस्यसि कौन्तेय तत्कुरुष्व मदर्पणम् ॥ [९.२७]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.२७</div></div>
+    <div class="entry-body"><div class="samjna">यत्करोषि यदश्नासि... तत्कुरुष्व मदर्पणम्</div><div class="vyakhya">जे करतोस, खातोस, हवन-दान-तप करतोस — ते सर्व मला अर्पण कर. कर्मयोगाचे सर्वात सोपे रूप: कर्म न बदलता भाव बदलणे — प्रत्येक दैनंदिन कृती अर्पणाने योगसाधना बनते.</div><span class="angle-tag">सर्वकर्म-अर्पण — सुलभ सूत्र</span></div>
+  </div>
+  <div class="entry" data-ch="9" data-cid="1" data-verse="शुभाशुभफलैरेवं मोक्ष्यसे कर्मबन्धनैः ।&#10;संन्यासयोगयुक्तात्मा विमुक्तो मामुपैष्यसि ॥ [९.२८]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.२८</div></div>
+    <div class="entry-body"><div class="samjna">शुभाशुभफलैरेवं मोक्ष्यसे कर्मबन्धनैः</div><div class="vyakhya">अशा अर्पण-भावाने शुभ-अशुभ फळरूप कर्मबंधनांतून मुक्त होशील — २.३९ मध्ये दिलेल्या 'कर्मबन्धं प्रहास्यसि' या वचनाची भक्तिमार्गाने इथे पूर्तता होते.</div><span class="angle-tag">कर्मबंधातून मुक्ती — वचनपूर्ती</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — अध्याय २ ते ७</div>
     <div class="arrow-row">
@@ -929,7 +955,7 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">आत्मशुद्धी + अकर्तापण (५)</span><span class="arr">→</span>
       <span class="arr-item">कर्म → शम → योगारूढ (६)</span><span class="arr">→</span>
       <span class="arr-item">अखिलं कर्म — ब्रह्मरूप (७)</span><span class="arr">→</span>
-      <span class="arr-item">विसर्गः कर्मसंज्ञितः — वैश्विक व्याख्या (८.०३)</span>
+      <span class="arr-item">विसर्गः कर्मसंज्ञितः — वैश्विक व्याख्या (८.०३)</span><span class="arr">→</span><span class="arr-item">यत्करोषि तत्कुरुष्व मदर्पणम् (९.२७)</span>
     </div>
   </div>
 </div>
@@ -1094,6 +1120,16 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">योगी परं स्थानमुपैति चाद्यम्</div><div class="vyakhya">हे रहस्य जाणणारा योगी वेद-यज्ञ-तप-दानाची सारी पुण्यफले ओलांडून सर्वांच्या मुळाशी असलेल्या 'आद्य परम स्थानाला' जातो — योग्याचे अंतिम गंतव्य आणि अध्यायाचा समारोप.</div><span class="angle-tag">योग्याचे परं स्थान</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="2" data-verse="न च मत्स्थानि भूतानि पश्य मे योगमैश्वरम् ।&#10;भूतभृन्न च भूतस्थो ममात्मा भूतभावनः ॥ [९.०५]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.०५</div></div>
+    <div class="entry-body"><div class="samjna">पश्य मे योगमैश्वरम्</div><div class="vyakhya">'माझा ईश्वरी योग पाहा' — भूतांना उत्पन्न करून, धारण-पोषण करूनही त्यांच्यात नसणे! 'योग' शब्दाचा ईश्वरी अर्थ: परस्परविरोधी गोष्टी एकत्र नांदवण्याचे अतर्क्य सामर्थ्य — हीच योगमाया.</div><span class="angle-tag">योगमाया — ऐश्वर योग</span></div>
+  </div>
+  <div class="entry" data-ch="9" data-cid="2" data-verse="अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते ।&#10;तेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम् ॥ [९.२२]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.२२</div></div>
+    <div class="entry-body"><div class="samjna">तेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम्</div><div class="vyakhya">अनन्य भावाने चिंतन करीत उपासणाऱ्या नित्ययुक्तांचा 'योगक्षेम' — नसलेले मिळवून देणे (योग) आणि असलेले राखणे (क्षेम) — मी स्वतः वाहतो. गीतेतले सर्वात मोठे आश्वासन-वचन.</div><span class="angle-tag">योगक्षेमं वहाम्यहम् — महावचन</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — अध्याय २ ते ७</div>
     <div class="arrow-row">
@@ -1104,7 +1140,7 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">योगयुक्त → अलिप्त (५.०७)</span><span class="arr">→</span>
       <span class="arr-item">योगारूढ → शम (६.०३)</span><span class="arr">→</span>
       <span class="arr-item">मदाश्रय → समग्र ज्ञान (७.०१)</span><span class="arr">→</span>
-      <span class="arr-item">सर्वेषु कालेषु योगयुक्त (८.२७)</span>
+      <span class="arr-item">सर्वेषु कालेषु योगयुक्त (८.२७)</span><span class="arr">→</span><span class="arr-item">योगक्षेमं वहाम्यहम् (९.२२)</span>
     </div>
   </div>
 </div>
@@ -1179,6 +1215,12 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">विशन्ति यद्यतयो वीतरागाः</div><div class="vyakhya">राग विरलेले 'यती' (संन्यासी) ज्या अक्षरात प्रवेश करतात, ज्याच्या इच्छेने ब्रह्मचर्य आचरले जाते — ते पद संग्रहाने सांगतो. संन्यासाचा प्रवास संकल्पत्यागापासून (६.०२) अक्षरप्रवेशापर्यंत पोहोचतो.</div><span class="angle-tag">यती → अक्षरप्रवेश</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="3" data-verse="शुभाशुभफलैरेवं मोक्ष्यसे कर्मबन्धनैः ।&#10;संन्यासयोगयुक्तात्मा विमुक्तो मामुपैष्यसि ॥ [९.२८]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.२८</div></div>
+    <div class="entry-body"><div class="samjna">संन्यासयोगयुक्तात्मा विमुक्तो मामुपैष्यसि</div><div class="vyakhya">सर्वकर्म-अर्पण हाच 'संन्यासयोग' — बाह्य त्याग नव्हे, फळाचे स्वामित्व सोडणे. असा युक्तात्मा विमुक्त होऊन मलाच येऊन मिळतो — ५.०३ च्या 'नित्यसंन्यासी' चे भक्तिरूप.</div><span class="angle-tag">अर्पण = खरा संन्यास</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — संन्यासाचे सात टप्पे</div>
     <div class="arrow-row">
@@ -1189,7 +1231,7 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">नित्यसंन्यासी + मनसा संन्यस्य (५)</span><span class="arr">→</span>
       <span class="arr-item">सर्वसंकल्पसंन्यासी = योगारूढ (६)</span><span class="arr">→</span>
       <span class="arr-item">द्वंद्वमुक्त भक्ती (७)</span><span class="arr">→</span>
-      <span class="arr-item">यतयो वीतरागाः → अक्षरप्रवेश (८.११)</span>
+      <span class="arr-item">यतयो वीतरागाः → अक्षरप्रवेश (८.११)</span><span class="arr">→</span><span class="arr-item">संन्यासयोगयुक्तात्मा (९.२८)</span>
     </div>
   </div>
 </div>
@@ -1302,6 +1344,12 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">मय्यर्पितमनोबुद्धिर्मामेवैष्यस्यसंशयम्</div><div class="vyakhya">'सर्वकाळ माझे स्मरण कर आणि युद्धही कर — मन-बुद्धी मला अर्पण केलीस की निःसंशय मलाच येऊन मिळशील.' बुद्धीच्या चढत्या विकासाचा (२.४१ → ७.१०) शेवट: ती ईश्वराला अर्पण होणे.</div><span class="angle-tag">मय्यर्पित बुद्धी — समर्पण</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="4" data-verse="अपि चेत्सुदुराचारो भजते मामनन्यभाक् ।&#10;साधुरेव स मन्तव्यः सम्यग्व्यवसितो हि सः ॥ [९.३०]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.३०</div></div>
+    <div class="entry-body"><div class="samjna">साधुरेव स मन्तव्यः सम्यग्व्यवसितो हि सः</div><div class="vyakhya">अत्यंत दुराचारीही अनन्यभावाने भजू लागला तर साधूच मानावा — कारण त्याचा 'व्यवसाय' (निश्चय) यथार्थ झाला आहे. २.४१ ची 'व्यवसायात्मिका बुद्धी' इथे भक्तीच्या अंतिम निर्णयात परिणत होते.</div><span class="angle-tag">सम्यक् व्यवसित — निश्चयपूर्ती</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — बुद्धीचा चढता विकास</div>
     <div class="arrow-row">
@@ -1312,7 +1360,7 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">तद्बुद्धयः + स्थिरबुद्धी (५)</span><span class="arr">→</span>
       <span class="arr-item">बुद्धिग्राह्यम् सुख (६)</span><span class="arr">→</span>
       <span class="arr-item">बुद्धी = ईश्वर (७)</span><span class="arr">→</span>
-      <span class="arr-item">मय्यर्पितमनोबुद्धिः (८.०७)</span>
+      <span class="arr-item">मय्यर्पितमनोबुद्धिः (८.०७)</span><span class="arr">→</span><span class="arr-item">सम्यग्व्यवसितः — यथार्थ निश्चय (९.३०)</span>
     </div>
   </div>
 </div>
@@ -1375,6 +1423,20 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">परस्तस्मात्तु भावोऽन्योऽव्यक्तोऽव्यक्तात्सनातनः</div><div class="vyakhya">त्या अव्यक्त प्रकृतीच्याही पलीकडे दुसरा 'सनातन अव्यक्त' भाव आहे — सारी भूते नष्ट होताना जो नष्ट होत नाही. अव्यक्त दोन: प्रकृति-अव्यक्त आणि अक्षर-अव्यक्त — हा भेद अध्याय ८ चे तात्त्विक शिखर.</div><span class="angle-tag">दोन अव्यक्तांचा भेद</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="5" data-verse="सर्वभूतानि कौन्तेय प्रकृतिं यान्ति मामिकाम् ।&#10;कल्पक्षये पुनस्तानि कल्पादौ विसृजाम्यहम् ॥ [९.०७]&#10;प्रकृतिं स्वामवष्टभ्य विसृजामि पुनः पुनः ।&#10;भूतग्राममिमं कृत्स्नमवशं प्रकृतेर्वशात् ॥ [९.०८]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.०७–०८</div></div>
+    <div class="entry-body"><div class="samjna">प्रकृतिं यान्ति मामिकाम् / अवशं प्रकृतेर्वशात्</div><div class="vyakhya">कल्पक्षयी सारी भूते 'माझ्या' प्रकृतीत विलीन होतात; कल्पारंभी मी माझ्या प्रकृतीला अवष्टंभ देऊन ती पुन्हा-पुन्हा विसर्जितो — प्रकृतीच्या वशात 'अवश' भूतग्राम. ८.१८–१९ चे चक्र, आता स्वामित्वासह: प्रकृती 'मामिका' — माझी.</div><span class="angle-tag">मामिका प्रकृती — कल्पचक्र</span></div>
+  </div>
+  <div class="entry" data-ch="9" data-cid="5" data-verse="मयाध्यक्षेण प्रकृतिः सूयते सचराचरम् ।&#10;हेतुनानेन कौन्तेय जगद्विपरिवर्तते ॥ [९.१०]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.१०</div></div>
+    <div class="entry-body"><div class="samjna">मयाध्यक्षेण प्रकृतिः सूयते सचराचरम्</div><div class="vyakhya">माझ्या अध्यक्षतेखाली प्रकृती चराचर जग प्रसवते — प्रकृती हे automation इंजिन, पण अध्यक्ष ईश्वर. सांख्याच्या स्वतंत्र जड प्रकृतीला गीतेने दिलेले ईश्वरी अधिष्ठान — याच हेतूने संसारचक्र फिरते.</div><span class="angle-tag">अध्यक्ष ईश्वर — प्रकृती यंत्र</span></div>
+  </div>
+  <div class="entry" data-ch="9" data-cid="5" data-verse="मोघाशा मोघकर्माणो मोघज्ञाना विचेतसः ।&#10;राक्षसीमासुरीं चैव प्रकृतिं मोहिनीं श्रिताः ॥ [९.१२]&#10;महात्मानस्तु मां पार्थ दैवीं प्रकृतिमाश्रिताः ।&#10;भजन्त्यनन्यमनसो ज्ञात्वा भूतादिमव्ययम् ॥ [९.१३]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.१२–१३</div></div>
+    <div class="entry-body"><div class="samjna">राक्षसी-आसुरी-मोहिनी वि. दैवी प्रकृती</div><div class="vyakhya">प्रकृतीच्या दोन वाटा: व्यर्थ आशा-कर्म-ज्ञानाचे विचेतस मूढ राक्षसी-आसुरी-मोहिनी प्रकृतीचा आश्रय घेतात; महात्मे दैवी प्रकृतीचा आश्रय घेऊन अनन्यमनाने भजतात — १६व्या अध्यायाच्या दैवासुर-संपत्तीची नांदी.</div><span class="angle-tag">आसुरी वि. दैवी प्रकृती</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — प्रकृतीचे कोडिंग</div>
     <div class="arrow-row">
@@ -1384,7 +1446,7 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">ईश्वराची दिव्य प्रकृती (४.०६)</span><span class="arr">→</span>
       <span class="arr-item">आत्मा अकर्ता, स्वभाव कर्ता (५.१४)</span><span class="arr">→</span>
       <span class="arr-item">अपरा + परा प्रकृती (७.०४–०५)</span><span class="arr">→</span>
-      <span class="arr-item">अव्यक्त प्रकृती ↔ परम अव्यक्त (८.१८–२०)</span>
+      <span class="arr-item">अव्यक्त प्रकृती ↔ परम अव्यक्त (८.१८–२०)</span><span class="arr">→</span><span class="arr-item">मयाध्यक्षेण प्रकृतिः (९.१०)</span>
     </div>
   </div>
 </div>
@@ -1726,6 +1788,12 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">यतयो वीतरागाः — रागविरहित</div><div class="vyakhya">अक्षरात प्रवेश त्यांचाच, ज्यांचा राग (आसक्ती) पूर्ण विरला — काम-क्रोधावरील आयुष्यभराच्या विजयाची अंतिम कसोटी मृत्यूच्या दारात लागते; वीतरागता हीच प्रवेशपत्रिका.</div><span class="angle-tag">वीतरागता — प्रवेशपत्रिका</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="9" data-verse="त्रैविद्या मां सोमपाः पूतपापा यज्ञैरिष्ट्वा स्वर्गतिं प्रार्थयन्ते ।&#10;[९.२०]&#10;ते तं भुक्त्वा स्वर्गलोकं विशालं क्षीणे पुण्ये मर्त्यलोकं विशन्ति ।&#10;एवं त्रयीधर्ममनुप्रपन्ना गतागतं कामकामा लभन्ते ॥ [९.२१]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.२०–२१</div></div>
+    <div class="entry-body"><div class="samjna">गतागतं कामकामा लभन्ते</div><div class="vyakhya">त्रैविद्य सोमप यज्ञांनी स्वर्ग मागतात, विशाल स्वर्ग भोगतात — आणि पुण्य क्षीण होताच मृत्युलोकात परततात. 'कामकामा' — कामनांचीच कामना करणाऱ्यांच्या पदरी येरझाऱ्या; कामना हीच परतीच्या तिकिटाची किंमत.</div><span class="angle-tag">कामकामा — गतागत चक्र</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — काम-क्रोधाचा आलेख</div>
     <div class="arrow-row">
@@ -1737,7 +1805,7 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">कामसंकल्पवर्जित (४)</span><span class="arr">→</span>
       <span class="arr-item">वेग सहन → ब्रह्मनिर्वाण (५)</span><span class="arr">→</span>
       <span class="arr-item">धर्माविरुद्धो काम = ईश्वर (७.११)</span><span class="arr">→</span>
-      <span class="arr-item">वीतरागता — प्रवेशपत्रिका (८.११)</span>
+      <span class="arr-item">वीतरागता — प्रवेशपत्रिका (८.११)</span><span class="arr">→</span><span class="arr-item">कामकामा — गतागतम् (९.२१)</span>
     </div>
   </div>
 </div>
@@ -1824,6 +1892,12 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">युक्तचेतसः — सर्वत्र समदृष्टी</div><div class="vyakhya">भौतिक, दैवी, यज्ञरूप — सर्वत्र एकाच ईश्वराला पाहणारे 'युक्तचेतस' — हीच परमोच्च समता. अंतकाळीही हे ज्ञान स्थिर राहते. समत्वाची ही अंतिम व अविचल अवस्था.</div><span class="angle-tag">युक्तचेतसः — सर्वव्यापी समदृष्टी</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="10" data-verse="समोऽहं सर्वभूतेषु न मे द्वेष्योऽस्ति न प्रियः ।&#10;ये भजन्ति तु मां भक्त्या मयि ते तेषु चाप्यहम् ॥ [९.२९]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.२९</div></div>
+    <div class="entry-body"><div class="samjna">समोऽहं सर्वभूतेषु न मे द्वेष्योऽस्ति न प्रियः</div><div class="vyakhya">मी सर्व भूतांत सम आहे — मला ना कोणी द्वेष्य, ना प्रिय; पण जे भक्तीने भजतात, ते माझ्यात राहतात आणि मी त्यांच्यात प्रकट होतो. समतेचे उगमस्थान खुद्द ईश्वर — भक्तांतील प्रकटता हा पक्षपात नव्हे, प्रतिसाद.</div><span class="angle-tag">ईश्वराची समता — भक्तप्रकटता</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — समत्वाचा चढता आलेख</div>
     <div class="arrow-row">
@@ -1833,7 +1907,7 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">यशापयशात समः (४)</span><span class="arr">→</span>
       <span class="arr-item">समदर्शन + प्राण समौ (५)</span><span class="arr">→</span>
       <span class="arr-item">समबुद्धी → आत्मौपम्य (६)</span><span class="arr">→</span>
-      <span class="arr-item">युक्तचेतसः (७)</span>
+      <span class="arr-item">युक्तचेतसः (७)</span><span class="arr">→</span><span class="arr-item">समोऽहं सर्वभूतेषु (९.२९)</span>
     </div>
   </div>
 </div>
@@ -1867,7 +1941,13 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">जानन्योगी मुह्यति न कश्चन</div><div class="vyakhya">शुक्ल-कृष्ण दोन्ही वाटा 'जाणणारा' योगी कधीही मोहात पडत नाही — मृत्यूसमोरही अमूढ राहणे हे स्थितप्रज्ञाचे अध्याय-८ मधील रूप; ज्ञानाने आलेली निर्भयता.</div><span class="angle-tag">गतिज्ञ अमूढ योगी (अ.८ रूप)</span></div>
   </div>
 
-  <div class="pattern-box"><div class="pattern-head">प्रवाह</div><div class="arrow-row"><span class="arr-item">स्थितप्रज्ञ (२)</span><span class="arr">→</span><span class="arr-item">पण्डित (४)</span><span class="arr">→</span><span class="arr-item">स्थिरबुद्धी (५)</span><span class="arr">→</span><span class="arr-item">योगारूढ (६)<span class="arr">→</span><span class="arr-item">गतिज्ञ अमूढ योगी (८.२७)</span></div></div>
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="11" data-verse="सततं कीर्तयन्तो मां यतन्तश्च दृढव्रताः ।&#10;नमस्यन्तश्च मां भक्त्या नित्ययुक्ता उपासते ॥ [९.१४]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.१४</div></div>
+    <div class="entry-body"><div class="samjna">यतन्तश्च दृढव्रताः / नित्ययुक्ता उपासते</div><div class="vyakhya">सतत कीर्तन, दृढ व्रत, भक्तिपूर्वक नमन, नित्ययुक्त उपासना — सिद्धावस्थेचे अध्याय-९ मधील रूप: 'दृढव्रत नित्ययुक्त भक्त'. स्थिरता आता ध्यानाची नव्हे, प्रेमाची.</div><span class="angle-tag">दृढव्रत भक्त (अ.९ रूप)</span></div>
+  </div>
+
+  <div class="pattern-box"><div class="pattern-head">प्रवाह</div><div class="arrow-row"><span class="arr-item">स्थितप्रज्ञ (२)</span><span class="arr">→</span><span class="arr-item">पण्डित (४)</span><span class="arr">→</span><span class="arr-item">स्थिरबुद्धी (५)</span><span class="arr">→</span><span class="arr-item">योगारूढ (६)<span class="arr">→</span><span class="arr-item">गतिज्ञ अमूढ योगी (८.२७)</span><span class="arr">→</span><span class="arr-item">दृढव्रत नित्ययुक्त भक्त (९.१४)</span></div></div>
 </div>
 
 <div class="concept" data-cid="12" id="concept-12">
@@ -1962,6 +2042,16 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">तत्र प्रयाता गच्छन्ति ब्रह्म ब्रह्मविदो जनाः</div><div class="vyakhya">शुक्ल (अर्चिरादि) मार्गाने गेलेले 'ब्रह्मवेत्ते' ब्रह्माला पावतात — परत येत नाहीत. ज्ञानाचे अंतिम फळ: अनावृत्ती. 'ज्ञानी = ईश्वराचा आत्मा' (७.१८) चे हे गती-रूप.</div><span class="angle-tag">ब्रह्मविदः → अनावृत्ती</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="12" data-verse="इदं तु ते गुह्यतमं प्रवक्ष्याम्यनसूयवे ।&#10;ज्ञानं विज्ञानसहितं यज्ज्ञात्वा मोक्ष्यसेऽशुभात् ॥ [९.०१]&#10;राजविद्या राजगुह्यं पवित्रमिदमुत्तमम् ।&#10;प्रत्यक्षावगमं धर्म्यं सुसुखं कर्तुमव्ययम् ॥ [९.०२]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.०१–०२</div></div>
+    <div class="entry-body"><div class="samjna">राजविद्या राजगुह्यं... प्रत्यक्षावगमं सुसुखम्</div><div class="vyakhya">दोषदृष्टिरहित भक्ताला विज्ञानासहित ज्ञान — सर्व विद्यांचा राजा, सर्व गुह्यांचा राजा: पवित्र, प्रत्यक्ष फळ देणारे, धर्म्य, साधण्यास अतिसोपे आणि अव्यय. ७.०१–०२ च्या ज्ञान-विज्ञानाचा हा राज-अभिषेक.</div><span class="angle-tag">राजविद्या — Sovereign Science</span></div>
+  </div>
+  <div class="entry" data-ch="9" data-cid="12" data-verse="ज्ञानयज्ञेन चाप्यन्ये यजन्तो मामुपासते ।&#10;एकत्वेन पृथक्त्वेन बहुधा विश्वतोमुखम् ॥ [९.१५]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.१५</div></div>
+    <div class="entry-body"><div class="samjna">ज्ञानयज्ञेन... एकत्वेन पृथक्त्वेन बहुधा</div><div class="vyakhya">कोणी ज्ञानयज्ञाने अभेदभावाने (एकत्वाने), कोणी पृथक्भावाने, कोणी विश्वतोमुख विराट रूपाने उपासतात — ज्ञानमार्गाच्या तिन्ही शैली एकाच ईश्वराकडे पोहोचतात.</div><span class="angle-tag">ज्ञानयज्ञाच्या तीन शैली</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — ज्ञानाचे रूपांतर</div>
     <div class="arrow-row">
@@ -1970,7 +2060,7 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">ज्ञान = सूर्य (५.१६)</span><span class="arr">→</span>
       <span class="arr-item">ज्ञानविज्ञानतृप्त (६.०८)</span><span class="arr">→</span>
       <span class="arr-item">ज्ञानी = ईश्वराचा आत्मा (७.१८)</span><span class="arr">→</span>
-      <span class="arr-item">ब्रह्मविदः → अनावृत्ती (८.२४)</span>
+      <span class="arr-item">ब्रह्मविदः → अनावृत्ती (८.२४)</span><span class="arr">→</span><span class="arr-item">राजविद्या — ज्ञान+विज्ञान (९.०१–०२)</span>
     </div>
   </div>
 </div>
@@ -2061,6 +2151,12 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">स्वभावोऽध्यात्ममुच्यते</div><div class="vyakhya">आपले मूळ स्वरूप — जीवभाव — म्हणजेच 'अध्यात्म'. अर्जुनाच्या दुसऱ्या प्रश्नाचे उत्तर: देहात राहणारा, परब्रह्माचाच अंश असलेला जीवात्मा. ७.२९ च्या 'कृत्स्नम् अध्यात्मम्' ची ही अधिकृत व्याख्या.</div><span class="angle-tag">अध्यात्म = स्वभाव — व्याख्या</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="13" data-verse="न च मत्स्थानि भूतानि पश्य मे योगमैश्वरम् ।&#10;भूतभृन्न च भूतस्थो ममात्मा भूतभावनः ॥ [९.०५]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.०५</div></div>
+    <div class="entry-body"><div class="samjna">भूतभृन्न च भूतस्थो ममात्मा भूतभावनः</div><div class="vyakhya">माझा आत्मा भूतांना धारण करणारा (भूतभृत्), भूतांना जन्म देणारा (भूतभावन) — पण भूतांत स्थित नाही! आधाराने आत, आसक्तीने बाहेर — आत्म्याच्या अलिप्त सर्वाधारतेचे गूढ सूत्र.</div><span class="angle-tag">भूतभृत् — पण भूतस्थ नव्हे</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — आत्म्याचा आलेख</div>
     <div class="arrow-row">
@@ -2071,7 +2167,7 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">समदर्शन (५.१८)</span><span class="arr">→</span>
       <span class="arr-item">आत्मसंस्थम् + आत्मौपम्य (६)</span><span class="arr">→</span>
       <span class="arr-item">विश्वआत्मा (७.०७)</span><span class="arr">→</span>
-      <span class="arr-item">स्वभावोऽध्यात्मम् — व्याख्या (८.०३)</span>
+      <span class="arr-item">स्वभावोऽध्यात्मम् — व्याख्या (८.०३)</span><span class="arr">→</span><span class="arr-item">ममात्मा भूतभावनः (९.०५)</span>
     </div>
   </div>
 </div>
@@ -2172,6 +2268,16 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">अनन्यचेताः सततं यो मां स्मरति नित्यशः</div><div class="vyakhya">'अनन्यचित्ताने, सतत, नित्य' स्मरण करणाऱ्याला ईश्वर सुलभ — ७.३० च्या 'युक्तचेतसः' चा कळस: चित्त आता केवळ जोडलेले नव्हे, अनन्य झालेले.</div><span class="angle-tag">अनन्यचेताः — चित्तप्रवासाचा कळस</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="14" data-verse="महात्मानस्तु मां पार्थ दैवीं प्रकृतिमाश्रिताः ।&#10;भजन्त्यनन्यमनसो ज्ञात्वा भूतादिमव्ययम् ॥ [९.१३]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.१३</div></div>
+    <div class="entry-body"><div class="samjna">भजन्त्यनन्यमनसो ज्ञात्वा भूतादिमव्ययम्</div><div class="vyakhya">महात्मे 'अनन्यमनाने' भजतात — ८.१४ चा अनन्यचेता आता दैवी प्रकृतीचा आश्रय घेतलेल्या महात्म्याचे लक्षण बनतो; अव्यय भूतादीला जाणून केलेले अखंड भजन.</div><span class="angle-tag">अनन्यमनस् महात्मे</span></div>
+  </div>
+  <div class="entry" data-ch="9" data-cid="14" data-verse="मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु ।&#10;मामेवैष्यसि युक्त्वैवमात्मानं मत्परायणम् ॥ [९.३४]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.३४</div></div>
+    <div class="entry-body"><div class="samjna">मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु</div><div class="vyakhya">'माझ्यात मन ठेव' — चित्तप्रवासाचा चरम आदेश: मन, भक्ती, यजन, नमन असे चौपदरी समर्पण करून मत्परायण झालेला मलाच पावतो; अध्यायाचा समारोप आणि १८.६५ मध्ये पुन्हा येणारे महावाक्य.</div><span class="angle-tag">मन्मना भव — चरमसूत्र</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — चित्ताचा प्रवास</div>
     <div class="arrow-row">
@@ -2182,7 +2288,7 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">यतचेतस् (५.२६)</span><span class="arr">→</span>
       <span class="arr-item">मच्चित्त → निरुद्ध (६)</span><span class="arr">→</span>
       <span class="arr-item">युक्तचेतसः (७.३०)</span><span class="arr">→</span>
-      <span class="arr-item">अनन्यचेताः सततम् (८.१४)</span>
+      <span class="arr-item">अनन्यचेताः सततम् (८.१४)</span><span class="arr">→</span><span class="arr-item">मन्मना भव (९.३४)</span>
     </div>
   </div>
 </div>
@@ -2257,6 +2363,20 @@ body.ch-filtered .footer { display: none; }
     <div class="entry-body"><div class="samjna">वेदेषु यज्ञेषु तपःसु चैव दानेषु यत्पुण्यफलम्</div><div class="vyakhya">वेदपठण, यज्ञ, तप, दान — साऱ्यांचे पुण्यफल हे रहस्य जाणणारा योगी 'अत्येति' — ओलांडून जातो. यज्ञ सोडायचा नाही; त्याच्या फळाच्या पलीकडे पाहायचे.</div><span class="angle-tag">पुण्यफलांचे अतिक्रमण</span></div>
   </div>
 
+  <!-- अध्याय ९ -->
+  <div class="entry" data-ch="9" data-cid="15" data-verse="अहं क्रतुरहं यज्ञः स्वधाहमहमौषधम् ।&#10;मन्त्रोऽहमहमेवाज्यमहमग्निरहं हुतम् ॥ [९.१६]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.१६</div></div>
+    <div class="entry-body"><div class="samjna">अहं क्रतुरहं यज्ञः... अहमग्निरहं हुतम्</div><div class="vyakhya">क्रतु, यज्ञ, स्वधा, औषध, मंत्र, आज्य, अग्नी, हवन — यज्ञाची सामग्री, क्रिया आणि देवता सर्व मीच. ४.२४ च्या 'ब्रह्मार्पणं ब्रह्म हविः' चे हे प्रथमपुरुषी घोषणापत्र.</div><span class="angle-tag">यज्ञाचे सर्वांग = ईश्वर</span></div>
+  </div>
+  <div class="entry" data-ch="9" data-cid="15" data-verse="अहं हि सर्वयज्ञानां भोक्ता च प्रभुरेव च ।&#10;न तु मामभिजानन्ति तत्त्वेनातश्च्यवन्ति ते ॥ [९.२४]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.२४</div></div>
+    <div class="entry-body"><div class="samjna">अहं हि सर्वयज्ञानां भोक्ता च प्रभुरेव च</div><div class="vyakhya">सर्व यज्ञांचा भोक्ता आणि प्रभू मीच — पण मला तत्त्वतः न जाणल्याने उपासक च्यवतात, पुनर्जन्म पावतात. यज्ञ योग्यच; पण पत्ता चुकला तर फळ मर्यादित राहते.</div><span class="angle-tag">यज्ञभोक्ता — तत्त्वज्ञान आवश्यक</span></div>
+  </div>
+  <div class="entry" data-ch="9" data-cid="15" data-verse="यान्ति देवव्रता देवान्पितॄन्यान्ति पितृव्रताः ।&#10;भूतानि यान्ति भूतेज्या यान्ति मद्याजिनोऽपि माम् ॥ [९.२५]&#10;पत्रं पुष्पं फलं तोयं यो मे भक्त्या प्रयच्छति ।&#10;तदहं भक्त्युपहृतमश्नामि प्रयतात्मनः ॥ [९.२६]">
+    <div class="entry-ch"><span class="ch-badge b9">अ.९</span><div class="shlok-ref">९.२५–२६</div></div>
+    <div class="entry-body"><div class="samjna">यान्ति मद्याजिनोऽपि माम् / पत्रं पुष्पं फलं तोयम्</div><div class="vyakhya">देवव्रत देवांकडे, पितृव्रत पितरांकडे, मद्याजी मलाच — आणि माझा यज्ञ किती सोपा: प्रेमाने दिलेले पान-फूल-फळ-पाणीही मी भक्तिभावाने स्वीकारतो. यज्ञाचे लोकशाहीकरण — मूल्य सामग्रीत नव्हे, भावात.</div><span class="angle-tag">पत्रं पुष्पम् — भक्तियज्ञ</span></div>
+  </div>
+
   <div class="pattern-box">
     <div class="pattern-head">प्रवाह — यज्ञाचा चढता आलेख</div>
     <div class="arrow-row">
@@ -2266,12 +2386,12 @@ body.ch-filtered .footer { display: none; }
       <span class="arr-item">द्रव्य → तपो → योग → ज्ञानयज्ञ (४.२८)</span><span class="arr">→</span>
       <span class="arr-item">भोक्तारं यज्ञतपसाम् (५.२९)</span><span class="arr">→</span>
       <span class="arr-item">अधियज्ञम् — अंतिम क्षण (७.३०)</span><span class="arr">→</span>
-      <span class="arr-item">अधियज्ञोऽहमेवात्र देहे (८.०४)</span>
+      <span class="arr-item">अधियज्ञोऽहमेवात्र देहे (८.०४)</span><span class="arr">→</span><span class="arr-item">अहं क्रतुरहं यज्ञः (९.१६)</span>
     </div>
   </div>
 </div>
 
-<div class="footer">॥ गीता स्वाध्याय · अध्याय १ ते ८ · जय जय रघुवीर समर्थ ॥</div>
+<div class="footer">॥ गीता स्वाध्याय · अध्याय १ ते ९ · जय जय रघुवीर समर्थ ॥</div>
 </div>
 
 
@@ -2315,7 +2435,8 @@ const chNames = {
   2:"अध्याय २ — सांख्ययोग", 3:"अध्याय ३ — कर्मयोग",
   4:"अध्याय ४ — ज्ञानकर्मसंन्यासयोग", 5:"अध्याय ५ — कर्मसंन्यासयोग",
   6:"अध्याय ६ — आत्मसंयमयोग", 7:"अध्याय ७ — ज्ञानविज्ञानयोग",
-  8:"अध्याय ८ — अक्षरब्रह्मयोग"
+  8:"अध्याय ८ — अक्षरब्रह्मयोग",
+  9:"अध्याय ९ — राजविद्याराजगुह्ययोग"
 };
 
 // ─── filter by chapter (now additive — allows intersection) ──────────────────
@@ -2475,7 +2596,7 @@ function applyFilter() {
     const cpName = document.querySelector('.cp-btn[data-cp="' + activeCp + '"]')?.textContent.replace(/\d+/g,'').trim() || '';
     filterBar.classList.add('visible');
     filterTitle.textContent = cpName;
-    filterSub.textContent = count + ' श्लोक · अध्याय १ ते ८';
+    filterSub.textContent = count + ' श्लोक · अध्याय १ ते ९';
   }
 }
 
@@ -2585,6 +2706,14 @@ const mmCards = {
     {n:4, num:`भाग ४`, title:`परमपद प्राप्तीचा मार्ग व ॐकार साधना`, shlok:`श्लोक ११ ते १६`, key:`🔑 सर्वद्वार-संयम · ॐ एकाक्षर ब्रह्म · अनन्यचेताः → सुलभ · मामुपेत्य पुनर्जन्म नाही`},
     {n:5, num:`भाग ५`, title:`कालचक्र गती व परम गती — धाम आणि पुरुष`, shlok:`श्लोक १७ ते २२`, key:`🔑 ब्रह्मदिन = १००० चतुर्युगे · अव्यक्तातून व्यक्त · त्याही पलीकडचा सनातन अव्यक्त · भक्त्या लभ्यः`},
     {n:6, num:`भाग ६`, title:`मरणोत्तर दोन शाश्वत मार्ग व योग्याची अलिप्तता`, shlok:`श्लोक २३ ते २८`, key:`🔑 शुक्ल गती — अनावृत्ती · कृष्ण गती — पुनरागमन · जाणणारा योगी न मुह्यति · परं स्थानम् आद्यम्`},
+  ],
+  9: [
+    {n:1, num:`भाग १`, title:`राजविद्या आणि सर्वांत श्रेष्ठ ज्ञान`, shlok:`श्लोक १ ते ३`, key:`🔑 ज्ञान + विज्ञान · सर्व विद्यांचा राजा · प्रत्यक्ष फळ · साधण्यास सोपे · अश्रद्धेने संसारचक्र`},
+    {n:2, num:`भाग २`, title:`भगवंतांची अचिन्त्य योगमाया आणि सृष्टीचे चक्र`, shlok:`श्लोक ४ ते १०`, key:`🔑 मया ततमिदं सर्वम् · भूते माझ्यात, मी त्यांत नाही · मयाध्यक्षेण प्रकृतिः · उदासीनवत् अलिप्त`},
+    {n:3, num:`भाग ३`, title:`अज्ञानी आणि ज्ञानी महात्म्यांचा दृष्टिकोन`, shlok:`श्लोक ११ ते १५`, key:`🔑 अवजानन्ति मां मूढाः · आसुरी-मोहिनी वि. दैवी प्रकृती · दृढव्रत नित्ययुक्त भक्त · ज्ञानयज्ञ`},
+    {n:4, num:`भाग ४`, title:`भगवंताचे सर्वव्यापी विराट स्वरूप`, shlok:`श्लोक १६ ते १९`, key:`🔑 अहं क्रतुरहं यज्ञः · पिता-माता-धाता · ॐकार व तीन वेद · अमृत-मृत्यू, सत्-असत् — सर्व मीच`},
+    {n:5, num:`भाग ५`, title:`सकाम भक्ती विरुद्ध निष्काम भक्ती आणि योगक्षेम`, shlok:`श्लोक २० ते २५`, key:`🔑 स्वर्ग भोगून परत — कामकामा · अनन्य चिंतकांचा योगक्षेम मी वाहतो · ज्याची पूजा त्याची प्राप्ती`},
+    {n:6, num:`भाग ६`, title:`भक्तीची सुलभता, संपूर्ण समर्पण आणि परम शांती`, shlok:`श्लोक २६ ते ३४`, key:`🔑 पत्रं पुष्पं फलं तोयम् · तत्कुरुष्व मदर्पणम् · समोऽहम् · न मे भक्तः प्रणश्यति · मन्मना भव`},
   ],
 };
 
@@ -5488,10 +5617,216 @@ const mmDetails = {
 <div class="ex-item"><span class="ex-b">गुंतवणुकीचे प्रकार (Fixed Maturity vs Generative Wealth):</span> फायनान्स क्षेत्रात सकाम पुण्याचे आचरण म्हणजे ठराविक मुदतीची एफडी (FD) किंवा बाँड खरेदी करण्यासारखे आहे — मुदत संपेपर्यंत उत्तम व्याज (स्वर्गसुख) मिळते, पण मॅच्युरिटी संपताच मुद्दल पुन्हा खात्यात येते व नवीन संघर्ष सुरू होतो.</div>
 </div>`
   },
+  9: {
+1:`<div class="dp-header"><span class="dp-num">भाग १</span><span class="dp-title">राजविद्या आणि सर्वांत श्रेष्ठ ज्ञान</span><span class="dp-shlok">श्लोक १ ते ३</span></div>
+<div class="mindmap">
+<div style="margin-bottom:10px;"><span class="badge badge-info">९.०१–९.०३ राजविद्या — सर्व विद्यांचा राजा</span></div>
+<div class="mflow">
+  <div class="mnode mn-darkgreen">🌸 श्री भगवान → दोषदृष्टिरहित (अनसूय) भक्ताला</div><div class="marr">→</div>
+  <div class="mnode mn-yellow mn-sm">हे अतिशय गोपनीय <b>विज्ञानासहित ज्ञान</b> पुन्हा नीटपणे सांगतो —<br>ते जाणल्याने तू दुःखरूप संसारापासून मुक्त होशील<br>(इदं तु ते गुह्यतमं... ज्ञानं विज्ञानसहितं यज्ज्ञात्वा मोक्ष्यसेऽशुभात् — ९.०१)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-key">⭐ या ज्ञानाची सात लक्षणे (९.०२)</div>
+<div class="mrow" style="flex-wrap:wrap;gap:8px;">
+  <div class="mnode mn-gold">👑 राजविद्या — सर्व विद्यांचा राजा</div>
+  <div class="mnode mn-gold">🔐 राजगुह्य — सर्व गुप्त गोष्टींचा राजा</div>
+  <div class="mnode mn-green mn-sm">🕊 पवित्र · उत्तम</div>
+  <div class="mnode mn-green mn-sm">👁 प्रत्यक्षावगम — प्रत्यक्ष फळ देणारे</div>
+  <div class="mnode mn-green mn-sm">⚖️ धर्म्य — धर्मयुक्त</div>
+  <div class="mnode mn-green mn-sm">🪶 सुसुखं कर्तुम् — साधण्यास फार सोपे</div>
+  <div class="mnode mn-green mn-sm">♾️ अव्यय — अविनाशी</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-red">⚠️ अश्रद्धेचा परिणाम (९.०३)</div>
+<div class="mflow">
+  <div class="mnode mn-red mn-sm">या धर्मावर श्रद्धा नसलेले पुरुष<br>(अश्रद्दधानाः पुरुषा धर्मस्यास्य)</div><div class="marr">→</div>
+  <div class="mnode mn-red mn-sm">मला प्राप्त न होता<br>(अप्राप्य माम्)</div><div class="marr">→</div>
+  <div class="mnode mn-darkred">🔁 मृत्युरूप संसारचक्रात फिरत राहतात<br>(निवर्तन्ते मृत्युसंसारवर्त्मनि)</div>
+</div>
+</div>
+<div class="tatva-box"><div class="tatva-head">तत्त्व — समालोचन</div>
+हे ज्ञान सर्व विद्यांचा राजा (Sovereign Science) आणि सर्वांत गोपनीय आहे. हे प्रत्यक्ष अनुभवाला येणारे, धर्मयुक्त आणि आचरण्यास अत्यंत सोपे आहे. या ज्ञानावर श्रद्धा नसलेले लोक ईश्वराला प्राप्त न होता पुन्हा पुन्हा जन्म-मृत्यूच्या चक्रात (संसारचक्रात) फिरत राहतात. जगात भौतिक विज्ञानाच्या अनेक विद्या आहेत, पण त्या सर्वांचा 'राजा' हे आध्यात्मिक ज्ञान आहे कारण ते थेट आपल्याला आपल्या मूळ स्वरूपाशी जोडते. हे ज्ञान 'ओपन सोर्स' असूनही 'गोपनीय' आहे, कारण जोपर्यंत साधकाची पात्रता (दोषदृष्टी नसणे) सिद्ध होत नाही, तोपर्यंत याचा खरा अर्थ उलगडत नाही. श्रद्धेअभावी मनुष्य केवळ एका लूपमध्ये अडकून राहतो.
+</div>
+<div class="ex-box"><div class="ex-head">उदाहरणे</div>
+<div class="ex-item"><span class="ex-b">एन्क्रिप्शन की (Encryption Key):</span> जसा एखादा अत्यंत महत्त्वाचा फायनान्शियल डेटा पब्लिक नेटवर्कवर उपलब्ध असला तरी तो 'एन्क्रिप्टेड' असतो. ज्याच्याकडे अचूक 'डिक्रिप्शन की' (श्रद्धा आणि दोषरहित मन) आहे, त्यालाच तो वाचता येतो; इतरांसाठी तो केवळ निरर्थक कोड असतो.</div>
+<div class="ex-item"><span class="ex-b">अल्गोरिदम लूप:</span> या ज्ञानावर श्रद्धा नसणे म्हणजे एखाद्या चुकीच्या प्रोग्रामिंग अल्गोरिदममध्ये अडकण्यासारखे आहे, जिथे युझर (जीव) पुन्हा पुन्हा त्याच चुका करून एकाच एरर लूपमध्ये (संसारचक्रात) गोल फिरत राहतो.</div>
+</div>`,
+
+2:`<div class="dp-header"><span class="dp-num">भाग २</span><span class="dp-title">भगवंतांची अचिन्त्य योगमाया आणि सृष्टीचे चक्र</span><span class="dp-shlok">श्लोक ४ ते १०</span></div>
+<div class="mindmap">
+<div style="margin-bottom:10px;"><span class="badge badge-info">९.०४–९.०६ सर्वव्यापकता आणि अलिप्तता — योगमाया</span></div>
+<div class="mrow" style="flex-wrap:wrap;gap:8px;">
+  <div class="mnode mn-blue mn-sm">🌊 मी निराकार (अव्यक्तमूर्ती) रूपाने हे सर्व<br>जग व्यापले आहे; सर्व भूते माझ्यात, पण<br>मी त्यांच्यात स्थित नाही (मया ततमिदं सर्वं<br>जगदव्यक्तमूर्तिना — ९.०४)</div>
+  <div class="mnode mn-purple mn-sm">✨ आणि खरे तर भूतेही माझ्यात नाहीत —<br><b>पश्य मे योगमैश्वरम्!</b> भूतांना धारण-पोषण<br>करूनही माझा आत्मा त्यांत नाही<br>(भूतभृन्न च भूतस्थः — ९.०५)</div>
+  <div class="mnode mn-green mn-sm">🌬 जसा सर्वत्र फिरणारा महान वायू नेहमी<br>आकाशातच राहतो, तशी सर्व भूते माझ्यात<br>(यथाकाशस्थितो नित्यं वायुः — ९.०६)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-warn">९.०७–९.०८ कल्पचक्र</div>
+<div class="mflow">
+  <div class="mnode mn-orange mn-sm">🌑 कल्पक्षयी सारी भूते <b>माझ्या</b> प्रकृतीत<br>विलीन (सर्वभूतानि... प्रकृतिं यान्ति मामिकाम्)</div><div class="marr">→</div>
+  <div class="mnode mn-orange mn-sm">🌅 कल्पारंभी मी त्यांना पुन्हा उत्पन्न करतो<br>(कल्पादौ विसृजाम्यहम्)</div><div class="marr">→</div>
+  <div class="mnode mn-red mn-sm">⛓️ प्रकृतीच्या वशात 'अवश' भूतग्राम —<br>कर्मांनुसार पुनः पुनः (अवशं प्रकृतेर्वशात्)</div>
+</div>
+<div class="mhr"/>
+<div class="two-col">
+  <div>
+    <div class="badge badge-ok">🧘 ईश्वराची अलिप्तता (९.०९)</div>
+    <div class="mnode mn-green mn-sm">एवढी प्रचंड कर्मे करूनही ती मला बांधत<br>नाहीत — मी उदासीनासारखा, अनासक्त<br>(उदासीनवदासीनमसक्तं तेषु कर्मसु)</div>
+  </div>
+  <div>
+    <div class="badge badge-pur">⚙️ अधिष्ठान (९.१०)</div>
+    <div class="mnode mn-purple mn-sm">माझ्या अध्यक्षतेखाली प्रकृती चराचर जग<br>प्रसवते — याच हेतूने संसारचक्र फिरते<br>(मयाध्यक्षेण प्रकृतिः सूयते सचराचरम्)</div>
+  </div>
+</div>
+</div>
+<div class="tatva-box"><div class="tatva-head">तत्त्व — समालोचन</div>
+संपूर्ण जग भगवंताने निराकार रूपाने व्यापले आहे. सर्व जीव ईश्वरात आहेत, पण ईश्वर त्यांच्यात अडकलेला नाही. प्रकृती ईश्वराच्या अध्यक्षतेखाली (अधिष्ठानामुळे) सर्व निर्मिती आणि लय करते, परंतु ईश्वर या सर्व कर्मांपासून पूर्णपणे अलिप्त (उदासीन) असतो. हा भाग ईश्वराची 'अलिप्तता' (Detachment) आणि 'सर्वव्यापकता' स्पष्ट करतो. ईश्वर हे एक असे अफाट होस्टिंग एन्व्हायर्न्मेंट (Hosting Environment) आहे, ज्यावर हे संपूर्ण जग रन होत आहे. प्रकृती (Nature/Matrix) हे एक ऑटोमेशन इंजिन आहे जे जीवांचे त्यांच्या कर्मानुसार उत्पन्न आणि लय करते, पण या प्रक्रियेचा मूळ ऑपरेटर (परमात्मा) निर्विकार असतो आणि कर्माच्या बंधनात अडकत नाही.
+</div>
+<div class="ex-box"><div class="ex-head">उदाहरणे</div>
+<div class="ex-item"><span class="ex-b">क्लाउड होस्टिंग आणि व्हर्च्युअल मशीन्स (Cloud Architecture):</span> जसे ॲमेझॉन एडब्ल्यूएस (AWS) किंवा गुगल क्लाउडवर लाखो सॉफ्टवेअर आणि ॲप्स (जीव) चालतात. ते सर्व ॲप्स क्लाउडवर अवलंबून आहेत, पण क्लाउड त्या ॲप्सच्या क्रॅश होण्याने किंवा यशाने प्रभावित होत नाही (अलिप्तता).</div>
+<div class="ex-item"><span class="ex-b">एआय एजंट्स (Agentic AI Systems):</span> एखाद्या सिस्टीममध्ये जेव्हा आपण ऑटोनॉमस मल्टी-एजंट्स तयार करतो, तेव्हा ते एजंट्स सिस्टीमच्या मर्यादेत राहून स्वतंत्रपणे काम करतात. मूळ प्रोग्रॅमर (ईश्वर) केवळ साक्षीदार असतो, तो त्या एजंट्सच्या दैनंदिन कर्मांत किंवा लूपमध्ये अडकत नाही.</div>
+</div>`,
+
+3:`<div class="dp-header"><span class="dp-num">भाग ३</span><span class="dp-title">अज्ञानी आणि ज्ञानी महात्म्यांचा दृष्टिकोन</span><span class="dp-shlok">श्लोक ११ ते १५</span></div>
+<div class="mindmap">
+<div style="margin-bottom:10px;"><span class="badge badge-info">९.११–९.१२ मूढांची दृष्टी</span></div>
+<div class="mflow">
+  <div class="mnode mn-red mn-sm">🙈 माझ्या परम भावाला न जाणणारे मूढ,<br>मनुष्यदेह धारण करणाऱ्या मला —<br>भूतमहेश्वराला — तुच्छ समजतात<br>(अवजानन्ति मां मूढा मानुषीं तनुमाश्रितम् — ९.११)</div><div class="marr">→</div>
+  <div class="mnode mn-darkred">💥 मोघाशा · मोघकर्मा · मोघज्ञान — विचेतस<br>होऊन राक्षसी, आसुरी, मोहिनी प्रकृतीचा<br>आश्रय घेतात (९.१२)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-ok">✨ ९.१३–९.१४ महात्म्यांची दृष्टी — दैवी प्रकृती</div>
+<div class="mflow">
+  <div class="mnode mn-green mn-sm">🌿 दैवी प्रकृतीचा आश्रय घेतलेले महात्मे मला<br>भूतांचे सनातन कारण, अविनाशी अक्षरस्वरूप<br>जाणून <b>अनन्यमनाने</b> भजतात<br>(महात्मानस्तु मां पार्थ दैवीं प्रकृतिमाश्रिताः — ९.१३)</div><div class="marr">→</div>
+  <div class="mnode mn-darkgreen">🎵 सतत कीर्तन · दृढ व्रत · वारंवार प्रणाम ·<br>नित्ययुक्त अनन्य उपासना<br>(सततं कीर्तयन्तो मां यतन्तश्च दृढव्रताः — ९.१४)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-pur">📚 ९.१५ ज्ञानयज्ञाच्या तीन शैली</div>
+<div class="mrow" style="flex-wrap:wrap;gap:8px;">
+  <div class="mnode mn-purple mn-sm">🕉 एकत्वेन — निर्गुण-निराकार ब्रह्माची<br>अभेदभावाने पूजा</div>
+  <div class="mnode mn-purple mn-sm">🙏 पृथक्त्वेन — भेदभावाने, सगुण<br>उपासना</div>
+  <div class="mnode mn-purple mn-sm">🌐 बहुधा विश्वतोमुखम् — विराट स्वरूपाची<br>नाना प्रकारांनी उपासना</div>
+</div>
+</div>
+<div class="tatva-box"><div class="tatva-head">तत्त्व — समालोचन</div>
+अज्ञानी (मूढ) लोक ईश्वराच्या मनुष्य रूपातील आगमनाला सामान्य मानून तुच्छ लेखतात आणि आसुरी/राक्षसी प्रवृत्तीकडे वळतात, ज्यामुळे त्यांचे जीवन व्यर्थ ठरते. याउलट, दैवी प्रकृतीचे महात्मे ईश्वराचे मूळ अविनाशी स्वरूप ओळखून अनन्य भावाने, अभेद भावाने किंवा विश्वाच्या विराट रूपाने त्यांची निरंतर उपासना करतात. मनुष्य जेव्हा केवळ बाह्य रूपावर (User Interface) भुलतो, तेव्हा तो मूळ कोड (Backend Reality) समजण्यास मुकतो. आसुरी प्रवृत्ती म्हणजे केवळ 'मी आणि माझे' या करप्ट झालेल्या सिस्टीममध्ये जगणे, ज्यामुळे सर्व आशा आणि ज्ञान क्रॅश होते. ज्ञानी लोक ईश्वराची महानता जाणतात आणि दृढनिश्चयाने त्या सनातन कारणाशी जोडले जातात.
+</div>
+<div class="ex-box"><div class="ex-head">उदाहरणे</div>
+<div class="ex-item"><span class="ex-b">डीपफेक आणि सत्य (Deepfakes vs Authentic Source):</span> सोशल मीडियावर दिसणाऱ्या वरवरच्या आणि खोट्या माहितीला (माया/आसुरी प्रकृती) भुलून अज्ञानी लोक चुकीचे निर्णय घेतात. पण जे डिजिटल लिटरसी जाणणारे (महात्मे) असतात, ते मूळ ऑथेंटिक सोर्स (सनातन कारण) शोधून विश्वास ठेवतात.</div>
+<div class="ex-item"><span class="ex-b">अंडरकव्हर बॉस (Undercover Boss):</span> जसा एखाद्या मोठ्या मल्टीनॅशनल बँकेचा वरिष्ठ नेता किंवा सीईओ साध्या वेशात शाखेत येतो, तेव्हा अज्ञानी कर्मचारी त्याला सामान्य माणूस समजून दुर्लक्ष करतात. पण जे त्याची खरी ओळख जाणतात, ते अत्यंत आदराने त्याच्याशी वागतात.</div>
+</div>`,
+
+4:`<div class="dp-header"><span class="dp-num">भाग ४</span><span class="dp-title">भगवंताचे सर्वव्यापी विराट स्वरूप</span><span class="dp-shlok">श्लोक १६ ते १९</span></div>
+<div class="mindmap">
+<div style="margin-bottom:10px;"><span class="badge badge-info">९.१६–९.१९ "मीच सर्व काही आहे" — विभूती-दर्शनाची नांदी</span></div>
+<div class="badge badge-key">🔥 यज्ञाचे सर्वांग (९.१६)</div>
+<div class="mrow" style="flex-wrap:wrap;gap:8px;">
+  <div class="mnode mn-gold">🕉 क्रतु (श्रौतयज्ञ) · यज्ञ (स्मार्त) · स्वधा (पितृयज्ञ)</div>
+  <div class="mnode mn-green mn-sm">🌿 औषध (वनस्पती/अन्न) · मंत्र</div>
+  <div class="mnode mn-orange mn-sm">🔥 आज्य (तूप) · अग्नी · हुत (हवन-क्रिया)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-warn">🌍 जगाचा आधार व स्रोत (९.१७)</div>
+<div class="mflow">
+  <div class="mnode mn-purple mn-sm">👨‍👩‍👧 या जगाचा पिता, माता, धाता (धारण करणारा),<br>पितामह (आजोबा)<br>(पिताहमस्य जगतो माता धाता पितामहः)</div><div class="marr">→</div>
+  <div class="mnode mn-purple mn-sm">📖 जाणण्याजोगा पवित्र ॐकार, आणि<br>ऋग्-साम-यजुर् — तिन्ही वेद<br>(वेद्यं पवित्रमोंकार ऋक्साम यजुरेव च)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-ok">🏛️ सर्वांचे परमधाम व आश्रय (९.१८)</div>
+<div class="mrow" style="flex-wrap:wrap;gap:8px;">
+  <div class="mnode mn-green mn-sm">🎯 गति · भर्ता (पोषक) · प्रभु · साक्षी ·<br>निवास · शरण · सुहृद् (निरपेक्ष हितकर्ता)</div>
+  <div class="mnode mn-green mn-sm">🔄 प्रभव-प्रलय · स्थान · निधान (भांडार) ·<br>अव्यय बीज (अविनाशी कारण)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-pur">☀️ द्वंद्वांच्या पलीकडे — अद्वैत (९.१९)</div>
+<div class="mflow">
+  <div class="mnode mn-orange mn-sm">🌞 सूर्यरूपाने उष्णता देतो; पाणी आकर्षून<br>वर्षाव करतो (तपाम्यहम्... निगृह्णाम्युत्सृजामि च)</div><div class="marr">→</div>
+  <div class="mnode mn-darkpurple">♾️ अमृत आणि मृत्यू, सत् आणि असत् —<br>दोन्ही मीच! (अमृतं चैव मृत्युश्च सदसच्चाहम्)</div>
+</div>
+</div>
+<div class="tatva-box"><div class="tatva-head">तत्त्व — समालोचन</div>
+विश्वातील प्रत्येक घटक — यज्ञ, मंत्र, औषध, अग्नी, ॐकार, तीन वेद, सूर्याची उष्णता, पाऊस, अमृत आणि मृत्यू तसेच सत् आणि असत् हे सर्व काही स्वतः भगवानच आहेत. भगवंत इथे स्पष्ट करतात की ते केवळ आकाशात बसलेले कोणीतरी नाहीत, तर अस्तित्वाची प्रत्येक प्रक्रिया (Process) आणि प्रत्येक वस्तू (Object) तेच आहेत. हे अद्वैताचे (Non-duality) सर्वोच्च दर्शन आहे. जगातील प्रत्येक ऊर्जा आणि तिचे रूपांतर हे ईश्वराचेच मॅनिफेस्टेशन आहे.
+</div>
+<div class="ex-box"><div class="ex-head">उदाहरणे</div>
+<div class="ex-item"><span class="ex-b">स्मार्टफोन इकोसिस्टीम (Operating System Integration):</span> जसे तुमच्या फोनमधील हार्डवेअर, ऑपरेटिंग सिस्टीम, ॲप्लिकेशन्स, बॅटरीची ऊर्जा, आणि स्क्रीनवर दिसणारे पिक्सल्स (सत् आणि असत्) हे सर्व एकाच एकात्मिक सिस्टीमचे भाग आहेत.</div>
+<div class="ex-item"><span class="ex-b">डेटा ॲनालिटिक्स (Data Analytics Platform):</span> एका मोठ्या फायनान्शियल डॅशबोर्डवर दिसणारा नफा (अमृत), तोटा (मृत्यू), कच्चा डेटा (सत्) आणि प्रेडिक्टिव्ह मॉडेल्सचे अनुमान (असत्) या सर्वांच्या मुळाशी एकच डेटाबेस आर्किटेक्चर (ईश्वर) असते.</div>
+</div>`,
+
+5:`<div class="dp-header"><span class="dp-num">भाग ५</span><span class="dp-title">सकाम भक्ती विरुद्ध निष्काम भक्ती आणि योगक्षेम</span><span class="dp-shlok">श्लोक २० ते २५</span></div>
+<div class="mindmap">
+<div style="margin-bottom:10px;"><span class="badge badge-info">९.२०–९.२१ सकाम भक्तीचा येरझारा-मार्ग</span></div>
+<div class="mflow">
+  <div class="mnode mn-yellow mn-sm">🍷 त्रैविद्य सोमप, पापमुक्त लोक यज्ञांनी<br>पूजा करून स्वर्ग मागतात<br>(त्रैविद्या मां सोमपाः पूतपापा... स्वर्गतिं प्रार्थयन्ते)</div><div class="marr">→</div>
+  <div class="mnode mn-orange mn-sm">🏝 विशाल स्वर्गलोक भोगतात, देवभोग<br>अनुभवतात</div><div class="marr">→</div>
+  <div class="mnode mn-red mn-sm">🔁 पुण्य क्षीण होताच मृत्युलोकात परत —<br><b>गतागतं कामकामा लभन्ते</b> (९.२१)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-key">⭐ ९.२२ निष्काम भक्तीचे महावचन</div>
+<div class="mflow">
+  <div class="mnode mn-green mn-sm">💗 जे अनन्य भावाने निरंतर चिंतन करीत<br>निष्काम भक्तीने भजतात<br>(अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते)</div><div class="marr">→</div>
+  <div class="mnode mn-darkgreen">🛡️ त्या नित्ययुक्तांचा <b>योगक्षेम</b> मी स्वतः वाहतो —<br>नसलेले मिळवून देतो (योग) + असलेले राखतो (क्षेम)<br>(तेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम्)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-warn">🧭 ९.२३–९.२५ अन्य देवपूजेचे रहस्य आणि गंतव्य</div>
+<div class="mrow" style="flex-wrap:wrap;gap:8px;">
+  <div class="mnode mn-blue mn-sm">🙏 जे श्रद्धेने अन्य देवांना भजतात, तेही<br>माझीच पूजा करतात — पण अज्ञानपूर्वक<br>(येऽप्यन्यदेवता भक्ता... तेऽपि मामेव — अविधिपूर्वकम् — ९.२३)</div>
+  <div class="mnode mn-blue mn-sm">👑 सर्व यज्ञांचा भोक्ता व प्रभू मीच; पण मला<br>तत्त्वतः न जाणल्याने ते च्यवतात<br>(अहं हि सर्वयज्ञानां भोक्ता... ततश्च्यवन्ति ते — ९.२४)</div>
+</div>
+<div class="badge badge-pur">जशी पूजा, तशी प्राप्ती (९.२५)</div>
+<div class="mrow" style="flex-wrap:wrap;gap:8px;">
+  <div class="mnode mn-purple mn-sm">🌟 देवव्रत → देव · पितृव्रत → पितर</div>
+  <div class="mnode mn-purple mn-sm">👻 भूतेज्य → भूते</div>
+  <div class="mnode mn-darkgreen">💠 मद्याजी → मलाच (यान्ति मद्याजिनोऽपि माम्) — पुनर्जन्म नाही</div>
+</div>
+</div>
+<div class="tatva-box"><div class="tatva-head">तत्त्व — समालोचन</div>
+सकाम (अपेक्षा ठेवून) कर्म करणारे लोक तात्पुरते स्वर्गसुख भोगतात आणि पुण्य संपल्यावर पुन्हा मृत्युलोकात येतात. पण जे निष्काम भावाने (अनन्य प्रेमाने) ईश्वराचे चिंतन करतात, त्यांचा <b>'योगक्षेम'</b> (जे नाही ते मिळवून देणे आणि जे आहे त्याचे रक्षण करणे) स्वतः भगवान वाहतात. अन्य देवतांची पूजा ही देखील ईश्वराचीच असते, पण ती अज्ञानाने केलेली असल्यामुळे पुनर्जन्म देते. हा गीतेतील सर्वांत आश्वासक भाग आहे. सकाम भक्ती ही 'प्रीपेड कार्ड' सारखी आहे; बॅलन्स (पुण्य) संपला की सेवा खंडित होते. परंतु अनन्य भक्ती ही थेट 'मुख्य सर्व्हर'शी केलेली अनलिमिटेड पार्टनरशिप आहे, जिथे सर्व जबाबदारी होस्ट (ईश्वर) घेतो.
+</div>
+<div class="ex-box"><div class="ex-head">उदाहरणे</div>
+<div class="ex-item"><span class="ex-b">सबस्क्रिप्शन मॉडेल वि. लाइफटाइम मेंबरशिप (Subscription vs Lifetime Access):</span> सकाम कर्म म्हणजे एखाद्या ओटीटी (OTT) प्लॅटफॉर्मचे किंवा सॉफ्टवेअरचे मासिक सबस्क्रिप्शन (स्वर्ग). मुदत संपली की ॲक्सेस जातो आणि पुन्हा पैसे भरावे लागतात. अनन्य भक्ती म्हणजे 'फाउंडर लेव्हल ॲक्सेस' (Lifetime Membership), जिथे तुमची सर्व काळजी डेव्हलपर स्वतः घेतो.</div>
+<div class="ex-item"><span class="ex-b">वेल्थ मॅनेजमेंट (Wealth Management &amp; Trust):</span> जसे तुम्ही एखाद्या ट्रस्टेड वेल्थ मॅनेजरकडे (परमात्मा) तुमचे सर्व फायनान्स पूर्ण विश्वासाने सोपवता (अनन्य भक्ती), तेव्हा तो तुमचा 'योगक्षेम' (गुंतवणूक आणि संरक्षण) स्वतःच्या जबाबदारीवर सांभाळतो.</div>
+</div>`,
+
+6:`<div class="dp-header"><span class="dp-num">भाग ६</span><span class="dp-title">भक्तीची सुलभता, संपूर्ण समर्पण आणि परम शांती</span><span class="dp-shlok">श्लोक २६ ते ३४</span></div>
+<div class="mindmap">
+<div style="margin-bottom:10px;"><span class="badge badge-info">९.२६–९.२८ सुलभ भक्ती आणि सर्वकर्म-अर्पण</span></div>
+<div class="mflow">
+  <div class="mnode mn-green mn-sm">🍃 प्रेमाने दिलेले पान, फूल, फळ, पाणी —<br>ते मी सगुण रूपात प्रकट होऊन प्रीतीने खातो<br>(पत्रं पुष्पं फलं तोयं यो मे भक्त्या प्रयच्छति — ९.२६)</div><div class="marr">→</div>
+  <div class="mnode mn-gold">🙏 जे करतोस, खातोस, हवन-दान-तप करतोस —<br>ते सर्व मला अर्पण कर<br>(यत्करोषि... तत्कुरुष्व मदर्पणम् — ९.२७)</div><div class="marr">→</div>
+  <div class="mnode mn-darkgreen">🔓 संन्यासयोगाने शुभाशुभ कर्मबंधनांतून<br>मुक्त होऊन मलाच येशील (९.२८)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-key">⚖️ ९.२९–९.३१ समता आणि अभयवचन</div>
+<div class="mrow" style="flex-wrap:wrap;gap:8px;">
+  <div class="mnode mn-blue mn-sm">🌍 मी सर्व भूतांत सम — ना द्वेष्य, ना प्रिय;<br>पण भक्त माझ्यात, मी त्यांच्यात प्रकट<br>(समोऽहं सर्वभूतेषु... मयि ते तेषु चाप्यहम् — ९.२९)</div>
+  <div class="mnode mn-green mn-sm">🔄 अत्यंत दुराचारीही अनन्यभावे भजू लागला<br>तर साधूच — त्याचा निश्चय यथार्थ<br>(अपि चेत्सुदुराचारो... साधुरेव स मन्तव्यः — ९.३०)</div>
+  <div class="mnode mn-darkgreen">🛡️ तो लवकरच धर्मात्मा, शाश्वत शांती पावतो —<br><b>न मे भक्तः प्रणश्यति!</b> (कौन्तेय प्रतिजानीहि — ९.३१)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-warn">🚪 ९.३२–९.३३ भक्तीचे सर्वांसाठी खुले द्वार</div>
+<div class="mflow">
+  <div class="mnode mn-purple mn-sm">🤝 स्त्रिया, वैश्य, शूद्र, पापयोनी — कोणीही<br>शरण आले तरी परम गती पावतात<br>(स्त्रियो वैश्यास्तथा शूद्रास्तेऽपि यान्ति परां गतिम् — ९.३२)</div><div class="marr">→</div>
+  <div class="mnode mn-purple mn-sm">🌸 मग पुण्यशील ब्राह्मण व राजर्षी भक्तांचे<br>काय सांगावे! म्हणून या नश्वर देहात<br>माझे भजन कर (९.३३)</div>
+</div>
+<div class="mhr"/>
+<div class="badge badge-gold">👑 ९.३४ अध्यायाचा चरम आदेश — चौपदरी समर्पण</div>
+<div class="mflow">
+  <div class="mnode mn-gold">🧠 मन्मना (मन माझ्यात) · 🙏 मद्भक्त (भक्त हो) ·<br>🔥 मद्याजी (पूजा कर) · 🕉 नमस्कुरु (नमन कर)</div><div class="marr">→</div>
+  <div class="mnode mn-darkpurple">✨ मत्परायण होऊन आत्म्याला माझ्याशी जोडून<br>तू मलाच प्राप्त होशील<br>(मामेवैष्यसि युक्त्वैवमात्मानं मत्परायणः)</div>
+</div>
+</div>
+<div class="tatva-box"><div class="tatva-head">तत्त्व — समालोचन</div>
+ईश्वराला महागड्या गोष्टींची अपेक्षा नाही; पाना-फुलांसारख्या साध्या गोष्टीही प्रेमाने दिल्यास ते आनंदाने स्वीकारतात. मनुष्य जे काही करतो ते सर्व ईश्वराला अर्पण करावे (कर्मसंन्यास). ईश्वर सर्वांसाठी समान आहे; अगदी दुराचारी, स्त्रिया, वैश्य किंवा शूद्रही अनन्य भावाने शरण आल्यास परमगतीला प्राप्त होतात. अंतिमतः आपले मन ईश्वरात जोडणे हेच ध्येय आहे. भक्तीसाठी कोणत्याही बाह्य डामडौलाची किंवा विशेष पात्रतेची गरज नाही. भक्ती ही 'ओपन-सोर्स' आणि 'युनिव्हर्सल' आहे. फक्त 'इंटेन्शन' (भाव) शुद्ध पाहिजे. आपण जे काही दैनंदिन कर्म करतो (खाणे, झोपणे, काम करणे), ते केवळ ईश्वरासाठीच आहे असा भाव ठेवल्यास तेच योगसाधना बनते. आणि ईश्वराची सर्वांत मोठी गॅरंटी आहे — "माझा भक्त कधीही नाश पावत नाही."
+</div>
+<div class="ex-box"><div class="ex-head">उदाहरणे</div>
+<div class="ex-item"><span class="ex-b">ओपन सोर्स कम्युनिटी (Open Source Contribution):</span> लिनक्स (Linux) किंवा विकिपीडियासारख्या प्लॅटफॉर्मवर कुणीही योगदान देऊ शकते. तिथे तुमची जात, धर्म किंवा भूतकाळ पाहिला जात नाही; फक्त तुमचे कमिटमेंट (अनन्य भक्ती) पाहिले जाते. तुम्ही कोडची एक लहान ओळ (पान/फूल) दिली तरी ती स्वीकारली जाते आणि सिस्टीमचा भाग बनते.</div>
+<div class="ex-item"><span class="ex-b">नॉलेज मॅनेजमेंट (PKM / Obsidian Vault Integration):</span> जसे आपण आपल्या पीकेएममध्ये एखादी छोटीशी नोट किंवा टॅग (पान/फूल) टाकतो आणि ती एका मोठ्या नॉलेज ग्राफशी जोडली जाते. आपले प्रत्येक कर्म (वाचणे, लिहिणे) जर त्या मध्यवर्ती ज्ञानाला (ईश्वराला) अर्पण केले, तर आपला नॉलेज बेस (जीवन) परिपूर्ण आणि अविनाशी (परम शांती) होतो.</div>
+</div>`
+  },
 };
 
-const mmChColors = {1:'#8a1a1a',2:'#1a4a8a',3:'#1a6b3a',4:'#7a2a00',5:'#5a1a6a',6:'#b85a00',7:'#1a5a6b',8:'#3a1a8a'};
-const mmChNames  = {1:'अर्जुनविषादयोग',2:'सांख्ययोग',3:'कर्मयोग',4:'ज्ञानकर्मसंन्यासयोग',5:'कर्मसंन्यासयोग',6:'आत्मसंयमयोग',7:'ज्ञानविज्ञानयोग',8:'अक्षरब्रह्मयोग'};
+const mmChColors = {1:'#8a1a1a',2:'#1a4a8a',3:'#1a6b3a',4:'#7a2a00',5:'#5a1a6a',6:'#b85a00',7:'#1a5a6b',8:'#3a1a8a',9:'#8a1a5a'};
+const mmChNames  = {1:'अर्जुनविषादयोग',2:'सांख्ययोग',3:'कर्मयोग',4:'ज्ञानकर्मसंन्यासयोग',5:'कर्मसंन्यासयोग',6:'आत्मसंयमयोग',7:'ज्ञानविज्ञानयोग',8:'अक्षरब्रह्मयोग',9:'राजविद्याराजगुह्ययोग'};
 
 let mmActiveCh = 0, mmActiveCard = 0;
 
