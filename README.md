@@ -1,7 +1,7 @@
-# gita-swadhyay - chapter 1 to 7 
+# gita-swadhyay - chapter 1 to 8
 Self-study work on Shrimad Bhagavad Gita
 
-# गीता स्वाध्याय — अध्याय १ ते ७
+# गीता स्वाध्याय — अध्याय १ ते ९ 
 
 ### Copyright Notice
 © 2026 Vivek Bhaskar Sathe. All rights reserved. 
