@@ -212,34 +212,65 @@
   .close .qs b{color:var(--gold-soft)}
   .samarth{font-family:var(--display);color:var(--gold-soft);letter-spacing:.14em;margin-top:26px;font-size:1.1rem}
 
-  #printReport{display:none}
-  @media print{
-    body{background:#fff;color:#000}
-    body>.wrap>*{display:none!important}
-    #printReport{display:block!important}
-    .wrap{max-width:100%;padding:0}
-  }
-  #printReport .pr-head{text-align:center;border-bottom:2px solid #b8792a;padding-bottom:10px;margin-bottom:14px}
-  #printReport .pr-head .pom{font-size:1.1rem;color:#b8792a}
-  #printReport .pr-head h1{font-size:1.35rem;margin:6px 0 2px;color:#111}
-  #printReport .pr-head .prm{font-size:.82rem;color:#555}
-  #printReport .pr-prati{font-size:1rem;color:#111;margin:0 0 4px}
-  #printReport .pr-ctx{font-size:.82rem;color:#444;margin:0 0 12px}
-  #printReport .pr-side{margin-bottom:12px;padding-left:10px;border-left:3px solid #d8b25a}
-  #printReport .pr-side h3{font-size:.92rem;margin:0 0 4px;color:#222}
-  #printReport .pr-side ul{margin:4px 0;padding-left:18px}
-  #printReport .pr-side li{font-size:.82rem;color:#222;margin:3px 0}
-  #printReport .pr-side p{font-size:.82rem;color:#222;margin:3px 0}
-  #printReport .pr-evh{font-size:1rem;color:#111;border-top:1px solid #ccc;padding-top:10px;margin-top:6px}
-  #printReport table{width:100%;border-collapse:collapse;font-size:.78rem;margin-bottom:10px}
-  #printReport th,#printReport td{border:1px solid #bbb;padding:5px 7px;text-align:left;color:#111}
-  #printReport th{background:#f2e8cc}
-  #printReport .pr-syn{font-size:.74rem;color:#444;font-style:italic}
-  #printReport .pr-sign{margin-top:22px;font-size:.82rem;color:#333;display:flex;justify-content:space-between}
-  #printReport .pr-foot{text-align:center;margin-top:16px;color:#b8792a;font-size:.95rem}
+  /* ---------- वाद-शैली निरीक्षण (डिजिटल) ---------- */
+  .cond-wrap{background:#100D18;border:1px solid #3a3452;border-radius:9px;padding:4px 12px;margin-bottom:13px}
+  .cond-row{display:grid;grid-template-columns:1fr 165px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed #2c2740}
+  .cond-row:last-child{border-bottom:0}
+  .cond-row .cl2{font-size:.85rem;color:#E7DFC9;font-weight:600}
+  .cond-row .ch2{font-size:.72rem;color:var(--on-ink-soft);margin-top:1px}
+  .cond-row select{padding:7px 9px;font-size:.82rem;background:#1a1626}
+  .btn-leaf{background:transparent;color:var(--gold-soft);border-color:var(--gold)}
+  .btn-leaf:hover{background:rgba(194,154,46,.14)}
 
-  @page{margin:14mm;}
-  @media print{#printReport .pr-side{break-inside:avoid;}#printReport tr{break-inside:avoid;}#printReport table{break-inside:auto;}}
+  /* ---------- छपाई · A4 उभी ---------- */
+  #printReport{display:none}
+  @page{size:A4 portrait;margin:13mm 12mm 12mm;}
+  @media print{
+    html,body{background:#fff!important;color:#1D1A14!important}
+    body>.wrap>*{display:none!important}
+    .wrap{max-width:100%;padding:0;margin:0}
+    #printReport{display:block!important;padding:4mm 3mm;font-family:'Noto Sans Devanagari',sans-serif}
+    *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+    #printReport .pr-side,#printReport .pr-note,#printReport tr,#printReport .pr-keep{break-inside:avoid;page-break-inside:avoid}
+    #printReport .pr-page{break-after:page;page-break-after:always}
+    #printReport .pr-page:last-child{break-after:auto;page-break-after:auto}
+  }
+  #printReport{color:#1D1A14;line-height:1.5}
+  #printReport .pr-head{text-align:center}
+  #printReport .pr-head .pom{font-family:'Tiro Devanagari Marathi',serif;font-size:10pt;color:#A5811F;letter-spacing:.24em}
+  #printReport .pr-head h1{font-family:'Tiro Devanagari Marathi',serif;font-weight:400;font-size:16pt;margin:4pt 0 2pt;color:#1D1A14;line-height:1.25}
+  #printReport .pr-head .prm{font-size:8pt;color:#6B6350}
+  #printReport .pr-rule{border:0;border-top:2pt solid #B85E1C;margin:6pt 0 1.5pt}
+  #printReport .pr-rule2{border:0;border-top:.5pt solid #C29A2E;margin:0 0 11pt}
+  #printReport .pr-meta{display:flex;gap:12pt;font-size:8.5pt;margin:0 0 10pt}
+  #printReport .pr-meta span{flex:1;border-bottom:.5pt solid #B3A98C;padding-bottom:3pt}
+  #printReport .pr-meta b{color:#6B6350;font-weight:600}
+  #printReport .pr-prati{background:#F7F0DE;border-left:3pt solid #C29A2E;padding:7pt 10pt;font-family:'Tiro Devanagari Marathi',serif;font-size:10.5pt;margin:0 0 6pt}
+  #printReport .pr-ctx{font-size:8.5pt;color:#4A4433;margin:0 0 11pt;padding-left:10pt}
+  #printReport .pr-side{margin-bottom:10pt;padding-left:10pt;border-left:2.5pt solid #C29A2E}
+  #printReport .pr-side.s-pak{border-left-color:#9E3B24}
+  #printReport .pr-side.s-vip{border-left-color:#423C69}
+  #printReport .pr-side h3{font-family:'Tiro Devanagari Marathi',serif;font-weight:400;font-size:11.5pt;margin:0 0 1pt;color:#1D1A14}
+  #printReport .pr-sh{font-size:7.5pt;color:#7A7057;letter-spacing:.03em;margin:0 0 3pt}
+  #printReport .pr-side ul{margin:3pt 0 0;padding-left:0;list-style:none}
+  #printReport .pr-side li{font-size:8.5pt;margin:3pt 0;padding-left:2pt}
+  #printReport .pr-side p{font-size:8.5pt;margin:3pt 0}
+  #printReport .pr-evh{font-family:'Tiro Devanagari Marathi',serif;font-weight:400;font-size:12pt;margin:13pt 0 3pt;padding-bottom:2pt;border-bottom:1pt solid #DCCFA8;color:#1D1A14}
+  #printReport .pr-evh small{font-family:'Noto Sans Devanagari',sans-serif;font-size:7.5pt;color:#7A7057;margin-left:6pt}
+  #printReport table{width:100%;border-collapse:collapse;font-size:8pt;margin:5pt 0 9pt}
+  #printReport th,#printReport td{border:.5pt solid #C6BA9A;padding:4.5pt 6pt;text-align:left;vertical-align:top;color:#1D1A14}
+  #printReport th{background:#F2E8CC;font-size:7.5pt;font-weight:600;color:#3A3324}
+  #printReport td.pr-num{text-align:center}
+  #printReport td.pr-fill{height:24pt;background:#FCFAF3}
+  #printReport .pr-hint{display:block;font-size:7pt;color:#7A7057;margin-top:1pt}
+  #printReport .pr-box{display:inline-block;width:9pt;height:9pt;border:.6pt solid #8C8163;margin-right:4pt;vertical-align:-.5pt}
+  #printReport .pr-tick{font-size:7.5pt;white-space:nowrap;text-align:center}
+  #printReport .pr-lines i{display:block;border-bottom:.5pt dotted #B3A98C;height:14pt}
+  #printReport .pr-note{margin:4pt 0 10pt}
+  #printReport .pr-note .nh{font-size:8pt;color:#6B6350;font-weight:600;margin-bottom:2pt}
+  #printReport .pr-syn{font-size:7.5pt;color:#4A4433;font-style:italic}
+  #printReport .pr-sign{margin-top:16pt;font-size:8.5pt;color:#3A3324;display:flex;justify-content:space-between}
+  #printReport .pr-foot{text-align:center;margin-top:11pt;padding-top:6pt;border-top:.5pt solid #DCCFA8;font-family:'Tiro Devanagari Marathi',serif;color:#B85E1C;font-size:10pt;letter-spacing:.1em}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -332,7 +363,7 @@
   <section class="sec" id="scorer">
     <div class="sec-head">
       <span class="sec-num">✦</span><h2>मूल्यांकन साधन</h2>
-      <p>परीक्षक नोंदी करा; प्रत्येक विधानाची स्वतंत्र PDF (गट · विधान · मजकूर · मूल्यांकन) बनवून Google Classroom मध्ये ठेवा.</p>
+      <p>वादापूर्वी परीक्षक-गटाला छापील पत्रिका द्या; वाद संपल्यावर त्यावरील नोंदी इथे उतरवा आणि विधानानुसार PDF बनवून Google Classroom मध्ये ठेवा.</p>
     </div>
     <div class="panel">
       <div class="score-grid">
@@ -346,6 +377,18 @@
             <div class="field"><label for="selTeam">कोणत्या गटाला गुण?</label><select id="selTeam"></select></div>
           </div>
           <div id="critHost"></div>
+          <div class="field">
+            <label>वाद-शैली निरीक्षण — गुणांव्यतिरिक्त (छापील पत्रिकेतील नोंदी इथे उतरवा)</label>
+            <div class="cond-wrap" id="condHost"></div>
+          </div>
+          <div class="field">
+            <label for="impression">एकूण छाप — चर्चेचे स्वरूप</label>
+            <select id="impression"></select>
+          </div>
+          <div class="field">
+            <label for="ptNote">परीक्षक-गटाच्या हस्तलिखित नोंदी — प्रत्यक्ष काय मांडले</label>
+            <textarea id="ptNote" placeholder="छापील पत्रिकेवरील टिपणं इथे थोडक्यात…"></textarea>
+          </div>
           <div class="field" style="margin-top:2px">
             <label for="synthNote">समन्वय / सिंथेसिस — पक्ष व विपक्ष यांचा मेळ</label>
             <textarea id="synthNote" placeholder="उदा. मृत्यूचा क्षण ट्रिगर, पण आयुष्यभराचा बॅकअप अत्यावश्यक — नांगर आधी रुजतो…"></textarea>
@@ -375,10 +418,16 @@
           <button class="btn btn-gold" data-pdf="2">विधान ३ · लोकसंग्रह</button>
         </div>
         <div class="btn-row">
+          <span class="rowlabel">छापील मूल्यांकन पत्रिका (परीक्षक-गटासाठी · A4 · कोरी):</span>
+          <button class="btn btn-leaf" data-sheet="0">विधान १</button>
+          <button class="btn btn-leaf" data-sheet="1">विधान २</button>
+          <button class="btn btn-leaf" data-sheet="2">विधान ३</button>
+        </div>
+        <div class="btn-row">
           <button class="btn btn-ghost" id="btnCopy">मजकूर कॉपी करा</button>
           <button class="btn btn-ghost" id="btnClear">सर्व नोंदी पुसा</button>
         </div>
-        <p class="note"><b>टीप:</b> चार निकषांचे १०० गुण वादक-गटाला. याखेरीज <b>परीक्षक-गटाचे समन्वय-सादरीकरण</b> स्वतंत्र १० गुणांवर तपासा. प्रत्येक विधानाची PDF वेगळी बनते — बटण दाबल्यावर प्रिंट-संवादात <b>‘Save as PDF’ / ‘PDF म्हणून जतन करा’</b> हा पर्याय निवडा. तिन्ही सत्रांच्या तीन PDF Classroom मध्ये ठेवता येतील. नोंदी याच ब्राउझरमध्ये (या उपकरणावर) साठतात.</p>
+        <p class="note"><b>टीप:</b> चार निकषांचे १०० गुण वादक-गटाला. याखेरीज <b>परीक्षक-गटाचे समन्वय-सादरीकरण</b> स्वतंत्र १० गुणांवर तपासा. <b>क्रम:</b> छापील पत्रिका (कोरी) → परीक्षक-गट वाद ऐकताना भरतो → तुम्ही ती इथे उतरवता → विधानानुसार PDF. दोन्ही बटणांवर प्रिंट-संवादात <b>‘Save as PDF’</b> निवडा; कागद <b>A4 · Portrait</b> ठेवा आणि <b>Background graphics</b> चालू करा (नाहीतर रंगपट्ट्या उमटणार नाहीत). छापील पत्रिकेतील एक स्तंभ = इथली एक नोंद. नोंदी याच ब्राउझरमध्ये साठतात.</p>
       </div>
     </div>
   </section>
@@ -529,6 +578,15 @@ const CRITERIA=[
   {key:'logic',label:'तार्किक मांडणी व स्पष्टता',max:20,hint:'युक्तिवादाची सुसंगत, स्पष्ट बांधणी'},
   {key:'rebut',label:'प्रतिवाद / खंडन कौशल्य',max:20,hint:'समोरच्या गटाचं तर्कशुद्ध, संयत खंडन'}
 ];
+const CONDUCT=[
+  {key:'sanyam',label:'संयम व ताबा',hint:'आवाज चढला नाही, राग आवरला'},
+  {key:'shravan',label:'ऐकण्याची तयारी',hint:'समोरच्याचे म्हणणे मध्येच तोडले नाही'},
+  {key:'bhasha',label:'भाषा-मर्यादा',hint:'व्यक्तिगत टीका नाही, भांडणाचे स्वरूप नाही'},
+  {key:'sahbhag',label:'गटातील सहभाग',hint:'सर्व सदस्यांनी बोलण्याची संधी घेतली'},
+  {key:'vel',label:'वेळेचे भान',hint:'मुद्दा नेमका, वेळेत आवरला'}
+];
+const CLEVELS=['उत्तम','ठीक','सुधारणा हवी'];
+const IMPRESSIONS=['संवाद — शांत व सखोल','वाद — निकोप खंडन-मंडन','भांडण — ताबा सुटला'];
 const PREP={
   paksha:{cls:'rb-pak',todo:'प्रतिपादन ठामपणे मांडा; दिलेले श्लोक बाजूने लावा; एक ठोस उदाहरण तयार ठेवा.'},
   vipaksha:{cls:'rb-vip',todo:'प्रतिपादनातली त्रुटी दाखवा; विरुद्ध श्लोक वाचा; पक्षाच्या मुद्द्याचं संयत खंडन तयार करा.'},
@@ -708,7 +766,21 @@ function recompute(){
   else if(tot>=50){cls='b3';txt='समाधानकारक';}else{cls='b4';txt=tot===0?'गुण द्या':'अजून सराव हवा';}
   tBand.className='band '+cls; tBand.textContent=txt; return tot;
 }
-function resetScores(){CRITERIA.forEach(c=>document.getElementById('r_'+c.key).value=0);synthNote.value='';recompute();}
+const condHost=document.getElementById('condHost');
+CONDUCT.forEach(c=>{
+  const d=document.createElement('div'); d.className='cond-row';
+  d.innerHTML=`<div><div class="cl2">${c.label}</div><div class="ch2">${c.hint}</div></div>
+    <select id="c_${c.key}" aria-label="${c.label}"><option value="">—</option>${CLEVELS.map(l=>`<option>${l}</option>`).join('')}</select>`;
+  condHost.appendChild(d);
+});
+const impression=document.getElementById('impression'), ptNote=document.getElementById('ptNote');
+impression.add(new Option('—',''));
+IMPRESSIONS.forEach(x=>impression.add(new Option(x,x)));
+function resetScores(){
+  CRITERIA.forEach(c=>document.getElementById('r_'+c.key).value=0);
+  CONDUCT.forEach(c=>document.getElementById('c_'+c.key).value='');
+  impression.value=''; ptNote.value=''; synthNote.value=''; recompute();
+}
 CRITERIA.forEach(c=>document.getElementById('r_'+c.key).addEventListener('input',recompute));
 selVidhan.addEventListener('change',fillTeams);
 fillTeams(); recompute();
@@ -721,8 +793,10 @@ document.getElementById('btnSave').addEventListener('click',()=>{
   const s={}; let tot=0;
   CRITERIA.forEach(c=>{const val=+document.getElementById('r_'+c.key).value;s[c.key]=val;tot+=val;});
   if(tot===0){tBand.textContent='आधी गुण द्या';tBand.className='band b4';return;}
+  const c={}; CONDUCT.forEach(x=>{const val=document.getElementById('c_'+x.key).value; if(val)c[x.key]=val;});
   entries.push({id:Date.now()+''+Math.floor(Math.random()*99),date:evDate.value||new Date().toISOString().slice(0,10),
-    evaluator:(evName.value||'—').trim(),vid:v.id,level:v.level,team:TEAMS[teamKey].name,teamCode:TEAMS[teamKey].code,role,s,total:tot,band:bandOf(tot),synth:synthNote.value.trim()});
+    evaluator:(evName.value||'—').trim(),vid:v.id,level:v.level,team:TEAMS[teamKey].name,teamCode:TEAMS[teamKey].code,role,s,total:tot,band:bandOf(tot),
+    c,imp:impression.value,pnote:ptNote.value.trim(),synth:synthNote.value.trim()});
   Store.write(KEY,entries); renderEntries(); resetScores(); evName.value='';
 });
 document.getElementById('btnReset').addEventListener('click',resetScores);
@@ -737,6 +811,8 @@ function renderEntries(){
   if(!entries.length){resHost.innerHTML='<p class="empty">अजून कोणतीही नोंद नाही — वर गुण देऊन “नोंद जतन करा” दाबा.</p>';return;}
   resHost.innerHTML=entries.map(e=>{
     const crit=CRITERIA.map(c=>`${c.label.split(' ')[0]} ${dv(e.s[c.key])}`).join(' · ');
+    const cd=e.c||{};
+    const condLine=CONDUCT.filter(c=>cd[c.key]).map(c=>`${c.label}: ${cd[c.key]}`).concat(e.imp?[`छाप: ${e.imp}`]:[]).join(' · ');
     return `<div class="rcard">
       <div class="rcard-top">
         <div><div class="rt">विधान ${e.vid} · ${e.level} — ${e.team} (${e.role})</div>
@@ -744,6 +820,8 @@ function renderEntries(){
         <div class="rscore">${dv(e.total)}<small>/१०० · ${e.band}</small></div>
       </div>
       <div class="rline">${crit}</div>
+      ${condLine?`<div class="rline" style="color:var(--gold-soft)">${condLine}</div>`:''}
+      ${e.pnote?`<div class="rsyn">नोंदी: ${e.pnote}</div>`:''}
       ${e.synth?`<div class="rsyn">समन्वय: ${e.synth}</div>`:''}
       <div class="rcard-act"><button class="btn-xs del-btn" data-del="${e.id}">पुसा</button></div>
     </div>`;
@@ -754,35 +832,121 @@ function renderEntries(){
 }
 renderEntries();
 
-/* ---- per-विधान PDF (गट · विधान · मजकूर · मूल्यांकन) ---- */
+/* ---- छपाई: सामायिक शीर्षक ---- */
+const PR=document.getElementById('printReport');
+function prHead(title,sub){
+  return `<div class="pr-head"><div class="pom">॥ ॐ ॥</div><h1>${title}</h1><div class="prm">${sub}</div></div>
+    <hr class="pr-rule"><hr class="pr-rule2">`;
+}
+function prFoot(leftLabel){
+  return `<div class="pr-sign"><span>${leftLabel}: ____________________</span><span>सूत्रधार: Vivek B. Sathe (VivSa)</span></div>
+    <div class="pr-foot">॥ जय जय रघुवीर समर्थ ॥</div>`;
+}
+const prLines=n=>`<div class="pr-lines">${'<i></i>'.repeat(n)}</div>`;
+
+/* ---- अ) भरलेला अहवाल — विधानानुसार PDF (Classroom) ---- */
 function buildVidhanReport(i){
   const v=VIDHANE[i];
   const pT=TEAMS[v.paksha.team], vT=TEAMS[v.vipaksha.team], jT=TEAMS[v.judge.team];
   const evs=entries.filter(e=>e.vid===v.id);
   const argLi=a=>a.map(x=>`<li>${x}</li>`).join('');
+  const today=new Date().toISOString().slice(0,10);
+
   const evRows=evs.length? evs.map(e=>`<tr>
       <td>${e.team} (${e.role})</td><td>${e.evaluator}</td><td>${e.date}</td>
-      ${CRITERIA.map(c=>`<td style="text-align:center">${e.s[c.key]}</td>`).join('')}
-      <td style="text-align:center"><b>${e.total}</b></td><td>${e.band}</td>
-    </tr>${e.synth?`<tr><td colspan="8" class="pr-syn">समन्वय: ${e.synth}</td></tr>`:''}`).join('')
-    : `<tr><td colspan="8" style="text-align:center;color:#888">या विधानाची अजून नोंद नाही</td></tr>`;
-  const today=new Date().toISOString().slice(0,10);
-  document.getElementById('printReport').innerHTML=`
-    <div class="pr-head"><div class="pom">॥ ॐ ॥</div>
-      <h1>विधान ${v.id} · ${v.level} — अक्षरब्रह्म वादसभा</h1>
-      <div class="prm">गीता स्वाध्याय · अध्याय ८ (श्लोक १–२८) · ${v.levelSub} · दिनांक: ${today}</div></div>
-    <p class="pr-prati"><b>प्रतिपादन:</b> “${v.prati}”</p>
-    <p class="pr-ctx">${v.ctx}</p>
-    <div class="pr-side"><h3>पक्ष — ${pT.name} (${pT.code}) · श्लोक: ${v.paksha.shloks.join(', ')}</h3><ul>${argLi(v.paksha.args)}</ul></div>
-    <div class="pr-side"><h3>विपक्ष — ${vT.name} (${vT.code}) · श्लोक: ${v.vipaksha.shloks.join(', ')}</h3><ul>${argLi(v.vipaksha.args)}</ul></div>
-    <div class="pr-side"><h3>परीक्षक — ${jT.name} (${jT.code})${v.judge.vivsa?' + सूत्रधार':''}</h3><p><b>समन्वय:</b> ${v.judge.synth}</p><p><i>→ ${v.judge.anchor}</i></p></div>
-    <h3 class="pr-evh">मूल्यांकन नोंदी</h3>
-    <table><thead><tr><th>गट</th><th>परीक्षक</th><th>दिनांक</th>${CRITERIA.map(c=>`<th>${c.label.split(' ')[0]}<br>/${c.max}</th>`).join('')}<th>एकूण</th><th>श्रेणी</th></tr></thead><tbody>${evRows}</tbody></table>
-    <div class="pr-sign"><span>सूत्रधार स्वाक्षरी: ____________________</span><span>Vivek B. Sathe (VivSa)</span></div>
-    <div class="pr-foot">॥ जय जय रघुवीर समर्थ ॥</div>`;
+      ${CRITERIA.map(c=>`<td class="pr-num">${e.s[c.key]}</td>`).join('')}
+      <td class="pr-num"><b>${e.total}</b></td><td>${e.band}</td></tr>`).join('')
+    : `<tr><td colspan="${CRITERIA.length+5}" style="text-align:center;color:#8C8163">या विधानाची अजून नोंद नाही</td></tr>`;
+
+  const hasCond=evs.some(e=>(e.c&&Object.keys(e.c).length)||e.imp);
+  const condTable=hasCond? `<h3 class="pr-evh">वाद-शैली निरीक्षण<small>गुणांव्यतिरिक्त</small></h3>
+    <table><thead><tr><th>गट</th>${CONDUCT.map(c=>`<th>${c.label}</th>`).join('')}<th>एकूण छाप</th></tr></thead>
+    <tbody>${evs.map(e=>{const cd=e.c||{};return `<tr><td>${e.team} (${e.role})</td>${CONDUCT.map(c=>`<td>${cd[c.key]||'—'}</td>`).join('')}<td>${e.imp||'—'}</td></tr>`;}).join('')}</tbody></table>`:'';
+
+  const noteBlocks=evs.filter(e=>e.pnote||e.synth).map(e=>`<div class="pr-note">
+      <div class="nh">${e.team} (${e.role}) — परीक्षक: ${e.evaluator}</div>
+      ${e.pnote?`<p class="pr-syn">नोंदी: ${e.pnote}</p>`:''}
+      ${e.synth?`<p class="pr-syn">समन्वय: ${e.synth}</p>`:''}</div>`).join('');
+
+  PR.innerHTML=
+    prHead(`विधान ${v.id} · ${v.level} — अक्षरब्रह्म वादसभा`,
+           `गीता स्वाध्याय · अध्याय ८ (श्लोक १–२८) · ${v.levelSub} · दिनांक: ${today}`)+
+    `<div class="pr-prati">प्रतिपादन: “${v.prati}”</div>
+     <div class="pr-ctx">${v.ctx}</div>
+     <div class="pr-side s-pak"><h3>पक्ष — ${pT.name} (${pT.code})</h3>
+       <div class="pr-sh">श्लोकाधार: ${v.paksha.shloks.join(' · ')}</div><ul>${argLi(v.paksha.args)}</ul></div>
+     <div class="pr-side s-vip"><h3>विपक्ष — ${vT.name} (${vT.code})</h3>
+       <div class="pr-sh">श्लोकाधार: ${v.vipaksha.shloks.join(' · ')}</div><ul>${argLi(v.vipaksha.args)}</ul></div>
+     <div class="pr-side"><h3>परीक्षक — ${jT.name} (${jT.code})${v.judge.vivsa?' + सूत्रधार':''}</h3>
+       <p><b>समन्वय:</b> ${v.judge.synth}</p><p><i>→ ${v.judge.anchor}</i></p></div>
+     <h3 class="pr-evh">मूल्यांकन नोंदी</h3>
+     <table><thead><tr><th>गट</th><th>परीक्षक</th><th>दिनांक</th>${CRITERIA.map(c=>`<th>${c.label.split(' ')[0]}<br>/${c.max}</th>`).join('')}<th>एकूण</th><th>श्रेणी</th></tr></thead><tbody>${evRows}</tbody></table>
+     ${condTable}${noteBlocks}`+
+    prFoot('सूत्रधार स्वाक्षरी');
   window.print();
 }
 document.querySelectorAll('[data-pdf]').forEach(b=>b.addEventListener('click',()=>buildVidhanReport(+b.dataset.pdf)));
+
+/* ---- ब) कोरी छापील मूल्यांकन पत्रिका — परीक्षक-गट वाद ऐकताना भरतो ---- */
+function buildPatrika(i){
+  const v=VIDHANE[i];
+  const pT=TEAMS[v.paksha.team], vT=TEAMS[v.vipaksha.team], jT=TEAMS[v.judge.team];
+  const expLi=side=>side.args.map(a=>`<li><span class="pr-box"></span>${a}</li>`).join('');
+  const sideBlock=(cls,role,T,side)=>`<div class="pr-side ${cls}">
+      <h3>${role} — ${T.name} (${T.code})</h3>
+      <div class="pr-sh">सदस्य: ${T.members} · श्लोकाधार: ${side.shloks.join(' · ')}</div>
+      <ul>${expLi(side)}</ul>
+      <div class="pr-note"><div class="nh">प्रत्यक्ष काय मांडले — तुमच्या नोंदी</div>${prLines(6)}</div>
+    </div>`;
+  const ticks=`<span class="pr-box"></span>उत्तम &nbsp;<span class="pr-box"></span>ठीक &nbsp;<span class="pr-box"></span>सुधारणा`;
+
+  const critRows=CRITERIA.map(c=>`<tr>
+      <td>${c.label}<span class="pr-hint">${c.hint}</span></td>
+      <td class="pr-num">${c.max}</td><td class="pr-fill"></td><td class="pr-fill"></td></tr>`).join('');
+  const condRows=CONDUCT.map(c=>`<tr>
+      <td>${c.label}<span class="pr-hint">${c.hint}</span></td>
+      <td class="pr-tick">${ticks}</td><td class="pr-tick">${ticks}</td></tr>`).join('');
+  const impRows=[[pT,'पक्ष'],[vT,'विपक्ष']].map(([T,r])=>`<tr><td>${T.name} (${r})</td>${IMPRESSIONS.map(()=>`<td class="pr-tick"><span class="pr-box"></span></td>`).join('')}</tr>`).join('');
+
+  PR.innerHTML=
+    `<div class="pr-page">`+
+    prHead(`मूल्यांकन पत्रिका — विधान ${v.id} · ${v.level}`,
+           `अक्षरब्रह्म वादसभा · गीता स्वाध्याय · अध्याय ८ (श्लोक १–२८) · ${v.levelSub}`)+
+    `<div class="pr-meta">
+       <span><b>परीक्षक-गट:</b> ${jT.name} (${jT.code})${v.judge.vivsa?' + सूत्रधार':''}</span>
+       <span><b>नाव:</b> </span><span><b>दिनांक:</b> </span></div>
+     <div class="pr-prati">प्रतिपादन: “${v.prati}”</div>
+     <div class="pr-ctx">${v.ctx}</div>
+     <div class="pr-sh" style="margin:0 0 6pt">खाली प्रत्येक बाजूचे <b>अपेक्षित मुद्दे</b> दिले आहेत — मांडला गेला तो ☐ खुणेने नोंदवा; प्रत्यक्ष मांडणी खालच्या ओळींवर लिहा.</div>
+     ${sideBlock('s-pak','पक्ष',pT,v.paksha)}
+     ${sideBlock('s-vip','विपक्ष',vT,v.vipaksha)}
+     </div>
+
+     <div class="pr-page">`+
+    prHead(`गुणपत्रिका — विधान ${v.id} · ${v.level}`,`पान २ · परीक्षक-गट: ${jT.name} (${jT.code})`)+
+    `<h3 class="pr-evh">गुण<small>प्रत्येक गटाला १०० पैकी</small></h3>
+     <table class="pr-keep"><thead><tr><th style="width:46%">निकष</th><th class="pr-num" style="width:10%">कमाल</th>
+       <th style="width:22%">${pT.name} · पक्ष</th><th style="width:22%">${vT.name} · विपक्ष</th></tr></thead>
+       <tbody>${critRows}
+       <tr><td><b>एकूण</b></td><td class="pr-num"><b>१००</b></td><td class="pr-fill"></td><td class="pr-fill"></td></tr></tbody></table>
+
+     <h3 class="pr-evh">वाद-शैली निरीक्षण<small>गुणांत धरायचे नाही — शिकवणीसाठी</small></h3>
+     <table class="pr-keep"><thead><tr><th style="width:46%">निरीक्षण</th><th style="width:27%">${pT.name} · पक्ष</th><th style="width:27%">${vT.name} · विपक्ष</th></tr></thead>
+       <tbody>${condRows}</tbody></table>
+
+     <h3 class="pr-evh">एकूण छाप<small>चर्चेचे स्वरूप कोणते राहिले?</small></h3>
+     <table class="pr-keep"><thead><tr><th style="width:28%">गट</th>${IMPRESSIONS.map(x=>`<th class="pr-tick">${x}</th>`).join('')}</tr></thead>
+       <tbody>${impRows}</tbody></table>
+
+     <h3 class="pr-evh">समन्वय<small>परीक्षक-गटाने वादानंतर मांडायचा — स्वतंत्र १० गुण</small></h3>
+     <div class="pr-note">${prLines(4)}
+       <div class="nh" style="margin-top:5pt">समन्वयाचे गुण: <span class="pr-box"></span><span class="pr-box"></span> / १०
+         &nbsp;&nbsp;दिशा: <i>${v.judge.anchor}</i></div></div>`+
+    prFoot('परीक्षक-गट स्वाक्षरी')+
+    `</div>`;
+  window.print();
+}
+document.querySelectorAll('[data-sheet]').forEach(b=>b.addEventListener('click',()=>buildPatrika(+b.dataset.sheet)));
 
 document.getElementById('btnCopy').addEventListener('click',async()=>{
   if(!entries.length){alert('अजून नोंद नाही.');return;}
@@ -791,6 +955,10 @@ document.getElementById('btnCopy').addEventListener('click',async()=>{
     txt+=`विधान ${e.vid} (${e.level}) · ${e.team} · ${e.role} · परीक्षक: ${e.evaluator} · ${e.date}\n`;
     CRITERIA.forEach(c=>txt+=`  ${c.label}: ${e.s[c.key]}/${c.max}\n`);
     txt+=`  एकूण: ${e.total}/100 · ${e.band}\n`;
+    const cd=e.c||{};
+    CONDUCT.forEach(c=>{if(cd[c.key])txt+=`  ${c.label}: ${cd[c.key]}\n`;});
+    if(e.imp)txt+=`  एकूण छाप: ${e.imp}\n`;
+    if(e.pnote)txt+=`  नोंदी: ${e.pnote}\n`;
     if(e.synth)txt+=`  समन्वय: ${e.synth}\n`;
     txt+='\n';
   });
