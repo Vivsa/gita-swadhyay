@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय १० — विभूतियोग · सखोल संदर्भ-अभ्यास</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:      #F7F2E8;
+  --surf:    #FFFDF7;
+  --deep:    #1A1005;
+  --ink:     #2B1D08;
+  --muted:   #7A6545;
+  --rule:    rgba(160,120,60,0.22);
+  --saffron: #C85A0A;
+  --gold:    #B8860B;
+  --gold-bg: rgba(184,134,11,0.08);
+  --c10: #8A5A0A; --c10-bg: rgba(138,90,10,0.10);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 16.5px;
+  line-height: 1.8;
+}
+
+/* ── HEADER ── */
+.masthead {
+  background: var(--deep);
+  color: #F0DDB0;
+  padding: 22px 40px 20px;
+  border-bottom: 3px solid var(--saffron);
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;
+}
+.masthead-main { flex: 1; min-width: 260px; }
+.masthead-sub {
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: #9A8060; margin-bottom: 6px;
+}
+.masthead-title {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 26px; color: #F5C87A; line-height: 1.3; margin-bottom: 6px;
+}
+.masthead-note { font-size: 13px; color: #C9B080; font-style: italic; }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border: 1.5px solid #C85A0A; border-radius: 18px;
+  color: #F5C87A; text-decoration: none; font-size: 13px; font-weight: 600;
+  background: rgba(200,90,10,0.12); white-space: nowrap; transition: background .15s;
+  margin-top: 2px;
+}
+.back-link:hover { background: rgba(200,90,10,0.28); }
+
+/* ── LAYOUT (sidebar + main content) ── */
+.layout { display: flex; align-items: flex-start; }
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: 290px; flex-shrink: 0; background: var(--surf);
+  border-right: 1px solid var(--rule); padding: 20px 18px 40px;
+  position: sticky; top: 0; align-self: flex-start;
+  max-height: 100vh; overflow-y: auto;
+}
+.sidebar-heading {
+  font-size: 11.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted);
+  font-weight: 600; margin: 18px 0 8px;
+}
+.sidebar-heading:first-child { margin-top: 0; }
+.sidebar-heading.collapsible-heading {
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none; padding: 2px 0;
+}
+.sidebar-heading.collapsible-heading:hover { color: var(--gold); }
+.collapse-chev { font-size: 10px; transition: transform .2s; flex-shrink: 0; }
+.sidebar-heading.collapsible-heading.open .collapse-chev { transform: rotate(90deg); }
+.tagbox-wrap { display: none; overflow: hidden; }
+.tagbox-wrap.open { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ── CONTROL BAR (now inside sidebar) ── */
+.ctrl-bar { }
+.ctrl-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.ctrl-row:last-child { margin-bottom: 0; }
+.ctrl-row-btns { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.ctrl-label { font-size: 11.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-right: 4px; font-family: 'EB Garamond', serif; font-weight: 600; }
+.ctrl-sep { width: 1px; align-self: stretch; background: var(--rule); margin: 0 4px; }
+.tag-btn, .cat-btn {
+  font-family: 'EB Garamond', serif; font-size: 12.5px; font-weight: 600;
+  padding: 4px 11px; border-radius: 14px; border: 1.3px solid var(--rule);
+  background: transparent; color: var(--muted); cursor: pointer; transition: all .15s;
+  line-height: 1.5;
+}
+.tag-btn:hover, .cat-btn:hover { border-color: var(--gold); color: var(--gold); }
+.tag-btn.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+.tag-btn.active.groupb { background: var(--c10); border-color: var(--c10); }
+.cat-btn.active { background: var(--saffron); border-color: var(--saffron); color: #fff; }
+.all-btn { color: var(--saffron); font-weight: 700; }
+.all-btn.active { background: var(--saffron); border-color: var(--saffron); color: #fff; }
+#cat-btns { display: contents; }
+#tagA-btns, #tagB-btns { display: flex; flex-wrap: wrap; gap: 6px; }
+#search-box {
+  font-family: 'EB Garamond', serif; font-size: 13.5px; padding: 5px 12px;
+  border-radius: 14px; border: 1.3px solid var(--rule); background: var(--bg);
+  color: var(--ink); width: 100%; margin-bottom: 4px;
+}
+#search-box:focus { outline: none; border-color: var(--gold); }
+
+.filter-bar {
+  display: none; flex-direction: column; align-items: flex-start; gap: 8px;
+  background: var(--gold-bg); border: 1px solid var(--rule); border-radius: 8px;
+  padding: 10px 12px; font-size: 13px; color: var(--ink); margin-bottom: 16px;
+}
+.filter-bar.show { display: flex; }
+.filter-clear { background: none; border: 1px solid var(--saffron); color: var(--saffron);
+  border-radius: 12px; padding: 3px 12px; font-size: 12px; cursor: pointer; font-family: 'EB Garamond', serif; }
+.filter-clear:hover { background: var(--saffron); color: #fff; }
+#filter-count { font-weight: 700; color: var(--saffron); }
+
+/* ── PAGE (main content column) ── */
+.page { flex: 1; min-width: 0; max-width: 900px; margin: 0 auto; padding: 30px 34px 60px; }
+
+/* Killi (key points) */
+.killi-box { background: var(--surf); border: 1.5px solid var(--gold); border-radius: 10px; padding: 20px 24px; margin-bottom: 34px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.killi-heading { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 19px; color: var(--saffron); margin-bottom: 14px; }
+.killi-item { margin-bottom: 14px; }
+.killi-item:last-child { margin-bottom: 0; }
+.killi-item .num { display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center;
+  background: var(--gold); color: #fff; border-radius: 50%; font-size: 12px; font-weight: 700; margin-right: 8px; font-family: 'EB Garamond',serif;}
+.killi-item .kt { font-weight: 700; color: var(--ink); }
+.killi-item p { font-size: 14.5px; color: var(--ink); margin-top: 4px; margin-left: 30px; }
+.killi-item p a { color: var(--saffron); }
+
+/* Jump nav */
+.jumpnav { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 0; }
+.jumpnav a { font-size: 11.5px; padding: 3px 8px; border-radius: 10px; background: var(--gold-bg); color: var(--gold);
+  text-decoration: none; border: 1px solid var(--rule); font-family: 'EB Garamond', serif; }
+.jumpnav a:hover { background: var(--gold); color: #fff; }
+
+/* Bhag divider */
+.bhag-divider { margin: 44px 0 20px; padding-top: 18px; border-top: 2px solid var(--rule); }
+.bhag-title { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 20px; color: var(--c10); margin-bottom: 4px; }
+.bhag-range { font-size: 12px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.bhag-tattva { font-size: 14px; color: var(--muted); font-style: italic; border-left: 3px solid var(--gold); padding-left: 12px; }
+
+/* Shlok card */
+.shlok-card { background: var(--surf); border-radius: 10px; padding: 20px 24px; margin-bottom: 18px; border: 1px solid var(--rule); scroll-margin-top: 165px; }
+.shlok-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.shlok-num { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 15px; color: var(--saffron); font-weight: 700; }
+.shlok-speaker { font-size: 11px; color: var(--muted); background: var(--gold-bg); padding: 2px 9px; border-radius: 10px; }
+.sanskrit blockquote { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 18px; line-height: 1.7; color: var(--deep);
+  background: var(--gold-bg); border-left: 3px solid var(--gold); padding: 12px 16px; margin-bottom: 12px; border-radius: 0 6px 6px 0; }
+.sanskrit blockquote a { font-size: 12px; color: var(--muted); }
+.meaning { font-size: 15px; color: var(--ink); margin-bottom: 4px; }
+.meaning-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 3px; }
+
+.shlok-image { margin: 14px 0; text-align: center; }
+.shlok-image img { max-width: 100%; border-radius: 8px; border: 1px solid var(--rule); box-shadow: 0 4px 16px rgba(0,0,0,0.10); }
+.shlok-image .cap { font-size: 11.5px; color: var(--muted); margin-top: 6px; font-style: italic; }
+
+/* Vibhuti accordion */
+.vib-list { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+.vib-card { border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: #fff; scroll-margin-top: 165px; }
+.vib-head { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; background: linear-gradient(to right, var(--c10-bg), transparent); }
+.vib-head:hover { background: linear-gradient(to right, var(--gold-bg), transparent); }
+.vib-num-badge { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 12px; color: #fff; background: var(--c10);
+  border-radius: 13px; min-width: 26px; height: 26px; padding: 0 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.vib-name { font-weight: 600; color: var(--ink); font-size: 15px; flex: 1; }
+.vib-chev { color: var(--muted); font-size: 13px; transition: transform .2s; flex-shrink: 0; }
+.vib-card.open .vib-chev { transform: rotate(90deg); }
+.vib-tags { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 14px 10px 50px; }
+.chip { font-size: 10.5px; padding: 1px 8px; border-radius: 8px; background: var(--gold-bg); color: var(--gold); border: 1px solid rgba(184,134,11,0.25); }
+.chip.b { background: var(--c10-bg); color: var(--c10); border-color: rgba(138,90,10,0.25); }
+.vib-body { display: none; padding: 4px 18px 18px 50px; }
+.vib-card.open .vib-body { display: block; }
+.vib-section { margin-bottom: 14px; }
+.vib-section:last-child { margin-bottom: 0; }
+.vib-section h5 { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 14.5px; color: var(--c10); margin-bottom: 5px; }
+.vib-section p { font-size: 14.5px; margin-bottom: 8px; }
+.vib-section p:last-child { margin-bottom: 0; }
+.vib-section blockquote { font-size: 13.5px; color: var(--muted); border-left: 2px solid var(--rule); padding-left: 10px; margin: 6px 0; font-style: italic; }
+.vib-section a { color: var(--saffron); }
+.vib-section em { color: #5a4522; }
+.vib-section strong { color: var(--ink); }
+.vib-category { font-size: 11px; color: var(--muted); margin-left: 4px; }
+
+/* Observations + closing */
+.section-block { background: var(--surf); border-radius: 10px; padding: 22px 26px; margin-top: 34px; border: 1px solid var(--rule); }
+.section-block h3 { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 19px; color: var(--saffron); margin-bottom: 14px; }
+.obs-item { font-size: 14.5px; margin-bottom: 12px; }
+.obs-item:last-child { margin-bottom: 0; }
+
+.closing-item { border-top: 1px solid var(--rule); padding-top: 16px; margin-top: 16px; }
+.closing-item:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.closing-head { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.closing-head h4 { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 16.5px; color: var(--c10); flex: 1; }
+.closing-body { display: none; margin-top: 12px; font-size: 14.5px; }
+.closing-item.open .closing-body { display: block; }
+.closing-item.open .vib-chev { transform: rotate(90deg); }
+.closing-body p { margin-bottom: 10px; }
+.closing-body h4 { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 15px; color: var(--saffron); margin: 14px 0 6px; }
+.closing-body blockquote { font-size: 13.5px; color: var(--muted); border-left: 2px solid var(--rule); padding-left: 10px; margin: 6px 0; font-style: italic; }
+.mini-table { border-collapse: collapse; width: 100%; font-size: 13px; margin: 10px 0; }
+.mini-table th, .mini-table td { border: 1px solid var(--rule); padding: 6px 9px; text-align: left; vertical-align: top; }
+.mini-table th { background: var(--gold-bg); color: var(--ink); }
+
+.footer { text-align: center; margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--rule); font-family: 'Tiro Devanagari Sanskrit', serif; color: var(--c10); font-size: 15px; }
+.footer .sub { font-family: 'EB Garamond', serif; font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+#load-error { display: none; max-width: 700px; margin: 60px auto; text-align: center; padding: 30px; background: var(--surf); border: 1.5px solid var(--saffron); border-radius: 10px; }
+#load-error.show { display: block; }
+
+@media (max-width: 900px) {
+  .layout { flex-direction: column; }
+  .sidebar {
+    width: 100%; position: static; max-height: none;
+    border-right: none; border-bottom: 3px solid var(--rule); overflow-y: visible;
+  }
+}
+@media (max-width: 640px) {
+  .masthead { padding: 18px 18px 16px; }
+  .sidebar { padding: 16px; }
+  .page { padding: 20px 12px 40px; }
+  .shlok-card { padding: 16px; }
+  .filter-bar { padding: 8px 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<div class="masthead">
+  <div class="masthead-main">
+    <div class="masthead-sub">गीता स्वाध्याय · अध्याय १० · विभूतियोग</div>
+    <div class="masthead-title">विभूतियोग — ७८ विभूतींचा सखोल संदर्भ-अभ्यास</div>
+    <div class="masthead-note">४२ श्लोक · ७८ विभूती · टॅग व वर्गीकरणासह — चर्चासत्रासाठी सिद्ध केलेला अभ्यास</div>
+  </div>
+  <a class="back-link" href="index.html">← मुख्य पान (अध्याय १–९)</a>
+</div>
+
+<div class="layout">
+
+<!-- ── SIDEBAR: फिल्टर + अनुक्रमणिका ── -->
+<aside class="sidebar">
+  <div class="filter-bar" id="filter-bar">
+    <span><span id="filter-count">0</span> विभूती जुळल्या</span>
+    <button class="filter-clear" onclick="clearFilters()">✕ सर्व दाखवा</button>
+  </div>
+
+  <input id="search-box" type="text" placeholder="🔍 विभूतीचे नाव किंवा शब्द…">
+
+  <div class="ctrl-bar">
+    <div class="sidebar-heading">विभाग</div>
+    <div class="ctrl-row-btns">
+      <button class="cat-btn all-btn active" data-cat="">सर्व</button>
+      <div id="cat-btns"></div>
+    </div>
+
+    <div class="sidebar-heading collapsible-heading" onclick="toggleSidebarSection(this)">
+      <span>माहिती-टॅग</span><span class="collapse-chev">▸</span>
+    </div>
+    <div class="tagbox-wrap" id="tagA-wrap"><div id="tagA-btns"></div></div>
+
+    <div class="sidebar-heading collapsible-heading" onclick="toggleSidebarSection(this)">
+      <span>स्वरूप-टॅग</span><span class="collapse-chev">▸</span>
+    </div>
+    <div class="tagbox-wrap" id="tagB-wrap"><div id="tagB-btns"></div></div>
+  </div>
+
+  <div class="sidebar-heading collapsible-heading" onclick="toggleSidebarSection(this)">
+    <span>श्लोक अनुक्रमणिका</span><span class="collapse-chev">▸</span>
+  </div>
+  <div class="tagbox-wrap" id="jumpnav-wrap"><div class="jumpnav" id="jumpnav"></div></div>
+</aside>
+
+<!-- ── मुख्य आशय ── -->
+<div class="page">
+  <div id="load-error">
+    <p style="font-size:15px; margin-bottom:8px;">आशय लोड होऊ शकला नाही.</p>
+    <p style="font-size:13px; color:var(--muted);">ही फाइल थेट डबल-क्लिक करून (file://) उघडली असल्यास ब्राउझर <code>data/</code> फोल्डरमधील JSON वाचू देत नाही. GitHub Pages वर उघडा, किंवा स्थानिक सर्व्हरने पहा (उदा. <code>python3 -m http.server</code>).</p>
+    <p style="font-size:12px; color:var(--saffron); margin-top:10px; font-family: monospace; white-space: pre-wrap; text-align:left; background:#fff8; padding:10px; border-radius:6px;" id="load-error-detail"></p>
+  </div>
+
+  <div class="killi-box" id="killi-box"></div>
+
+  <div id="content"></div>
+
+  <div class="section-block" id="obs-block" style="display:none">
+    <h3>टॅग-आधारित निरीक्षणे</h3>
+    <div id="obs-list"></div>
+  </div>
+
+  <div class="section-block" id="closing-block" style="display:none">
+    <h3>समारोप व वर्तक-भूमिका</h3>
+    <div id="closing-list"></div>
+  </div>
+
+  <div class="footer">
+    ॥ नान्तोऽस्ति मम दिव्यानां विभूतीनां परन्तप ॥
+    <div class="sub">विभूतियोग — अध्याय दहावा समाप्त · <a href="index.html" style="color:var(--c10)">← मुख्य पानावर परत</a></div>
+  </div>
+</div>
+
+</div><!-- /.layout -->
+
+<script>
+let CORE = null, VIB = null;
+let activeTags = new Set();
+let activeCat = '';
+let searchQ = '';
+
+function showLoadError(stage, e) {
+  document.getElementById('load-error').classList.add('show');
+  const detail = document.getElementById('load-error-detail');
+  if (detail) detail.textContent = '[' + stage + '] ' + (e && e.stack ? e.stack : String(e));
+  console.error(stage, e);
+}
+
+async function boot() {
+  let core, vib;
+  try {
+    [core, vib] = await Promise.all([
+      fetch('data/adhyay10-core.json').then(r => { if(!r.ok) throw new Error('HTTP ' + r.status + ' for adhyay10-core.json'); return r.json(); }),
+      fetch('data/adhyay10-vibhutis.json').then(r => { if(!r.ok) throw new Error('HTTP ' + r.status + ' for adhyay10-vibhutis.json'); return r.json(); })
+    ]);
+  } catch (e) {
+    showLoadError('fetch', e);
+    return;
+  }
+
+  if (!core || typeof core !== 'object' || !core.meta || !core.shlokas) {
+    const keys = core && typeof core === 'object' ? Object.keys(core).slice(0,8).join(', ') : String(core);
+    showLoadError('structure',
+      new Error('data/adhyay10-core.json मध्ये अपेक्षित रचना (meta, shlokas) सापडली नाही.\n' +
+        'त्याऐवजी सापडलेल्या keys: [' + keys + ']\n' +
+        'हे विभूती-यादीसारखे (उदा. "१","२","३"...) दिसत असेल, तर data/adhyay10-core.json आणि ' +
+        'data/adhyay10-vibhutis.json या दोन फाइल्सची अदलाबदल झाली आहे किंवा एक फाइल जुनी/चुकीची कॉपी झाली आहे. ' +
+        'दोन्ही फाइल्स पुन्हा मूळ झिपमधून, नाव न बदलता, data/ फोल्डरमध्ये कॉपी करून पहा.'));
+    return;
+  }
+  if (!vib || typeof vib !== 'object') {
+    showLoadError('structure', new Error('data/adhyay10-vibhutis.json रिकामी किंवा अवैध आहे.'));
+    return;
+  }
+
+  CORE = core; VIB = vib;
+  try {
+    render();
+  } catch (e) {
+    showLoadError('render', e);
+  }
+}
+
+function renderKilli() {
+  const box = document.getElementById('killi-box');
+  let html = '<div class="killi-heading">अध्यायाची किल्ली — चार गोष्टी आधी लक्षात घ्याव्यात</div>';
+  CORE.meta.killi.forEach(k => {
+    html += `<div class="killi-item"><span class="num">${k.num}</span><span class="kt">${k.title}</span>${k.html}</div>`;
+  });
+  box.innerHTML = html;
+}
+
+function renderFilterBtns() {
+  const catWrap = document.getElementById('cat-btns');
+  CORE.meta.categories.forEach(c => {
+    const b = document.createElement('button');
+    b.className = 'cat-btn'; b.textContent = c.num + '. ' + c.title; b.dataset.cat = c.title;
+    b.title = c.sutra.replace(/<[^>]+>/g,'');
+    b.onclick = () => { activeCat = (activeCat === c.title) ? '' : c.title; syncCatBtns(); applyFilters(); };
+    catWrap.appendChild(b);
+  });
+  document.querySelector('.all-btn').onclick = () => { activeCat=''; syncCatBtns(); applyFilters(); };
+
+  const tagA = CORE.meta.tagDict.slice(0,10);
+  const tagB = CORE.meta.tagDict.slice(10);
+  const aWrap = document.getElementById('tagA-btns');
+  tagA.forEach(t => {
+    const b = document.createElement('button');
+    b.className = 'tag-btn'; b.textContent = '#' + t.tag + ' (' + t.count + ')';
+    b.title = t.meaning.replace(/<[^>]+>/g,'');
+    b.onclick = () => { toggleTag(t.tag, b); };
+    b.dataset.tag = t.tag;
+    aWrap.appendChild(b);
+  });
+  const bWrap = document.getElementById('tagB-btns');
+  tagB.forEach(t => {
+    const b = document.createElement('button');
+    b.className = 'tag-btn groupb'; b.textContent = '#' + t.tag + ' (' + t.count + ')';
+    b.title = t.meaning.replace(/<[^>]+>/g,'');
+    b.onclick = () => { toggleTag(t.tag, b); };
+    b.dataset.tag = t.tag;
+    bWrap.appendChild(b);
+  });
+}
+
+function toggleSidebarSection(headEl) {
+  headEl.classList.toggle('open');
+  const wrap = headEl.nextElementSibling;
+  if (wrap) wrap.classList.toggle('open');
+}
+
+function toggleTag(tag, btn) {
+  if (activeTags.has(tag)) { activeTags.delete(tag); btn.classList.remove('active'); }
+  else { activeTags.add(tag); btn.classList.add('active'); }
+  applyFilters();
+}
+
+function syncCatBtns() {
+  document.querySelectorAll('.cat-btn').forEach(b => {
+    b.classList.toggle('active', (b.dataset.cat||'') === activeCat && (activeCat !== '' || b.classList.contains('all-btn')));
+  });
+  document.querySelector('.all-btn').classList.toggle('active', activeCat==='');
+}
+
+function renderContent() {
+  const wrap = document.getElementById('content');
+  let html = '';
+  let currentBhag = null;
+  CORE.shlokas.forEach(s => {
+    if (!currentBhag || currentBhag !== s.bhag.num) {
+      currentBhag = s.bhag.num;
+      html += `<div class="bhag-divider" id="bhag-${s.bhag.num}">
+        <div class="bhag-title">भाग ${s.bhag.num}. ${s.bhag.title}</div>
+        <div class="bhag-range">${s.bhag.range || ''}</div>
+        ${s.bhag.tattva ? `<div class="bhag-tattva">${s.bhag.tattva}</div>` : ''}
+      </div>`;
+    }
+    html += renderShlok(s);
+  });
+  wrap.innerHTML = html;
+}
+
+function renderShlok(s) {
+  let vibHtml = '';
+  if (s.vibhutiIds.length) {
+    vibHtml = '<div class="vib-list">' + s.vibhutiIds.map(id => renderVibhuti(id)).join('') + '</div>';
+  }
+  return `<div class="shlok-card" id="s-${s.num}" data-shlok="${s.num}">
+    <div class="shlok-head">
+      <span class="shlok-num">श्लोक ${s.label}</span>
+      <span class="shlok-speaker">${s.speaker}</span>
+    </div>
+    <div class="sanskrit">${s.sanskrit_html}</div>
+    <div class="meaning-label">सोप्या मराठीत अर्थ</div>
+    <div class="meaning">${s.meaning_full}</div>
+    ${vibHtml}
+  </div>`;
+}
+
+function renderVibhuti(id) {
+  const v = VIB[id];
+  if (!v) return '';
+  const tagsHtml = v.tags.map(t => {
+    const isB = CORE.meta.tagDict.slice(10).some(x => x.tag === t);
+    return `<span class="chip${isB ? ' b' : ''}" data-tag="${t}">#${t}</span>`;
+  }).join('');
+  const sectionOrder = ['१','२','३','४','५'];
+  let secHtml = '';
+  sectionOrder.forEach(k => {
+    const sec = v.sections[k];
+    if (sec) secHtml += `<div class="vib-section"><h5>${k}. ${sec.title}</h5>${sec.html}</div>`;
+  });
+  const imgHtml = v.shlokNum ? `<div class="shlok-image"><img src="images/adhyay10/10-${v.shlokNum}.jpg" alt="विभूती ${id} — ${v.name}" loading="lazy"
+      onerror="this.parentElement.style.display='none'"><div class="cap">श्लोक ${v.shlokLabel || ''} — विभूती-चित्र</div></div>` : '';
+  const slug = id.replace(/\s+/g,'');
+  return `<div class="vib-card" id="v-${slug}" data-num="${id}" data-tags="${v.tags.join(',')}" data-cat="${v.category}" data-name="${v.name}">
+    <div class="vib-head" onclick="toggleVib(this)">
+      <span class="vib-num-badge">${id}</span>
+      <span class="vib-name">विभूती ${id} — ${v.name}<span class="vib-category">· ${v.category}</span></span>
+      <span class="vib-chev">▸</span>
+    </div>
+    <div class="vib-tags">${tagsHtml}</div>
+    <div class="vib-body">${imgHtml}${secHtml}</div>
+  </div>`;
+}
+
+function toggleVib(headEl) {
+  headEl.closest('.vib-card').classList.toggle('open');
+}
+
+function renderObservations() {
+  if (!CORE.meta.observations || !CORE.meta.observations.length) return;
+  document.getElementById('obs-block').style.display = 'block';
+  document.getElementById('obs-list').innerHTML = CORE.meta.observations.map(o => `<div class="obs-item">${o}</div>`).join('');
+}
+
+function renderClosing() {
+  if (!CORE.meta.closing || !CORE.meta.closing.length) return;
+  document.getElementById('closing-block').style.display = 'block';
+  document.getElementById('closing-list').innerHTML = CORE.meta.closing.map((c,i) => `
+    <div class="closing-item" id="closing-${i}">
+      <div class="closing-head" onclick="this.closest('.closing-item').classList.toggle('open')">
+        <h4>${c.title}</h4><span class="vib-chev">▸</span>
+      </div>
+      <div class="closing-body">${c.html}</div>
+    </div>`).join('');
+}
+
+function renderJumpNav() {
+  const withVib = CORE.shlokas.filter(s => s.vibhutiIds.length);
+  document.getElementById('jumpnav').innerHTML = withVib.map(s => `<a href="#s-${s.num}">${s.label}</a>`).join('');
+}
+
+function applyFilters() {
+  searchQ = document.getElementById('search-box').value.trim().toLowerCase();
+  const anyFilter = activeTags.size > 0 || activeCat !== '' || searchQ !== '';
+  let matchCount = 0;
+
+  document.querySelectorAll('.vib-card').forEach(card => {
+    const tags = (card.dataset.tags||'').split(',').filter(Boolean);
+    const cat = card.dataset.cat || '';
+    const name = (card.dataset.name||'').toLowerCase();
+    const textBlob = name + ' ' + card.textContent.toLowerCase();
+    let ok = true;
+    if (activeTags.size) ok = ok && [...activeTags].every(t => tags.includes(t));
+    if (activeCat) ok = ok && (cat === activeCat);
+    if (searchQ) ok = ok && textBlob.includes(searchQ);
+    card.style.display = ok ? '' : 'none';
+    if (ok) matchCount++;
+  });
+
+  document.querySelectorAll('.shlok-card').forEach(sc => {
+    const cards = sc.querySelectorAll('.vib-card');
+    if (!cards.length) {
+      sc.style.display = anyFilter ? 'none' : '';
+      return;
+    }
+    const anyVisible = [...cards].some(c => c.style.display !== 'none');
+    sc.style.display = (anyFilter && !anyVisible) ? 'none' : '';
+  });
+
+  document.querySelectorAll('.bhag-divider').forEach(bd => {
+    let sib = bd.nextElementSibling;
+    let anyVisible = false;
+    while (sib && !sib.classList.contains('bhag-divider')) {
+      if (sib.classList.contains('shlok-card') && sib.style.display !== 'none') anyVisible = true;
+      sib = sib.nextElementSibling;
+    }
+    bd.style.display = (anyFilter && !anyVisible) ? 'none' : '';
+  });
+
+  document.getElementById('filter-bar').classList.toggle('show', anyFilter);
+  document.getElementById('filter-count').textContent = matchCount;
+
+  // "सर्व" (कोणतेही फिल्टर/शोध सक्रिय नाही) असतानाच किल्ली/निरीक्षणे/समारोप दाखवा
+  const showOverview = !anyFilter;
+  const killiBox = document.getElementById('killi-box');
+  if (killiBox) killiBox.style.display = showOverview ? '' : 'none';
+  const obsBlock = document.getElementById('obs-block');
+  if (obsBlock && CORE.meta.observations && CORE.meta.observations.length) {
+    obsBlock.style.display = showOverview ? 'block' : 'none';
+  }
+  const closingBlock = document.getElementById('closing-block');
+  if (closingBlock && CORE.meta.closing && CORE.meta.closing.length) {
+    closingBlock.style.display = showOverview ? 'block' : 'none';
+  }
+}
+
+function clearFilters() {
+  activeTags.clear(); activeCat = '';
+  document.getElementById('search-box').value = '';
+  document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+  syncCatBtns();
+  applyFilters();
+}
+
+let searchTimer;
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('search-box').addEventListener('input', () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(applyFilters, 200);
+  });
+});
+
+function render() {
+  const steps = [renderKilli, renderFilterBtns, renderContent, renderObservations, renderClosing, renderJumpNav];
+  const failed = [];
+  steps.forEach(fn => {
+    try { fn(); } catch (e) { failed.push(fn.name + ': ' + e.message); console.error(fn.name, e); }
+  });
+  if (failed.length) showLoadError('render (आंशिक)', new Error(failed.join('\n')));
+}
+
+boot();
+</script>
+</body>
+</html>
