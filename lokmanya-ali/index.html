@@ -798,12 +798,28 @@ function summaryText(d){
 }
 const okBox=document.getElementById('okBox'), failBox=document.getElementById('failBox');
 function hideResults(){okBox.classList.remove('show');failBox.classList.remove('show');}
-function ok(d,extra){
+function ok(d,res){
   okBox.innerHTML='';
-  const h=document.createElement('h3');h.textContent='नोंदणी मिळाली';
-  const p=document.createElement('p');p.textContent='धन्यवाद, '+d.parentName+'. आपले क्रमांक आणि Classroom मध्ये सामील होण्याच्या पायऱ्या '+d.parents.map(x=>x.gmail).join(' आणि ')+' या पत्त्यावर ईमेलने पाठवल्या आहेत. काही मिनिटांत ईमेल न आल्यास Spam फोल्डर तपासा.';
-  okBox.append(h,p);if(extra)okBox.append(extra);
+  const h=document.createElement('h3');h.textContent='नोंदणी मिळाली';okBox.append(h);
+  const P=t=>{const p=document.createElement('p');p.textContent=t;okBox.append(p);};
+  if(res&&res.ok&&res.familyId){
+    P('धन्यवाद, '+d.parentName+'. कुटुंब क्र.: '+res.familyId+'.');
+    const ppl=(res.people||[]).map(x=>x.name+' ('+x.id+')').join(', ');
+    if(ppl)P('आपले क्रमांक: '+ppl);
+    (res.mail||[]).forEach(m=>{
+      if(m.status==='पाठवला')P('पुढील पायऱ्यांचा ईमेल '+m.to+' वर पाठवला आहे. काही मिनिटांत न आल्यास Spam फोल्डर तपासा.');
+      else if(m.status!=='बंद')P('ईमेल पाठवता आला नाही ('+m.to+'). वरील क्रमांक जपून ठेवा आणि WhatsApp ग्रुपवर कळवा.');
+    });
+  }else{
+    P('धन्यवाद, '+d.parentName+'. आपली नोंदणी पाठवली आहे. पुढील पायऱ्यांचा ईमेल '+d.parents.map(x=>x.gmail).join(' आणि ')+' वर येईल. काही तासांत (Spam सह) न आल्यास WhatsApp ग्रुपवर कळवा.');
+  }
   okBox.classList.add('show');okBox.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function fail(title,text){
+  failBox.innerHTML='';
+  const h=document.createElement('h3');h.textContent=title;
+  const p=document.createElement('p');p.textContent=text;
+  failBox.append(h,p);failBox.classList.add('show');
 }
 function waLink(d){
   return 'https://wa.me/'+CONFIG.WHATSAPP+'?text='+encodeURIComponent(summaryText(d));
@@ -818,15 +834,15 @@ document.getElementById('regForm').addEventListener('submit',async e=>{
   const btn=document.getElementById('submitBtn');
   if(CONFIG.FORM_ENDPOINT){
     btn.disabled=true;btn.textContent='पाठवत आहे…';
+    let res=null,netFail=false;
     try{
-      await fetch(CONFIG.FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)});
-      ok(d);document.getElementById('regForm').reset();kidsBox.innerHTML='';addKid();
-    }catch(err){
-      failBox.innerHTML='';
-      const h=document.createElement('h3');h.textContent='नोंदणी पाठवता आली नाही';
-      const p=document.createElement('p');p.textContent='इंटरनेट तपासून पुन्हा प्रयत्न करा. तुम्ही भरलेली माहिती तशीच आहे.';
-      failBox.append(h,p);failBox.classList.add('show');
-    }finally{btn.disabled=false;btn.textContent='नोंदणी पाठवा';}
+      const r=await fetch(CONFIG.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)});
+      try{res=await r.json();}catch(_){res=null;}
+    }catch(err){netFail=(navigator.onLine===false);}
+    btn.disabled=false;btn.textContent='नोंदणी पाठवा';
+    if(netFail){fail('नोंदणी पाठवता आली नाही','इंटरनेट तपासून पुन्हा प्रयत्न करा. तुम्ही भरलेली माहिती तशीच आहे.');return;}
+    if(res&&res.ok===false){fail('नोंदणी नोंदवता आली नाही','तांत्रिक अडचण: '+String(res.error||'').slice(0,160)+'. कृपया WhatsApp ग्रुपवर कळवा.');return;}
+    ok(d,res);document.getElementById('regForm').reset();kidsBox.innerHTML='';addKid();document.getElementById('p2box').hidden=true;
     return;
   }
   /* ऑनलाइन साठवण जोडलेली नसल्यास: WhatsApp / कॉपी */
