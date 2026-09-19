@@ -6,7 +6,7 @@
 */
 window.GITA_CONFIG = {
   // Apps Script "Web app" चा URL (/exec ने संपणारा)
-  FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycbxcubkFQAXsIus8IDVgCMdUgC75hy5th1PTFvWtnfUfs0vcdu5HJAZZBI96-J0R1nTVCw/exec",
+  FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycbwxNOCIPLEAG127nm9LNiNxoYjBTy0iW94zrZ0XoVdk6FzkH7x924RRAwRJXfclNMLjbQ/exec",
 
   // WhatsApp क्रमांक: 91 ने सुरू, + किंवा जागा नको. उदा. "919XXXXXXXXX"
   WHATSAPP: "917738198747",
