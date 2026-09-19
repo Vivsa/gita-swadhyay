@@ -461,7 +461,7 @@ footer a{color:var(--gold-soft)}
         <h3>नोंदणीनंतर काय होते?</h3>
         <ol class="steps">
           <li><b>फॉर्म भरा.</b> पालकांचे (वडील/आई) आणि प्रत्येक पाल्याचे नाव, gmail, मोबाइल क्रमांक, तसेच मंडळाचा सभासद क्रमांक.</li>
-          <li><b>ईमेल येईल.</b> तुमचा क्रमांक (उदा. LGB-P-0001), पाल्यांचे क्रमांक आणि Classroom च्या लिंक तुमच्या gmail वर येतात. Spam फोल्डरही पाहा.</li>
+          <li><b>ईमेल येईल.</b> तुमचा क्रमांक (उदा. LOK-P-0001), पाल्यांचे क्रमांक आणि Classroom च्या लिंक तुमच्या gmail वर येतात. Spam फोल्डरही पाहा.</li>
           <li><b>Classroom मध्ये सामील व्हा.</b> पालक पालक वर्गात आणि पाल्य पाल्य वर्गात, स्वतःच्या gmail खात्याने.</li>
           <li><b>सभासदत्वाची पडताळणी.</b> सभासदत्वाच्या पावतीचा फोटो संयोजकांना WhatsApp वर खासगी संदेशात पाठवा.</li>
           <li><b>सत्राची लिंक.</b> Zoom/Meet ची लिंक आणि वेळ Classroom मध्ये पाहा.</li>
@@ -723,7 +723,7 @@ function addKid(){
   <div class="three">
    <div class="f"><label for="kn${id}">पाल्याचे नाव</label><input id="kn${id}" data-k="name" autocomplete="off"></div>
    <div class="f"><label for="kc${id}">इयत्ता</label><select id="kc${id}" data-k="cls"><option value="">निवडा</option>${CLASSES.map(c=>`<option>${c}</option>`).join('')}</select></div>
-   <div class="f"><label for="km${id}">पाल्याचा gmail <span class="hint">पर्यायी</span></label><input id="km${id}" data-k="mail" type="email" inputmode="email" autocomplete="off"><div class="err">@gmail.com ने संपणारा पत्ता लिहा किंवा रिकामा ठेवा.</div></div>
+   <div class="f"><label for="km${id}">पाल्याचा gmail <span class="hint">पर्यायी. दिल्यास पाल्याला स्वतःचा ईमेल आणि क्रमांक मिळतो.</span></label><input id="km${id}" data-k="mail" type="email" inputmode="email" autocomplete="off"><div class="err">@gmail.com ने संपणारा पत्ता लिहा किंवा रिकामा ठेवा.</div></div>
   </div>`;
   d.querySelector('.rm').addEventListener('click',()=>{d.remove();renumber();});
   kidsBox.append(d);renumber();
@@ -808,6 +808,7 @@ function ok(d,res){
     if(ppl)P('आपले क्रमांक: '+ppl);
     (res.mail||[]).forEach(m=>{
       if(m.status==='पाठवला')P('पुढील पायऱ्यांचा ईमेल '+m.to+' वर पाठवला आहे. काही मिनिटांत न आल्यास Spam फोल्डर तपासा.');
+      else if(m.status==='आधी पाठवला')P('या ईमेलवर ('+m.to+') पोच ईमेल आधीच पाठवला होता. तो न दिसल्यास Spam/Promotions तपासा, किंवा WhatsApp ग्रुपवर कळवा, आम्ही पुन्हा पाठवू.');
       else if(m.status!=='बंद')P('ईमेल पाठवता आला नाही ('+m.to+'). वरील क्रमांक जपून ठेवा आणि WhatsApp ग्रुपवर कळवा.');
     });
   }else{
