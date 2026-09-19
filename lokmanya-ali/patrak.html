@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>आळीची गीता — माहितीपत्रक (A4)</title>
+<title>लोकमान्य गीताबोध — माहितीपत्रक (A4)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@ p{margin:0 0 .6em}
 .hero{background:var(--ink);color:#EDEEF7;padding:15mm 16mm 12mm;position:relative;height:118mm}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3.2mm;background:linear-gradient(90deg,var(--gold) 0 70%,var(--saffron) 70%)}
 .hero .m{font-size:10.5pt;color:var(--gold-soft);border-left:1.2mm solid var(--saffron);padding-left:3mm;margin-bottom:7mm}
-.hero h1{font-size:50pt;line-height:1.15;color:#fff}
+.hero h1{font-size:38pt;line-height:1.15;color:#fff}
 .hero .s{font-family:var(--serif);font-size:17pt;line-height:1.4;color:var(--gold-soft);margin-top:4mm;max-width:118mm}
 .hero .art{position:absolute;right:16mm;top:12mm;width:42mm;height:88mm;border:.5mm solid var(--gold);border-radius:21mm 21mm 1.5mm 1.5mm;overflow:hidden;background:var(--ink-2)}
 .hero .art img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
@@ -61,6 +61,7 @@ p{margin:0 0 .6em}
 .cls h3{font-size:14pt;color:var(--gold-soft)}
 .cls.k h3{color:#fff}
 .cls b{display:block;font-size:10pt;margin:1mm 0 0}
+.cls p{font-size:9.4pt;line-height:1.5;margin:1.5mm 0 0;opacity:.95}
 .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5mm 8mm;margin:0 0 6mm;padding:0;list-style:none;font-size:10.8pt}
 .facts li{border-left:.9mm solid var(--gold);padding-left:3mm}
 .facts strong{color:var(--ink)}
@@ -91,7 +92,7 @@ tr:last-child td{border-bottom:.25mm solid #D9D3C2}
 <section class="page">
   <div class="hero">
     <div class="m">गीता स्वाध्याय · लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे</div>
-    <h1>आळीची गीता</h1>
+    <h1>लोकमान्य गीताबोध</h1>
     <div class="s">लोकमान्यांचे गीतारहस्य, आजच्या जीवनाचा अर्थबोध</div>
     <div class="art"><img src="assets/lokmanya-statue.jpg" alt="लोकमान्य बाळ गंगाधर टिळक यांचे शिल्प"></div>
     <div class="for">सभासद पालक आणि पाल्यांसाठी · ऑनलाइन · पुढील काही वर्षे</div>
@@ -126,8 +127,8 @@ tr:last-child td{border-bottom:.25mm solid #D9D3C2}
     <h2>उपक्रमाची रचना</h2>
 
     <div class="two">
-      <div class="cls"><h3>पालक वर्ग</h3><b>श्री. विवेक भास्कर साठे</b></div>
-      <div class="cls k"><h3>पाल्य वर्ग</h3><b>सौ. मानसी निखिलेश गोडबोले</b></div>
+      <div class="cls"><h3>पालक वर्ग</h3><b>श्री. विवेक भास्कर साठे · मंडळाचे आजीव सभासद</b><p>जन्मभूमी ठाणे, कर्मभूमी सिंगापूर. यांत्रिकी अभियंता (COEP, पुणे); Analytics मध्ये पदव्युत्तर (Georgia Tech, Atlanta); बँकेत कार्यरत.</p></div>
+      <div class="cls k"><h3>पाल्य वर्ग</h3><b>सौ. मानसी निखिलेश गोडबोले · मंडळाच्या आजीव सभासद</b><p>पूर्वाश्रमीच्या कु. भारती भास्कर साठे. M.Com (मुंबई विद्यापीठ); डोंबिवली येथे बारावी कॉमर्सपर्यंत शिकवणी.</p></div>
     </div>
 
     <ul class="facts">
@@ -167,7 +168,7 @@ tr:last-child td{border-bottom:.25mm solid #D9D3C2}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 /* वेबसाइटचा अंतिम पत्ता येथे बदला (किंवा उघडताना ?u=https://... जोडा) */
-const SITE_URL = new URLSearchParams(location.search).get('u') || 'https://gita-swadhaya.link/lokmanya-ali/';
+const SITE_URL = new URLSearchParams(location.search).get('u') || 'https://gita-swadhyay.link/lokmanya-ali/';
 document.querySelectorAll('[data-site-url]').forEach(e=>e.textContent=SITE_URL.replace(/^https?:\/\//,''));
 (function(){
   const box=document.getElementById('qr');
