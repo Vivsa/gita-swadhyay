@@ -138,14 +138,12 @@ details.prak p{margin:0 0 14px 2.2ch;color:var(--muted);font-size:.97rem;line-he
 .quote{font-family:var(--serif);font-size:clamp(1.35rem,2.6vw,1.8rem);line-height:1.5;color:var(--ink);border-left:4px solid var(--saffron);padding-left:22px;margin:0}
 .classes{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:44px 0 12px}
 @media (max-width:760px){.classes{grid-template-columns:1fr}}
-.class{padding:28px 28px 22px;border-radius:14px;background:var(--ink);color:#E6E8F5}
-.class.kids{background:var(--saffron-deep);color:#FFF3E6}
+.class{padding:28px 28px 22px;border-radius:14px;background:var(--ink);color:#E6E8F5;border-top:5px solid var(--gold)}
+.class.kids{border-top-color:var(--saffron)}
 .class h3{color:var(--gold-soft);margin-bottom:.2em}
-.class.kids h3{color:#fff}
 .class .who{font-size:1.05rem;font-weight:600;margin-bottom:.9em}
 .class .bio{font-size:.95rem;line-height:1.7;margin:0 0 1em;color:inherit;opacity:.94}
 .class .bio a{color:var(--gold-soft);text-underline-offset:3px}
-.class.kids .bio a{color:#fff}
 .class ul{margin:0;padding-left:1.1em;font-size:.97rem}
 .class li{margin-bottom:.35em}
 .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;margin-top:28px;border-top:2px solid var(--ink)}
@@ -216,7 +214,7 @@ legend{font-family:var(--serif);font-size:1.3rem;color:var(--ink);padding:0 0 10
 .f.bad input,.f.bad select{border-color:var(--err)}
 .err{color:var(--err);font-size:.88rem;margin-top:4px;display:none}
 .f.bad .err{display:block}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end}
 @media (max-width:600px){.two{grid-template-columns:1fr}}
 .kid{border:1.5px dashed #C9C3B2;border-radius:10px;padding:14px 14px 4px;margin-bottom:14px;position:relative;background:#FFFDF8}
 .kid .kh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:600;color:var(--gold-deep)}
@@ -370,7 +368,7 @@ footer a{color:var(--gold-soft)}
   <div class="wrap">
     <div class="why">
       <div>
-        <h2>गणपती सार्वजनिक केला, आता गीता घरा-घरात न्यायची आहे</h2>
+        <h2>गणपती रस्त्यावर आणला, आता गीता घरात</h2>
         <p class="lead">टिळकांनी घरगुती गणपती सार्वजनिक केला, म्हणजे माणसे एकत्र यावीत, बोलावीत आणि एकत्र विचार करावा. त्या विचारांचा अभ्यास करून पालक आणि पाल्यांची एक विचारशील पिढी उभी राहावी, हा या उपक्रमाचा हेतू आहे.</p>
       </div>
       <blockquote class="quote">उत्सव फक्त आनंदाचा नाही, तो विचाराचाही आहे.</blockquote>
@@ -443,7 +441,7 @@ footer a{color:var(--gold-soft)}
   <div class="wrap band-grid">
     <div>
       <h2>परीक्षा, प्रशस्तीपत्रक आणि २०२७ चा गणेशोत्सव</h2>
-      <p>वर्षाच्या शेवटी बहुपर्यायी प्रश्नपत्रिकेची परीक्षा होईल. उत्तम रीतीने उत्तीर्ण झालेल्या पालक आणि पाल्यांना मंडळातर्फे “लोकमान्य गीताबोध” प्रशस्तीपत्रक दिले जाईल.</p>
+      <p>वर्षाच्या शेवटी बहुपर्यायी प्रश्नपत्रिकेची परीक्षा होईल. किमान ७०% उपस्थिती आणि परीक्षेत किमान ७०% गुण मिळवणाऱ्या प्रत्येक सहभागीला (वडील, आई आणि पाल्य) मंडळातर्फे स्वतंत्र “लोकमान्य गीताबोध” प्रशस्तीपत्रक दिले जाईल. ते हस्तांतरणीय नाही आणि त्यावर सहभागीचा नोंदणी क्रमांक असेल.</p>
       <p style="margin-bottom:0">तेच २०२७ च्या गणेशोत्सवात पहिल्या आणि दुसर्‍या अध्यायावरील चर्चा आणि वादविवाद सत्रात भाग घेतील.</p>
     </div>
     <div class="cert" aria-hidden="true">
@@ -462,9 +460,10 @@ footer a{color:var(--gold-soft)}
       <div>
         <h3>नोंदणीनंतर काय होते?</h3>
         <ol class="steps">
-          <li><b>फॉर्म भरा.</b> पालकाचे आणि प्रत्येक पाल्याचे नाव, gmail, मोबाइल क्रमांक.</li>
-          <li><b>आमंत्रण मिळेल.</b> पालक वर्ग आणि पाल्य वर्ग या स्वतंत्र Classroom मध्ये तुम्हाला आमंत्रित केले जाईल.</li>
-          <li><b>आमंत्रण स्वीकारा.</b> gmail मध्ये आलेला ईमेल उघडून “Join” दाबा किंवा classroom.google.com वर जा.</li>
+          <li><b>फॉर्म भरा.</b> पालकांचे (वडील/आई) आणि प्रत्येक पाल्याचे नाव, gmail, मोबाइल क्रमांक, तसेच मंडळाचा सभासद क्रमांक.</li>
+          <li><b>ईमेल येईल.</b> तुमचा क्रमांक (उदा. LGB-P-0001), पाल्यांचे क्रमांक आणि Classroom च्या लिंक तुमच्या gmail वर येतात. Spam फोल्डरही पाहा.</li>
+          <li><b>Classroom मध्ये सामील व्हा.</b> पालक पालक वर्गात आणि पाल्य पाल्य वर्गात, स्वतःच्या gmail खात्याने.</li>
+          <li><b>सभासदत्वाची पडताळणी.</b> सभासदत्वाच्या पावतीचा फोटो संयोजकांना WhatsApp वर खासगी संदेशात पाठवा.</li>
           <li><b>सत्राची लिंक.</b> Zoom/Meet ची लिंक आणि वेळ Classroom मध्ये पाहा.</li>
         </ol>
         <p class="fine" id="lastDate"></p>
@@ -474,15 +473,33 @@ footer a{color:var(--gold-soft)}
         <div class="hp" aria-hidden="true"><label>संकेतस्थळ <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
         <fieldset>
-          <legend>पालक (सभासद)</legend>
-          <div class="f" id="f-pname"><label for="pname">पालकाचे पूर्ण नाव</label><input id="pname" name="pname" autocomplete="name"><div class="err">पालकाचे नाव लिहा.</div></div>
+          <legend>पालक १ (नोंदणी करणारे)</legend>
+          <div class="two">
+            <div class="f" id="f-pname"><label for="pname">पूर्ण नाव</label><input id="pname" name="pname" autocomplete="name"><div class="err">पालकाचे नाव लिहा.</div></div>
+            <div class="f" id="f-prel"><label for="prel">नाते</label><select id="prel" name="prel"><option value="">निवडा</option><option>वडील</option><option>आई</option><option>इतर पालक</option></select><div class="err">नाते निवडा.</div></div>
+          </div>
           <div class="two">
             <div class="f" id="f-pmail"><label for="pmail">gmail पत्ता<span class="hint">Classroom चे आमंत्रण येथे येईल. @gmail.com असणे आवश्यक.</span></label><input id="pmail" name="pmail" type="email" inputmode="email" autocomplete="email"><div class="err">@gmail.com ने संपणारा योग्य पत्ता लिहा.</div></div>
             <div class="f" id="f-pmob"><label for="pmob">मोबाइल (WhatsApp)</label><input id="pmob" name="pmob" type="tel" inputmode="tel" autocomplete="tel"><div class="err">१० अंकी भारतीय मोबाइल क्रमांक लिहा.</div></div>
           </div>
           <div class="two">
             <div class="f"><label for="pflat">इमारत / पत्ता <span class="hint">पर्यायी</span></label><input id="pflat" name="pflat" autocomplete="street-address"></div>
-            <div class="f"><label for="pmem">मंडळ सभासद क्रमांक <span class="hint">पर्यायी</span></label><input id="pmem" name="pmem"></div>
+            <div class="f" id="f-pmem"><label for="pmem">मंडळ सभासद क्रमांक<span class="hint">सभासदत्वाच्या पावतीवरील क्रमांक. पावतीचा फोटो नंतर संयोजकांना WhatsApp वर पाठवावा लागेल.</span></label><input id="pmem" name="pmem"><div class="err">मंडळाचा सभासद क्रमांक लिहा.</div></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>पालक २ (पर्यायी)</legend>
+          <div class="chk"><input type="checkbox" id="p2on"><label for="p2on">दुसऱ्या पालकांनाही (वडील/आई) सहभागी व्हायचे आहे. त्यांना स्वतंत्र क्रमांक आणि स्वतंत्र प्रशस्तीपत्रक मिळेल.</label></div>
+          <div id="p2box" hidden>
+            <div class="two">
+              <div class="f" id="f-p2name"><label for="p2name">पूर्ण नाव</label><input id="p2name" name="p2name" autocomplete="off"><div class="err">नाव लिहा.</div></div>
+              <div class="f" id="f-p2rel"><label for="p2rel">नाते</label><select id="p2rel" name="p2rel"><option value="">निवडा</option><option>वडील</option><option>आई</option><option>इतर पालक</option></select><div class="err">नाते निवडा.</div></div>
+            </div>
+            <div class="two">
+              <div class="f" id="f-p2mail"><label for="p2mail">gmail पत्ता<span class="hint">पालक १ पेक्षा वेगळा. @gmail.com असणे आवश्यक.</span></label><input id="p2mail" name="p2mail" type="email" inputmode="email" autocomplete="off"><div class="err">@gmail.com ने संपणारा, पालक १ पेक्षा वेगळा पत्ता लिहा.</div></div>
+              <div class="f" id="f-p2mob"><label for="p2mob">मोबाइल <span class="hint">पर्यायी</span></label><input id="p2mob" name="p2mob" type="tel" inputmode="tel" autocomplete="off"><div class="err">१० अंकी भारतीय मोबाइल क्रमांक लिहा.</div></div>
+            </div>
           </div>
         </fieldset>
 
@@ -521,8 +538,8 @@ footer a{color:var(--gold-soft)}
         <h3>पहिल्यांदा प्रवेश</h3>
         <ol>
           <li>मोबाइल किंवा संगणकावर तुमच्या <span class="key">gmail</span> मध्ये लॉगिन करा.</li>
-          <li>ईमेलमधील <span class="key">Classroom आमंत्रण</span> उघडा आणि “Join” दाबा.</li>
-          <li>किंवा <span class="key">classroom.google.com</span> वर जा, वर “+” दाबा, “Join class” निवडा आणि तुम्हाला कळवलेला वर्ग-कोड टाका.</li>
+          <li>ईमेलमधील <span class="key">पालक वर्ग</span> / <span class="key">पाल्य वर्ग</span> बटण दाबा आणि “Join” दाबा.</li>
+          <li>लिंक चालत नसेल तर <span class="key">classroom.google.com</span> वर जा, वर “+” दाबा, “Join class” निवडा आणि ईमेलमध्ये दिलेला वर्ग-कोड टाका.</li>
           <li>पालकांनी <b>पालक वर्ग</b> आणि पाल्यांनी <b>पाल्य वर्ग</b> यातच जायचे.</li>
         </ol>
         <div class="btn-row">
@@ -531,7 +548,7 @@ footer a{color:var(--gold-soft)}
       </div>
       <div class="cr-box">
         <h3>तुमचे वर्ग</h3>
-        <p id="crJoinNote">वर्गाचे आमंत्रण किंवा कोड नोंदणीनंतर तुमच्या gmail आणि WhatsApp वर पाठवला जाईल.</p>
+        <p id="crJoinNote">वर्गाच्या लिंक नोंदणीनंतर तुमच्या ईमेलवर पाठवल्या जातात.</p>
         <div class="btn-row" id="crJoinBtns"></div>
         <h3 style="margin-top:22px">सत्राची लिंक कुठे मिळेल?</h3>
         <p style="margin:0">Classroom मध्ये वर्गाच्या “Stream” वर आणि Calendar मध्ये प्रत्येक सत्राची Zoom/Meet लिंक, वेळ आणि अभ्यास साहित्य असेल. व्हिडिओ आणि प्रश्नपत्रिकाही तेथेच.</p>
@@ -550,6 +567,9 @@ footer a{color:var(--gold-soft)}
       <details><summary>पाल्याचे स्वतःचे gmail नसेल तर?</summary><p>पाल्याचा gmail रकाना रिकामा ठेवा. पालकांच्या मदतीने खाते कसे तयार करायचे किंवा दुसरा पर्याय काय, हे आम्ही तुम्हाला कळवू.</p></details>
       <details><summary>एखादे सत्र चुकले तर?</summary><p>लेक्चरचे व्हिडिओ Classroom मध्ये उपलब्ध असतील. तरीही उपस्थिती बंधनकारक असल्याने अपरिहार्य कारण असल्यास पुढे मार्गदर्शकांना आधी कळवा.</p></details>
       <details><summary>परीक्षा कशी असते?</summary><p>बहुपर्यायी प्रश्नपत्रिका, स्वाध्याय पुस्तिकेवर आधारित. उद्देश आपण किती समजलो हे पाहणे आणि प्रशस्तीपत्रकासाठी पात्रता ठरवणे.</p></details>
+      <details><summary>प्रशस्तीपत्रक कोणाला आणि कोणत्या अटींवर मिळते?</summary><p>वडील, आई आणि पाल्य, प्रत्येकाला स्वतंत्र प्रशस्तीपत्रक मिळते. ते हस्तांतरणीय नाही. अटी: किमान ७०% उपस्थिती, परीक्षेत किमान ७०% गुण आणि मंडळाच्या सभासदत्वाची पडताळणी. प्रशस्तीपत्रकावर सहभागीचा नोंदणी क्रमांक असतो.</p></details>
+      <details><summary>आई आणि वडील दोघे सहभागी होऊ शकतात का?</summary><p>हो. फॉर्ममध्ये “पालक २” भरा. दोघांना स्वतंत्र क्रमांक मिळतो आणि दोघांनी स्वतःच्या gmail खात्याने पालक वर्गात सामील व्हायचे आहे.</p></details>
+      <details><summary>सभासदत्वाची पडताळणी कशी होते?</summary><p>फॉर्ममध्ये सभासद क्रमांक द्या. नोंदणीनंतर ईमेलमध्ये सांगितल्याप्रमाणे सभासदत्वाच्या पावतीचा फोटो संयोजकांना WhatsApp वर खासगी संदेशात पाठवा (ग्रुपमध्ये नको). पडताळणी झाल्यावर संयोजक ती नोंदवतात.</p></details>
       <details><summary>२०२७ च्या गणेशोत्सवात कोण सहभागी होऊ शकते?</summary><p>परीक्षा उत्तम रीतीने उत्तीर्ण झालेले पालक आणि पाल्य, पहिल्या आणि दुसर्‍या अध्यायावरील चर्चा आणि वादविवाद सत्रात.</p></details>
       <details><summary>वेळ आणि दिवस कोणता असेल?</summary><p>नोंदणी पूर्ण झाल्यावर, सर्वांच्या सोयीचा विचार करून Classroom मध्ये कळवला जाईल.</p></details>
     </div>
@@ -716,6 +736,7 @@ function renumber(){
 }
 document.getElementById('addKid').addEventListener('click',addKid);
 addKid();
+document.getElementById('p2on').addEventListener('change',e=>{document.getElementById('p2box').hidden=!e.target.checked;});
 
 /* --- फॉर्म --- */
 const GMAIL=/^[a-z0-9._%+\-]+@gmail\.com$/i;
@@ -729,8 +750,11 @@ function collect(){
     mail:k.querySelector('[data-k=mail]').value.trim().toLowerCase(),
     el:k
   }));
+  const p2on=document.getElementById('p2on').checked;
+  const parents=[{name:g('pname'),relation:g('prel'),gmail:g('pmail').toLowerCase(),mobile:normMobile(g('pmob'))}];
+  if(p2on) parents.push({name:g('p2name'),relation:g('p2rel'),gmail:g('p2mail').toLowerCase(),mobile:normMobile(g('p2mob'))});
   return {
-    submittedAt:new Date().toISOString(),
+    submittedAt:new Date().toISOString(),parents,p2on,
     website:document.querySelector('[name=website]').value,
     parentName:g('pname'),parentGmail:g('pmail').toLowerCase(),parentMobile:normMobile(g('pmob')),
     address:g('pflat'),membershipNo:g('pmem'),kids,
@@ -744,6 +768,15 @@ function validate(d){
   flag('f-pname',!d.parentName,'pname');
   flag('f-pmail',!GMAIL.test(d.parentGmail),'pmail');
   flag('f-pmob',!/^[6-9]\d{9}$/.test(d.parentMobile),'pmob');
+  flag('f-prel',!d.parents[0].relation,'prel');
+  flag('f-pmem',!d.membershipNo,'pmem');
+  if(d.p2on){
+    const p2=d.parents[1];
+    flag('f-p2name',!p2.name,'p2name');
+    flag('f-p2rel',!p2.relation,'p2rel');
+    flag('f-p2mail',!GMAIL.test(p2.gmail)||p2.gmail===d.parents[0].gmail,'p2mail');
+    flag('f-p2mob',!!p2.mobile&&!/^[6-9]\d{9}$/.test(p2.mobile),'p2mob');
+  }else{['f-p2name','f-p2rel','f-p2mail','f-p2mob'].forEach(id=>setBad(id,false));}
   d.kids.forEach(k=>{
     const bad=k.mail && !GMAIL.test(k.mail);
     k.el.querySelector('[data-k=mail]').closest('.f').classList.toggle('bad',!!bad);
@@ -760,14 +793,15 @@ function validate(d){
 }
 function summaryText(d){
   const kids=d.kids.filter(k=>k.name).map((k,i)=>`${i+1}. ${k.name} (${k.cls||'इयत्ता ?'})${k.mail?' – '+k.mail:''}`).join('\n');
-  return `गीता स्वाध्याय नोंदणी – श्री गणेशोत्सव मंडळ, लोकमान्य आळी, ठाणे\nपालक: ${d.parentName}\ngmail: ${d.parentGmail}\nमोबाइल: ${d.parentMobile}${d.address?'\nपत्ता: '+d.address:''}${d.membershipNo?'\nसभासद क्र.: '+d.membershipNo:''}\nपाल्य:\n${kids}`;
+  const pl=d.parents.map((p,i)=>`पालक ${i+1}: ${p.name} (${p.relation})\ngmail: ${p.gmail}${p.mobile?'\nमोबाइल: '+p.mobile:''}`).join('\n');
+  return `गीता स्वाध्याय नोंदणी – श्री गणेशोत्सव मंडळ, लोकमान्य आळी, ठाणे\n${pl}${d.address?'\nपत्ता: '+d.address:''}${d.membershipNo?'\nसभासद क्र.: '+d.membershipNo:''}\nपाल्य:\n${kids}`;
 }
 const okBox=document.getElementById('okBox'), failBox=document.getElementById('failBox');
 function hideResults(){okBox.classList.remove('show');failBox.classList.remove('show');}
 function ok(d,extra){
   okBox.innerHTML='';
   const h=document.createElement('h3');h.textContent='नोंदणी मिळाली';
-  const p=document.createElement('p');p.textContent='धन्यवाद, '+d.parentName+'. Google Classroom चे आमंत्रण '+d.parentGmail+' या पत्त्यावर येईल. त्यासाठी थोडा वेळ द्या.';
+  const p=document.createElement('p');p.textContent='धन्यवाद, '+d.parentName+'. आपले क्रमांक आणि Classroom मध्ये सामील होण्याच्या पायऱ्या '+d.parents.map(x=>x.gmail).join(' आणि ')+' या पत्त्यावर ईमेलने पाठवल्या आहेत. काही मिनिटांत ईमेल न आल्यास Spam फोल्डर तपासा.';
   okBox.append(h,p);if(extra)okBox.append(extra);
   okBox.classList.add('show');okBox.scrollIntoView({behavior:'smooth',block:'center'});
 }
