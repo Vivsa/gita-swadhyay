@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>आळीची गीता — माहितीपत्रक (A4)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15182B; --ink-2:#232846; --gold:#C8962E; --gold-soft:#F3E4B8; --gold-deep:#8A6414;
+  --saffron:#E4700F; --saffron-deep:#B85606; --text:#1F2033; --muted:#585B74;
+  --serif:"Tiro Devanagari Marathi","Noto Serif Devanagari","Kohinoor Devanagari",serif;
+  --sans:"Noto Sans Devanagari","Mukta","Kohinoor Devanagari","Nirmala UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+@page{size:A4;margin:0}
+html,body{margin:0;background:#8a8d9c}
+body{font-family:var(--sans);color:var(--text);font-size:11.6pt;line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.toolbar{position:sticky;top:0;z-index:5;background:#15182B;color:#F3E4B8;padding:10px 16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:14px}
+.toolbar button{font:600 14px var(--sans);padding:8px 16px;border-radius:6px;border:0;background:#E4700F;color:#fff;cursor:pointer}
+.toolbar span{opacity:.85}
+.page{width:210mm;height:297mm;margin:14px auto;background:#fff;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.35)}
+@media print{
+  html,body{background:#fff}
+  .toolbar{display:none}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page}
+  .page:last-child{page-break-after:auto;break-after:auto}
+}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0}
+p{margin:0 0 .6em}
+
+/* ---- पान १ ---- */
+.hero{background:var(--ink);color:#EDEEF7;padding:15mm 16mm 12mm;position:relative;height:118mm}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3.2mm;background:linear-gradient(90deg,var(--gold) 0 70%,var(--saffron) 70%)}
+.hero .m{font-size:10.5pt;color:var(--gold-soft);border-left:1.2mm solid var(--saffron);padding-left:3mm;margin-bottom:7mm}
+.hero h1{font-size:50pt;line-height:1.15;color:#fff}
+.hero .s{font-family:var(--serif);font-size:17pt;line-height:1.4;color:var(--gold-soft);margin-top:4mm;max-width:118mm}
+.hero .art{position:absolute;right:16mm;top:12mm;width:42mm;height:88mm;border:.5mm solid var(--gold);border-radius:21mm 21mm 1.5mm 1.5mm;overflow:hidden;background:var(--ink-2)}
+.hero .art img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.hero .for{position:absolute;left:16mm;bottom:9mm;font-size:10.5pt;color:#C7CADF}
+.b1{padding:9mm 16mm 0}
+.b1 .story{font-family:var(--serif);font-size:15pt;line-height:1.6;color:var(--ink);border-left:1.2mm solid var(--saffron);padding-left:5mm;margin-bottom:7mm}
+.get{display:grid;grid-template-columns:1fr 1fr;gap:4.5mm 9mm;margin:0 0 6mm;padding:0;list-style:none}
+.get li{padding-left:5.5mm;position:relative;font-size:11.6pt;line-height:1.5}
+.get li::before{content:"";position:absolute;left:0;top:.55em;width:2.4mm;height:2.4mm;border-radius:50%;background:var(--saffron)}
+.enrol{position:absolute;left:16mm;right:16mm;bottom:12mm;display:flex;gap:8mm;align-items:center;border:.5mm solid var(--gold);border-radius:2.5mm;padding:5mm 6mm;background:#FFFDF6}
+.qr{width:33mm;height:33mm;flex:none;display:grid;place-items:center;font-size:8pt;color:var(--muted);text-align:center;border:.3mm dashed #bbb}
+.qr img,.qr canvas{width:33mm!important;height:33mm!important}
+.enrol h2{font-size:19pt;color:var(--ink);margin-bottom:1.5mm}
+.enrol .u{font-weight:700;color:var(--saffron-deep);font-size:13pt;word-break:break-all}
+.enrol p{font-size:10.6pt;margin:1.5mm 0 0;color:var(--muted)}
+
+/* ---- पान २ ---- */
+.p2{padding:12mm 16mm 0}
+.p2 h2{font-size:19pt;color:var(--ink);padding-bottom:1.5mm;border-bottom:.6mm solid var(--gold);margin-bottom:4mm}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-bottom:6mm}
+.cls{border-radius:2.5mm;padding:4.5mm 5mm;color:#EDEEF7;background:var(--ink)}
+.cls.k{background:var(--saffron-deep);color:#FFF3E6}
+.cls h3{font-size:14pt;color:var(--gold-soft)}
+.cls.k h3{color:#fff}
+.cls b{display:block;font-size:10pt;margin:1mm 0 0}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5mm 8mm;margin:0 0 6mm;padding:0;list-style:none;font-size:10.8pt}
+.facts li{border-left:.9mm solid var(--gold);padding-left:3mm}
+.facts strong{color:var(--ink)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin:0 0 6mm;padding:0;list-style:none}
+.flow li{border-top:.9mm solid var(--gold);padding-top:2mm;font-size:10.4pt;line-height:1.45}
+.flow li:last-child{border-top-color:var(--saffron)}
+.flow .n{font-family:var(--serif);font-size:15pt;color:var(--gold);line-height:1}
+.flow strong{display:block;color:var(--ink);font-size:10.4pt;margin:.5mm 0}
+table{width:100%;border-collapse:collapse;font-size:10.4pt;margin-bottom:5mm}
+td{padding:1.4mm 0;border-top:.25mm solid #D9D3C2;vertical-align:top}
+td:first-child{width:24mm;font-family:var(--serif);color:var(--gold-deep);font-size:10.5pt}
+tr:last-child td{border-bottom:.25mm solid #D9D3C2}
+.cert{border:.5mm solid var(--gold);border-radius:2.5mm;padding:4mm 5mm;background:#FFFDF6;margin-bottom:5mm;font-size:10.8pt}
+.cert strong{color:var(--ink)}
+.foot{position:absolute;left:0;right:0;bottom:0;background:var(--ink);color:#C7CADF;padding:5mm 16mm 6mm;font-size:9.6pt;display:flex;justify-content:space-between;gap:8mm;align-items:flex-end}
+.foot b{color:var(--gold-soft)}
+.foot .sig{font-family:var(--serif);color:var(--gold-soft);font-size:12pt;white-space:nowrap}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button onclick="window.print()">A4 मध्ये छापा / PDF करा</button>
+  <span>प्रिंट डायलॉगमध्ये “Background graphics” आणि Margins: None निवडा. संगणकावर Chrome किंवा Edge वापरा.</span>
+</div>
+
+<!-- ============ पान १ ============ -->
+<section class="page">
+  <div class="hero">
+    <div class="m">गीता स्वाध्याय · लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे</div>
+    <h1>आळीची गीता</h1>
+    <div class="s">लोकमान्यांचे गीतारहस्य, आजच्या जीवनाचा अर्थबोध</div>
+    <div class="art"><img src="assets/lokmanya-statue.jpg" alt="लोकमान्य बाळ गंगाधर टिळक यांचे शिल्प"></div>
+    <div class="for">सभासद पालक आणि पाल्यांसाठी · ऑनलाइन · पुढील काही वर्षे</div>
+  </div>
+
+  <div class="b1">
+    <p class="story">कोठडीत बसून निराश होण्याऐवजी टिळकांनी मंडालेच्या तुरुंगात गीतारहस्य लिहिले. त्यांचे सांगणे सोपे होते: जबाबदारी टाळू नका, फळाच्या हव्यासाशिवाय पण विचारपूर्वक कर्म करा. हाच विचार आपल्या घरात, आपल्या मुलांसोबत.</p>
+
+    <ul class="get">
+      <li>मूळ श्लोकांचा सोप्या मराठीत अर्थ आणि गीतारहस्यातील निवडक उतारे</li>
+      <li>रोजच्या निर्णयांसाठी आणि कामासाठी विचार करण्याची एक चौकट</li>
+      <li>स्पष्टीकरण, चर्चा आणि प्रश्नोत्तरे</li>
+      <li>स्वाध्याय पुस्तिका, लेक्चरचे व्हिडिओ आणि बहुपर्यायी प्रश्नपत्रिका</li>
+      <li>उत्तम उत्तीर्णांना मंडळातर्फे “लोकमान्य गीताबोध” प्रशस्तीपत्रक</li>
+      <li>२०२७ च्या गणेशोत्सवात जाहीर चर्चा आणि वादसभेत सहभाग</li>
+    </ul>
+  </div>
+
+  <div class="enrol">
+    <div class="qr" id="qr">QR कोड</div>
+    <div>
+      <h2>आजच नाव नोंदवा</h2>
+      <div class="u" data-site-url></div>
+      <p>मोबाइलने QR स्कॅन करा. पालक आणि प्रत्येक पाल्य यांचे नाव, gmail.com पत्ता आणि मोबाइल क्रमांक भरा. gmail आवश्यक, कारण Google Classroom चे आमंत्रण त्यावरच येते.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ पान २ ============ -->
+<section class="page">
+  <div class="p2">
+    <h2>उपक्रमाची रचना</h2>
+
+    <div class="two">
+      <div class="cls"><h3>पालक वर्ग</h3><b>श्री. विवेक भास्कर साठे</b></div>
+      <div class="cls k"><h3>पाल्य वर्ग</h3><b>सौ. मानसी निखिलेश गोडबोले</b></div>
+    </div>
+
+    <ul class="facts">
+      <li><strong>कालावधी:</strong> पुढील काही वर्षे; दर वर्षी २–३ अध्याय</li>
+      <li><strong>सत्रे:</strong> वर्षभरात ८ ते १० (महिन्यातून एक); मोठे सण आणि शाळेच्या परीक्षा वगळून</li>
+      <li><strong>माध्यम:</strong> Zoom / Google Meet, ऑनलाइन. नोंदणी केलेल्यांना Google Classroom मध्ये प्रवेश</li>
+      <li><strong>वर्ग:</strong> पालक आणि पाल्य यांचे वर्ग वेगळे. उपस्थिती दोघांसाठी बंधनकारक</li>
+    </ul>
+
+    <h2>प्रत्येक सत्रात</h2>
+    <ol class="flow">
+      <li><div class="n">१</div><strong>लेक्चर</strong>श्लोकार्थ आणि गीतारहस्यातील निवडक उतारे</li>
+      <li><div class="n">२</div><strong>जीवनाची चौकट</strong>दैनंदिन निर्णय आणि कामासाठी विचाराचा साचा</li>
+      <li><div class="n">३</div><strong>चर्चा आणि परीक्षा</strong>स्पष्टीकरण, प्रश्नोत्तरे, बहुपर्यायी परीक्षा</li>
+      <li><div class="n">४</div><strong>पुढील गणेशोत्सव</strong>चर्चा आणि वादसभेची तयारी</li>
+    </ol>
+
+    <h2>पहिले वर्ष (२०२६–२७): अध्याय १ आणि २</h2>
+    <table>
+      <tr><td>नोव्हेंबर</td><td>परिचय: टिळक, मंडाले आणि गीतारहस्याची पार्श्वभूमी</td></tr>
+      <tr><td>डिसेंबर</td><td>अध्याय १: अर्जुनविषादयोग</td></tr>
+      <tr><td>जानेवारी – एप्रिल</td><td>अध्याय २: आत्मतत्त्व, स्वधर्म आणि निष्काम कर्म, स्थितप्रज्ञ (मार्चमध्ये परीक्षांमुळे सुट्टी)</td></tr>
+      <tr><td>मे – ऑगस्ट</td><td>उजळणी, बहुपर्यायी परीक्षा, वादसभेची तयारी आणि रंगीत तालीम</td></tr>
+      <tr><td>सप्टेंबर २०२७</td><td>गणेशोत्सवात अध्याय १ आणि २ वर चर्चा आणि वादसभा; प्रशस्तीपत्रक वितरण</td></tr>
+    </table>
+    <p style="font-size:9pt;color:var(--muted);margin-top:-2mm">महिने तात्पुरते. दिवस आणि वेळ Google Classroom मध्ये कळवल्या जातील.</p>
+
+    <div class="cert"><strong>प्रशस्तीपत्रक आणि वादसभा:</strong> परीक्षेत उत्तम रीतीने उत्तीर्ण झालेल्या पालक आणि पाल्यांना मंडळातर्फे “लोकमान्य गीताबोध” प्रशस्तीपत्रक, आणि ते २०२७ च्या गणेशोत्सवातील पहिल्या व दुसर्‍या अध्यायाच्या चर्चा-वादविवाद सत्रात भाग घेतील.</div>
+  </div>
+
+  <div class="foot">
+    <div><b>नोंदणी:</b> <span data-site-url></span><br><b>अटी:</b> पालक आणि पाल्य दोघांची उपस्थिती बंधनकारक · gmail.com पत्ता आवश्यक<br>श्री गणेशोत्सव मंडळ, लोकमान्य आळी, ठाणे · स्थापना १९२० (शके १८४२) · सार्वजनिक विश्वस्त निधी क्र. ए ३६ टी</div>
+    <div class="sig">॥ श्रीकृष्णार्पणमस्तु ॥</div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* वेबसाइटचा अंतिम पत्ता येथे बदला (किंवा उघडताना ?u=https://... जोडा) */
+const SITE_URL = new URLSearchParams(location.search).get('u') || 'https://gita-swadhaya.link/lokmanya-ali/';
+document.querySelectorAll('[data-site-url]').forEach(e=>e.textContent=SITE_URL.replace(/^https?:\/\//,''));
+(function(){
+  const box=document.getElementById('qr');
+  try{
+    if(window.QRCode){box.textContent='';new QRCode(box,{text:SITE_URL,width:256,height:256,correctLevel:QRCode.CorrectLevel.M});}
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

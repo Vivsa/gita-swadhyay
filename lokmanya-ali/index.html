@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>आळीची गीता — गीता स्वाध्याय · लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे</title>
+<meta name="description" content="लोकमान्यांचे गीतारहस्य, आजच्या जीवनाचा अर्थबोध. लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे यांचा उपक्रम: सभासद पालक आणि पाल्यांसाठी, ऑनलाइन, Google Classroom वर.">
+<!-- WhatsApp/Facebook पूर्वावलोकन: अंतिम पत्ता बदलल्यास खालील दोन URL बदला -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="आळीची गीता: लोकमान्यांचे गीतारहस्य, आजच्या जीवनाचा अर्थबोध">
+<meta property="og:description" content="लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे: सभासद पालक आणि पाल्यांसाठी गीता स्वाध्याय. आजच नाव नोंदवा.">
+<meta property="og:url" content="https://gita-swadhaya.link/lokmanya-ali/">
+<meta property="og:image" content="https://gita-swadhaya.link/lokmanya-ali/assets/mandal-banner.jpg">
+<meta name="theme-color" content="#15182B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15182B; --ink-2:#232846; --ink-3:#343a63;
+  --gold:#C8962E; --gold-soft:#F3E4B8; --gold-deep:#8A6414;
+  --saffron:#E4700F; --saffron-deep:#B85606;
+  --paper:#FCFAF5; --white:#FFFFFF;
+  --text:#1F2033; --muted:#585B74; --line:#E3DCCB; --ok:#1F7A4D; --err:#B3261E;
+  --serif:"Tiro Devanagari Marathi","Noto Serif Devanagari","Kohinoor Devanagari",serif;
+  --sans:"Noto Sans Devanagari","Mukta","Kohinoor Devanagari","Nirmala UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.75}
+img,svg{max-width:100%}
+a{color:var(--saffron-deep)}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold-soft);color:var(--ink);padding:8px 14px;z-index:99;border-radius:6px}
+.skip:focus{left:8px}
+.wrap{width:min(1080px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.3;margin:0 0 .5em}
+h2{font-size:clamp(1.7rem,3.4vw,2.35rem);color:var(--ink)}
+h3{font-size:1.3rem;color:var(--ink)}
+p{margin:0 0 1em}
+.sec{padding:72px 0}
+.sec-white{background:var(--white)}
+.lead{font-size:1.14rem;color:var(--muted);max-width:62ch}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(21,24,43,.96);backdrop-filter:blur(6px);border-bottom:1px solid rgba(200,150,46,.35)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.brand{color:var(--gold-soft);text-decoration:none;font-family:var(--serif);font-size:1.15rem;line-height:1.2}
+.brand small{display:block;font-family:var(--sans);font-size:.72rem;color:#AEB2D0;letter-spacing:.01em}
+.nav{display:flex;gap:4px;align-items:center;overflow-x:auto}
+.nav a{color:#D9DBEE;text-decoration:none;font-size:.92rem;padding:6px 10px;border-radius:6px;white-space:nowrap}
+.nav a:hover{background:var(--ink-2)}
+.nav a.join{background:var(--saffron);color:#fff;font-weight:600}
+.nav a.join:hover{background:var(--saffron-deep)}
+@media (max-width:820px){.nav a:not(.join){display:none}}
+
+/* hero */
+.hero{background:var(--ink);color:#EDEEF7;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 340px at 85% -10%,rgba(228,112,15,.28),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative}
+.hero-mandal{color:var(--gold-soft);font-size:.98rem;margin-bottom:20px;padding-left:14px;border-left:3px solid var(--saffron)}
+.hero h1{font-size:clamp(3rem,9vw,5.6rem);color:#fff;margin:0 0 .15em;letter-spacing:.005em}
+.hero-sub{font-family:var(--serif);font-size:clamp(1.25rem,2.6vw,1.75rem);color:var(--gold-soft);max-width:38ch;line-height:1.45;margin-bottom:26px}
+.hero-grid{display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:center}
+.hero-art{margin:0;justify-self:center;width:260px}
+.hero-art .arch{aspect-ratio:1/2;border-radius:130px 130px 8px 8px;overflow:hidden;border:3px solid var(--gold);background:var(--ink-2)}
+.hero-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.hero-art figcaption{margin-top:10px;text-align:center;font-family:var(--serif);color:var(--gold-soft);font-size:1.05rem}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-art{width:min(210px,60%)}
+}
+.hero p.lead{color:#C7CADF}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.btn{display:inline-block;font:600 1rem/1 var(--sans);padding:15px 24px;border-radius:8px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-saffron{background:var(--saffron);color:#fff}
+.btn-saffron:hover{background:var(--saffron-deep)}
+.btn-ghost{border-color:rgba(243,228,184,.55);color:var(--gold-soft);background:transparent}
+.btn-ghost:hover{background:rgba(243,228,184,.1)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--ink-3)}
+.btn[disabled]{opacity:.6;cursor:wait}
+
+/* path: mandap -> Mandalay -> Gitarahasya -> Thane */
+.path{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative}
+.path::before{content:"";position:absolute;left:0;right:0;top:11px;height:2px;background:linear-gradient(90deg,var(--gold) 0 70%,var(--saffron) 70% 100%);transform-origin:left;animation:draw 1.6s .2s ease-out both}
+.path li{position:relative;padding:34px 12px 0 0;opacity:0;animation:rise .6s ease-out forwards;animation-delay:calc(.25s + var(--i)*.22s)}
+.path li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--ink);border:3px solid var(--gold)}
+.path li.now::before{border-color:var(--saffron);background:var(--saffron)}
+.path b{display:block;font-family:var(--serif);font-weight:400;font-size:1.5rem;color:var(--gold-soft);line-height:1.2}
+.path li.now b{color:#FFB877}
+.path span{display:block;font-size:.88rem;line-height:1.55;color:#B9BCD6;margin-top:4px}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (max-width:980px){
+  .path{grid-template-columns:1fr;margin-top:40px;padding-left:6px}
+  .path::before{left:14px;right:auto;top:8px;bottom:8px;width:2px;height:auto;background:linear-gradient(180deg,var(--gold) 0 75%,var(--saffron) 75% 100%);transform-origin:top;animation-name:drawv}
+  .path li{padding:0 0 22px 40px}
+  .path li::before{left:6px;top:6px}
+  @keyframes drawv{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .path::before,.path li{animation:none;opacity:1;transform:none}
+}
+
+/* मंडळ */
+.banner{display:block;width:100%;height:auto;border:3px solid var(--gold);border-radius:6px}
+.mandal-grid{display:grid;grid-template-columns:6fr 5fr;gap:48px;align-items:center;margin-top:48px}
+@media (max-width:900px){.mandal-grid{grid-template-columns:1fr;gap:28px}}
+.reg{margin-top:1.2em;padding-left:16px;border-left:3px solid var(--saffron);color:var(--ink);font-weight:600}
+.vakya{margin:0}
+.vakya img{display:block;width:100%;height:auto;border-radius:6px;border:3px solid var(--gold)}
+.vakya figcaption{margin-top:8px;font-size:.9rem;color:var(--muted);text-align:center}
+
+/* gitarahasya */
+.gr-grid{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:start}
+@media (max-width:900px){.gr-grid{grid-template-columns:1fr;gap:32px}}
+.facts{margin:0;padding:0}
+.facts div{padding:4px 0 18px 20px;border-left:3px solid var(--gold);margin-bottom:6px}
+.facts dt{font-family:var(--serif);font-size:1.2rem;color:var(--gold-deep)}
+.facts dd{margin:2px 0 0;color:var(--text)}
+.says{margin:0 0 28px;padding-left:1.2em}
+.says li{margin-bottom:.7em}
+.says b{color:var(--ink)}
+details.prak{border-top:1px solid var(--line)}
+details.prak:last-of-type{border-bottom:1px solid var(--line)}
+details.prak summary{cursor:pointer;padding:12px 4px;font-weight:600;color:var(--ink);list-style:none;display:flex;gap:12px;align-items:baseline}
+details.prak summary::-webkit-details-marker{display:none}
+details.prak summary::before{content:"+";color:var(--saffron);font-weight:700;width:1ch;flex:none}
+details.prak[open] summary::before{content:"−"}
+details.prak p{margin:0 0 14px 2.2ch;color:var(--muted);font-size:.97rem;line-height:1.65}
+.note{font-size:.9rem;color:var(--muted);background:var(--gold-soft);border-radius:8px;padding:12px 16px}
+
+/* upakram: two classes */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media (max-width:900px){.why{grid-template-columns:1fr}}
+.quote{font-family:var(--serif);font-size:clamp(1.35rem,2.6vw,1.8rem);line-height:1.5;color:var(--ink);border-left:4px solid var(--saffron);padding-left:22px;margin:0}
+.classes{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:44px 0 12px}
+@media (max-width:760px){.classes{grid-template-columns:1fr}}
+.class{padding:28px 28px 22px;border-radius:14px;background:var(--ink);color:#E6E8F5}
+.class.kids{background:var(--saffron-deep);color:#FFF3E6}
+.class h3{color:var(--gold-soft);margin-bottom:.2em}
+.class.kids h3{color:#fff}
+.class .who{font-size:1.05rem;font-weight:600;margin-bottom:.9em}
+.class ul{margin:0;padding-left:1.1em;font-size:.97rem}
+.class li{margin-bottom:.35em}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;margin-top:28px;border-top:2px solid var(--ink)}
+.rules div{padding:16px 20px 8px 0}
+.rules b{display:block;font-family:var(--serif);font-weight:400;font-size:1.15rem;color:var(--ink)}
+.rules span{font-size:.95rem;color:var(--muted)}
+
+/* session flow (real sequence) */
+.flow{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+@media (max-width:900px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.flow{grid-template-columns:1fr}}
+.flow li{position:relative;padding:22px 22px 22px 0;margin-right:22px;border-top:3px solid var(--gold)}
+.flow li:nth-child(4){border-top-color:var(--saffron)}
+.flow .n{font-family:var(--serif);font-size:1.9rem;color:var(--gold);line-height:1}
+.flow h3{font-size:1.15rem;margin:.35em 0 .3em}
+.flow p{font-size:.95rem;color:var(--muted);margin:0}
+.mats{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding:0;list-style:none}
+.mats li{background:var(--gold-soft);color:var(--ink);padding:8px 16px;border-radius:999px;font-size:.95rem;font-weight:500}
+
+/* plan */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 22px}
+.tab{font:500 .95rem var(--sans);padding:10px 16px;border-radius:8px;border:1.5px solid var(--line);background:var(--white);color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tabpanel{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px 28px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 4px;padding:0;list-style:none}
+.chips li{border:1.5px solid var(--gold);border-radius:10px;padding:8px 14px;background:#FFFDF6}
+.chips b{font-family:var(--serif);font-weight:400;color:var(--gold-deep);margin-right:6px}
+.cal{list-style:none;margin:28px 0 0;padding:0}
+.cal li{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:16px 0;border-top:1px solid var(--line)}
+.cal li:last-child{border-bottom:1px solid var(--line)}
+@media (max-width:560px){.cal li{grid-template-columns:1fr;gap:2px}}
+.cal .m{font-family:var(--serif);font-size:1.15rem;color:var(--gold-deep)}
+.cal .m small{display:block;font-family:var(--sans);font-size:.8rem;color:var(--muted)}
+.cal b{color:var(--ink)}
+.cal p{margin:2px 0 0;font-size:.95rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.78rem;font-weight:600;padding:2px 10px;border-radius:999px;margin-left:8px;vertical-align:1px;background:var(--gold-soft);color:var(--ink)}
+.tag.exam{background:var(--ink);color:#fff}
+.tag.big{background:var(--saffron);color:#fff}
+.cal li.skip-m{opacity:.75}
+.cal li.skip-m .m{color:var(--muted)}
+
+/* certificate band */
+.band{background:var(--ink);color:#E6E8F5;padding:56px 0}
+.band h2{color:#fff}
+.band-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+@media (max-width:860px){.band-grid{grid-template-columns:1fr}}
+.cert{border:2px solid var(--gold);border-radius:6px;padding:26px 22px;text-align:center;background:var(--ink-2);outline:1px solid rgba(200,150,46,.5);outline-offset:6px}
+.cert .a{font-family:var(--serif);font-size:1.7rem;color:var(--gold-soft)}
+.cert .b{font-size:.92rem;color:#AEB2D0;margin:6px 0 0}
+
+/* enrol */
+.enrol-grid{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:start}
+@media (max-width:920px){.enrol-grid{grid-template-columns:1fr}}
+.steps{list-style:none;margin:22px 0 0;padding:0;counter-reset:s}
+.steps li{position:relative;padding:0 0 22px 52px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--gold-soft);font-family:var(--serif);font-size:1.1rem;display:grid;place-items:center}
+.steps li::after{content:"";position:absolute;left:17px;top:40px;bottom:2px;width:2px;background:var(--line)}
+.steps li:last-child::after{display:none}
+.steps b{color:var(--ink)}
+form.reg{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px}
+fieldset{border:0;margin:0 0 24px;padding:0}
+legend{font-family:var(--serif);font-size:1.3rem;color:var(--ink);padding:0 0 10px;border-bottom:2px solid var(--gold);margin-bottom:16px;width:100%}
+.f{margin-bottom:16px}
+.f label{display:block;font-weight:600;font-size:.95rem;margin-bottom:4px;color:var(--ink)}
+.f .hint{display:block;font-size:.84rem;color:var(--muted);font-weight:400;margin-top:2px}
+.f input,.f select{width:100%;font:inherit;font-size:1rem;padding:11px 12px;border:1.5px solid #C9C3B2;border-radius:8px;background:#fff;color:var(--text)}
+.f input:focus,.f select:focus{border-color:var(--saffron);outline:2px solid rgba(228,112,15,.35);outline-offset:0}
+.f.bad input,.f.bad select{border-color:var(--err)}
+.err{color:var(--err);font-size:.88rem;margin-top:4px;display:none}
+.f.bad .err{display:block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:600px){.two{grid-template-columns:1fr}}
+.kid{border:1.5px dashed #C9C3B2;border-radius:10px;padding:14px 14px 4px;margin-bottom:14px;position:relative;background:#FFFDF8}
+.kid .kh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:600;color:var(--gold-deep)}
+.kid .rm{border:0;background:none;color:var(--err);font:600 .88rem var(--sans);cursor:pointer;padding:4px 8px}
+.kid .three{display:grid;grid-template-columns:1.2fr .8fr 1.4fr;gap:12px}
+@media (max-width:700px){.kid .three{grid-template-columns:1fr}}
+.linkbtn{background:none;border:1.5px solid var(--gold);color:var(--gold-deep);font:600 .95rem var(--sans);padding:10px 16px;border-radius:8px;cursor:pointer}
+.linkbtn:hover{background:var(--gold-soft)}
+.chk{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;font-size:.96rem}
+.chk input{margin-top:.45em;width:18px;height:18px;flex:none;accent-color:var(--saffron)}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.result{display:none;border-radius:12px;padding:20px 22px;margin-top:18px}
+.result.show{display:block}
+.result.okc{background:#E9F6EE;border:1.5px solid var(--ok)}
+.result.failc{background:#FCEDEC;border:1.5px solid var(--err)}
+.result h3{margin:0 0 .3em;font-size:1.2rem}
+.result pre{white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;font:inherit;font-size:.92rem;margin:10px 0}
+.fine{font-size:.86rem;color:var(--muted)}
+
+/* classroom */
+.cr{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px}
+@media (max-width:820px){.cr{grid-template-columns:1fr}}
+.cr-box{border:1.5px solid var(--line);border-radius:14px;padding:24px;background:var(--paper)}
+.cr-box h3{margin-bottom:.4em}
+.cr-box ol{padding-left:1.2em;margin:0 0 14px}
+.cr-box li{margin-bottom:.5em}
+.key{background:var(--gold-soft);border-radius:6px;padding:1px 8px;font-weight:600;color:var(--ink);white-space:nowrap}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* faq */
+.faq details{border-top:1px solid var(--line);padding:2px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:600;color:var(--ink);padding:14px 4px;list-style:none;display:flex;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--saffron);font-weight:700;width:1ch}
+.faq details[open] summary::before{content:"−"}
+.faq p{margin:0 0 16px 2.2ch;color:var(--muted)}
+
+/* footer */
+footer{background:var(--ink);color:#B9BCD6;padding:48px 0 36px;font-size:.95rem}
+footer h3{color:var(--gold-soft);font-size:1.15rem}
+.foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+footer a{color:var(--gold-soft)}
+.sig{text-align:center;margin-top:34px;font-family:var(--serif);color:var(--gold-soft);font-size:1.15rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">मुख्य मजकुराकडे जा</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top">आळीची गीता<small>गीता स्वाध्याय · लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे</small></a>
+    <nav class="nav" aria-label="मुख्य मेनू">
+      <a href="#gitarahasya">गीतारहस्य</a>
+      <a href="#upakram">उपक्रम</a>
+      <a href="#aaraakhada">आराखडा</a>
+      <a href="#classroom">Classroom</a>
+      <a href="#prashna">प्रश्न</a>
+      <a class="join" href="#nondani">नाव नोंदवा</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="hero-mandal">गीता स्वाध्याय · लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे<br>सभासद पालक आणि पाल्यांसाठी</p>
+        <h1>आळीची गीता</h1>
+        <p class="hero-sub">लोकमान्यांचे गीतारहस्य, आजच्या जीवनाचा अर्थबोध</p>
+        <p class="lead">मंडालेच्या कोठडीत लिहिलेला विचार, आता आळीच्या घराघरांत. लोकमान्य टिळकांचा गणेशोत्सव आपण दरवर्षी साजरा करतो; आता त्यांनी गीतारहस्यात मांडलेला कर्मयोगाचा विचारही पालक आणि मुले एकत्र शिकतील. ऑनलाइन, महिन्यातून एक सत्र, पुढील काही वर्षे.</p>
+        <div class="cta-row">
+          <a class="btn btn-saffron" href="#nondani">नाव नोंदवा</a>
+          <a class="btn btn-ghost" href="#upakram">उपक्रम कसा असेल?</a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <div class="arch"><img src="assets/lokmanya-statue.jpg" width="855" height="2000" alt="छत्राखाली उभे असलेले लोकमान्य बाळ गंगाधर टिळक यांचे शिल्प"></div>
+        <figcaption>लोकमान्य बाळ गंगाधर टिळक</figcaption>
+      </figure>
+    </div>
+
+    <ol class="path" aria-label="गणेशोत्सवापासून गीता स्वाध्यायापर्यंतचा प्रवास">
+      <li style="--i:0"><b>१८९३</b><span>पुणे: टिळक गणेशोत्सवाला सार्वजनिक रूप देतात</span></li>
+      <li style="--i:1"><b>१९०८</b><span>मंडालेच्या तुरुंगात सहा वर्षांची शिक्षा सुरू</span></li>
+      <li style="--i:2"><b>१९१०–११</b><span>कोठडीत गीतारहस्याचे लेखन</span></li>
+      <li style="--i:3"><b>१९१५</b><span>गीतारहस्य ग्रंथरूपाने प्रकाशित</span></li>
+      <li style="--i:4"><b>१९२०</b><span>ठाण्यात लोकमान्य आळी गणेशोत्सव मंडळाची स्थापना</span></li>
+      <li style="--i:5" class="now"><b>२०२६</b><span>आळीची गीता: गीता स्वाध्याय सुरू</span></li>
+      <li style="--i:6" class="now"><b>२०२७</b><span>गणेशोत्सवात पहिली चर्चा-वादसभा</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- मंडळ -->
+<section class="sec sec-white" id="mandal" style="padding-bottom:24px">
+  <div class="wrap">
+    <img class="banner" src="assets/mandal-banner.jpg" width="1536" height="661" alt="श्री गणेशोत्सव मंडळ, लोकमान्य आळी, ठाणे यांचा फलक: डावीकडे श्रीगणेश, उजवीकडे लोकमान्य टिळक">
+    <div class="mandal-grid">
+      <div>
+        <h2>१९२० पासून आळीचा गणेशोत्सव</h2>
+        <p class="lead">श्री गणेशोत्सव मंडळ, लोकमान्य आळी, ठाणे यांची स्थापना १९२० (शके १८४२) मध्ये झाली. आजपर्यंत आपण उत्सव करत आलो.</p>
+        <p>“स्वराज्य हा माझा जन्मसिद्ध हक्क आहे” ही टिळकांची गर्जना आपल्या सगळ्यांना माहीत आहे. तो हक्क मिळवण्यामागचा जबाबदार कर्माचा विचार त्यांनी गीतारहस्यात मांडला, असे अनेक अभ्यासक मानतात. तोच विचार आता आळीच्या घरांत, पालक आणि मुलांसोबत शिकायचा आहे.</p>
+        <p class="reg">सार्वजनिक विश्वस्त निधी क्र. ए ३६ टी</p>
+      </div>
+      <figure class="vakya">
+        <img src="assets/swarajya-vakya.jpg" width="1200" height="1350" loading="lazy" alt="दगडी भिंतीवर धातूच्या अक्षरांत: स्वराज्य हा माझा जन्मसिद्ध हक्क आहे आणि तो मी मिळविणारच! — लोकमान्य बाळ गंगाधर टिळक">
+        <figcaption>लोकमान्य टिळकांची गर्जना</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- गीतारहस्य -->
+<section class="sec sec-white" id="gitarahasya">
+  <div class="wrap">
+    <h2>गीतारहस्य: टिळकांनी कधी, का आणि काय लिहिले?</h2>
+    <p class="lead">आपण जो विचार शिकणार आहोत, त्याचा जन्म कसा झाला ते आधी समजून घेऊ.</p>
+    <div class="gr-grid" style="margin-top:36px">
+      <dl class="facts">
+        <div><dt>कधी</dt><dd>१९०८ मध्ये टिळकांना राजद्रोहाच्या आरोपावरून सहा वर्षांची शिक्षा झाली. तुरुंगवासात, साधारण १९१० ते १९११ या काळात त्यांनी ग्रंथ लिहिला. १९१४ मध्ये सुटका झाली आणि १९१५ मध्ये मराठीत तो प्रसिद्ध झाला.</dd></div>
+        <div><dt>कुठे</dt><dd>मंडालेच्या तुरुंगात (ब्रह्मदेश, आजचे म्यानमार). तुरुंगातही संस्कृत ग्रंथ, भाष्ये आणि पाश्चात्य नीतिशास्त्र यांचा सखोल अभ्यास करून त्यांनी हा ग्रंथ रचला.</dd></div>
+        <div><dt>का</dt><dd>पारंपरिक भाष्यांमध्ये गीतेचा अर्थ अनेकदा “संसार सोडा, संन्यास घ्या” असा लावला जाई. टिळकांचे म्हणणे होते की अर्जुनाला कर्तव्यापासून पळायला नाही, तर विचारपूर्वक कर्म करायला सांगितले आहे. म्हणून त्यांच्या मते गीता हे <b>कर्मयोगशास्त्र</b> आहे. निराशेत अडकलेल्या समाजाला जबाबदार कृतीकडे नेणारा हा विचार त्यांनी पुराव्यांसह मांडला.</dd></div>
+        <div><dt>ग्रंथाचे पूर्ण नाव</dt><dd>श्रीमद्भगवद्गीतारहस्य अथवा कर्मयोगशास्त्र</dd></div>
+      </dl>
+
+      <div>
+        <h3>त्यात काय आहे?</h3>
+        <ul class="says">
+          <li><b>गीतेचा गाभा कर्मयोग.</b> ज्ञान आणि भक्ती यांचा आधार घेऊन, पण कर्म न सोडता जगण्याचा मार्ग.</li>
+          <li><b>निष्काम कर्म.</b> फळाच्या हव्यासात न अडकता, पण कर्तव्यबुद्धी जागी ठेवून काम करणे.</li>
+          <li><b>स्थितप्रज्ञ आदर्श.</b> सुखदुःखात समबुद्धी राखून व्यवहार करणारा माणूस.</li>
+          <li><b>तुलना.</b> पाश्चात्य नीतिशास्त्रातील सुखवाद, सांख्य आणि वेदान्त या दर्शनांशी गीतेच्या शिकवणीची तपासणी.</li>
+          <li><b>बहिरंग परीक्षण.</b> गीतेचा काळ आणि महाभारत, उपनिषदे यांच्याशी तिचे नाते.</li>
+          <li><b>मूळ श्लोकांचा मराठी अनुवाद</b> आणि टीपा.</li>
+        </ul>
+
+        <h3>पंधरा प्रकरणांचा नकाशा</h3>
+        <div id="prakList"></div>
+        <p class="note" style="margin-top:16px">गीतेचे अध्याय १८, तर गीतारहस्याची प्रकरणे १५. आपण गीतेचे अध्याय क्रमाने शिकू आणि प्रत्येक सत्रात विषयाशी जुळणारे गीतारहस्यातील निवडक उतारे पाहू.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- उपक्रम -->
+<section class="sec" id="upakram">
+  <div class="wrap">
+    <div class="why">
+      <div>
+        <h2>गणपती रस्त्यावर आणला, आता गीता घरात</h2>
+        <p class="lead">टिळकांनी घरगुती गणपती सार्वजनिक केला, म्हणजे माणसे एकत्र यावीत, बोलावीत आणि एकत्र विचार करावा. त्या विचारांचा अभ्यास करून पालक आणि पाल्यांची एक विचारशील पिढी उभी राहावी, हा या उपक्रमाचा हेतू आहे.</p>
+      </div>
+      <blockquote class="quote">उत्सव फक्त आनंदाचा नाही, तो विचाराचाही आहे.</blockquote>
+    </div>
+
+    <div class="classes">
+      <article class="class">
+        <h3>पालक वर्ग</h3>
+        <p class="who">मार्गदर्शक: श्री. विवेक भास्कर साठे</p>
+        <ul>
+          <li>श्लोकार्थ आणि गीतारहस्यातील निवडक उतारे</li>
+          <li>निर्णय, काम, नाती यांत गीता कशी वापरायची यावर चर्चा</li>
+          <li>घरात मुलांशी संवादासाठी सूत्रे</li>
+        </ul>
+      </article>
+      <article class="class kids">
+        <h3>पाल्य वर्ग</h3>
+        <p class="who">मार्गदर्शक: सौ. मानसी निखिलेश गोडबोले</p>
+        <ul>
+          <li>श्लोकांचा सोप्या मराठीत अर्थ आणि गोष्टीरूप स्पष्टीकरण</li>
+          <li>शाळा, मित्र, अभ्यास यांतील प्रसंगांतून विचार</li>
+          <li>प्रश्नोत्तरे आणि वादसभेची तयारी</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="rules">
+      <div><b>दोन्ही वर्ग वेगळे</b><span>पालक आणि पाल्यांचे सत्र स्वतंत्र, कारण दोघांच्या भाषेत आणि प्रश्नांत फरक असतो.</span></div>
+      <div><b>उपस्थिती बंधनकारक</b><span>पालक आणि पाल्य दोघांनी हजर राहायचे, म्हणजे घरात एकाच विषयावर संवाद होतो.</span></div>
+      <div><b>ऑनलाइन सत्रे</b><span>Zoom किंवा Google Meet वर. नोंदणी केलेल्यांना Google Classroom मध्ये घेतले जाईल.</span></div>
+      <div><b>gmail.com आवश्यक</b><span>Classroom चे आमंत्रण याच पत्त्यावर येते.</span></div>
+    </div>
+
+    <h2 style="margin-top:64px">प्रत्येक सत्राची रचना</h2>
+    <ol class="flow">
+      <li><div class="n">१</div><h3>लेक्चर</h3><p>मूळ श्लोकांचा मराठी अर्थ आणि गीतारहस्यातील निवडक उतार्‍यांचे संदर्भ.</p></li>
+      <li><div class="n">२</div><h3>जीवनाची चौकट</h3><p>आजच्या दैनंदिन निर्णयांचा आणि कामाचा विचार करण्यासाठी एक साचा.</p></li>
+      <li><div class="n">३</div><h3>चर्चा आणि परीक्षा</h3><p>स्पष्टीकरण, चर्चा, प्रश्नोत्तरे आणि बहुपर्यायी परीक्षा.</p></li>
+      <li><div class="n">४</div><h3>पुढील गणेशोत्सवाची तयारी</h3><p>गणेशोत्सवात होणार्‍या चर्चा-वादसभेची तयारी.</p></li>
+    </ol>
+    <ul class="mats" aria-label="अभ्यास साहित्य">
+      <li>स्वाध्याय पुस्तिका</li>
+      <li>लेक्चरचे व्हिडिओ</li>
+      <li>बहुपर्यायी प्रश्नपत्रिका</li>
+    </ul>
+  </div>
+</section>
+
+<!-- आराखडा -->
+<section class="sec sec-white" id="aaraakhada">
+  <div class="wrap">
+    <h2>पुढील वर्षांचा आराखडा</h2>
+    <p class="lead">दर वर्षी दोन ते तीन अध्याय. वर्षभरात आठ ते दहा सत्रे, महिन्यातून एक. मोठे सण आणि शाळेच्या परीक्षा वगळून.</p>
+
+    <div class="tabs" role="tablist" aria-label="वर्ष निवडा" id="yearTabs"></div>
+    <div class="tabpanel" id="yearPanel" role="tabpanel" aria-live="polite"></div>
+
+    <h3 style="margin-top:56px">पहिल्या वर्षाचे सत्र-वेळापत्रक (२०२६–२७)</h3>
+    <p class="fine">महिने तात्पुरते आहेत. दिवस, वेळ आणि अंतिम तारखा शाळांच्या दिनदर्शिकेनुसार Google Classroom मध्ये कळवल्या जातील.</p>
+    <ol class="cal" id="cal"></ol>
+  </div>
+</section>
+
+<!-- प्रशस्तीपत्रक -->
+<section class="band">
+  <div class="wrap band-grid">
+    <div>
+      <h2>परीक्षा, प्रशस्तीपत्रक आणि २०२७ चा गणेशोत्सव</h2>
+      <p>वर्षाच्या शेवटी बहुपर्यायी प्रश्नपत्रिकेची परीक्षा होईल. उत्तम रीतीने उत्तीर्ण झालेल्या पालक आणि पाल्यांना मंडळातर्फे “लोकमान्य गीताबोध” प्रशस्तीपत्रक दिले जाईल.</p>
+      <p style="margin-bottom:0">तेच २०२७ च्या गणेशोत्सवात पहिल्या आणि दुसर्‍या अध्यायावरील चर्चा आणि वादविवाद सत्रात भाग घेतील.</p>
+    </div>
+    <div class="cert" aria-hidden="true">
+      <div class="a">लोकमान्य गीताबोध</div>
+      <p class="b">प्रशस्तीपत्रक · आळीची गीता<br>लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे<br>अध्याय १ व २</p>
+    </div>
+  </div>
+</section>
+
+<!-- नोंदणी -->
+<section class="sec" id="nondani">
+  <div class="wrap">
+    <h2>नाव नोंदवा</h2>
+    <p class="lead">सभासद पालकांनी स्वतःची आणि पाल्यांची माहिती एकदाच भरायची. त्यानंतर Google Classroom चे आमंत्रण तुमच्या gmail पत्त्यावर येईल.</p>
+    <div class="enrol-grid" style="margin-top:32px">
+      <div>
+        <h3>नोंदणीनंतर काय होते?</h3>
+        <ol class="steps">
+          <li><b>फॉर्म भरा.</b> पालकाचे आणि प्रत्येक पाल्याचे नाव, gmail, मोबाइल क्रमांक.</li>
+          <li><b>आमंत्रण मिळेल.</b> पालक वर्ग आणि पाल्य वर्ग या स्वतंत्र Classroom मध्ये तुम्हाला आमंत्रित केले जाईल.</li>
+          <li><b>आमंत्रण स्वीकारा.</b> gmail मध्ये आलेला ईमेल उघडून “Join” दाबा किंवा classroom.google.com वर जा.</li>
+          <li><b>सत्राची लिंक.</b> Zoom/Meet ची लिंक आणि वेळ Classroom मध्ये पाहा.</li>
+        </ol>
+        <p class="fine" id="lastDate"></p>
+      </div>
+
+      <form class="reg" id="regForm" novalidate>
+        <div class="hp" aria-hidden="true"><label>संकेतस्थळ <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+        <fieldset>
+          <legend>पालक (सभासद)</legend>
+          <div class="f" id="f-pname"><label for="pname">पालकाचे पूर्ण नाव</label><input id="pname" name="pname" autocomplete="name"><div class="err">पालकाचे नाव लिहा.</div></div>
+          <div class="two">
+            <div class="f" id="f-pmail"><label for="pmail">gmail पत्ता<span class="hint">Classroom चे आमंत्रण येथे येईल. @gmail.com असणे आवश्यक.</span></label><input id="pmail" name="pmail" type="email" inputmode="email" autocomplete="email"><div class="err">@gmail.com ने संपणारा योग्य पत्ता लिहा.</div></div>
+            <div class="f" id="f-pmob"><label for="pmob">मोबाइल (WhatsApp)</label><input id="pmob" name="pmob" type="tel" inputmode="tel" autocomplete="tel"><div class="err">१० अंकी भारतीय मोबाइल क्रमांक लिहा.</div></div>
+          </div>
+          <div class="two">
+            <div class="f"><label for="pflat">इमारत / पत्ता <span class="hint">पर्यायी</span></label><input id="pflat" name="pflat" autocomplete="street-address"></div>
+            <div class="f"><label for="pmem">मंडळ सभासद क्रमांक <span class="hint">पर्यायी</span></label><input id="pmem" name="pmem"></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>पाल्य</legend>
+          <div id="kids"></div>
+          <div class="err" id="kidsErr" style="display:none;margin-bottom:10px">किमान एका पाल्याचे नाव आणि इयत्ता भरा.</div>
+          <button type="button" class="linkbtn" id="addKid">आणखी एक पाल्य जोडा</button>
+          <p class="fine" style="margin-top:12px">पाल्याचे स्वतःचे gmail नसेल तर तो रकाना रिकामा ठेवा. आम्ही तुमच्याशी संपर्क करू.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend>संमती</legend>
+          <div class="chk"><input type="checkbox" id="c1" name="c1"><label for="c1">पालक आणि पाल्य दोघांची सत्रांना उपस्थिती बंधनकारक आहे हे मला मान्य आहे.</label></div>
+          <div class="chk"><input type="checkbox" id="c2" name="c2"><label for="c2">मी पालक म्हणून पाल्याची माहिती देण्यास आणि त्यांना Google Classroom मध्ये जोडण्यास संमती देतो/देते.</label></div>
+          <div class="err" id="cErr" style="display:none;margin-bottom:8px">पुढे जाण्यासाठी दोन्ही संमती आवश्यक आहेत.</div>
+          <p class="fine">ही माहिती फक्त या उपक्रमाच्या संचालनासाठी वापरली जाईल.</p>
+        </fieldset>
+
+        <button class="btn btn-saffron" type="submit" id="submitBtn">नोंदणी पाठवा</button>
+
+        <div class="result okc" id="okBox" role="status"></div>
+        <div class="result failc" id="failBox" role="alert"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Classroom -->
+<section class="sec sec-white" id="classroom">
+  <div class="wrap">
+    <h2>Google Classroom मध्ये प्रवेश</h2>
+    <p class="lead">आम्ही तुमचा पासवर्ड कधीही मागत नाही आणि देत नाही. तुम्ही नोंदणीत दिलेल्या gmail खात्यानेच Classroom मध्ये जायचे आहे.</p>
+    <div class="cr">
+      <div class="cr-box">
+        <h3>पहिल्यांदा प्रवेश</h3>
+        <ol>
+          <li>मोबाइल किंवा संगणकावर तुमच्या <span class="key">gmail</span> मध्ये लॉगिन करा.</li>
+          <li>ईमेलमधील <span class="key">Classroom आमंत्रण</span> उघडा आणि “Join” दाबा.</li>
+          <li>किंवा <span class="key">classroom.google.com</span> वर जा, वर “+” दाबा, “Join class” निवडा आणि तुम्हाला कळवलेला वर्ग-कोड टाका.</li>
+          <li>पालकांनी <b>पालक वर्ग</b> आणि पाल्यांनी <b>पाल्य वर्ग</b> यातच जायचे.</li>
+        </ol>
+        <div class="btn-row">
+          <a class="btn btn-ink" id="crHome" href="https://classroom.google.com" target="_blank" rel="noopener">Google Classroom उघडा</a>
+        </div>
+      </div>
+      <div class="cr-box">
+        <h3>तुमचे वर्ग</h3>
+        <p id="crJoinNote">वर्गाचे आमंत्रण किंवा कोड नोंदणीनंतर तुमच्या gmail आणि WhatsApp वर पाठवला जाईल.</p>
+        <div class="btn-row" id="crJoinBtns"></div>
+        <h3 style="margin-top:22px">सत्राची लिंक कुठे मिळेल?</h3>
+        <p style="margin:0">Classroom मध्ये वर्गाच्या “Stream” वर आणि Calendar मध्ये प्रत्येक सत्राची Zoom/Meet लिंक, वेळ आणि अभ्यास साहित्य असेल. व्हिडिओ आणि प्रश्नपत्रिकाही तेथेच.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="prashna">
+  <div class="wrap">
+    <h2>नेहमी विचारले जाणारे प्रश्न</h2>
+    <div class="faq" style="margin-top:22px">
+      <details><summary>आम्हाला संस्कृत किंवा गीता अजिबात येत नाही, चालेल का?</summary><p>हो. सत्रे मूळ श्लोकांच्या मराठी अर्थापासून सुरू होतात. पूर्वतयारी लागत नाही.</p></details>
+      <details><summary>पाल्यासाठी वयाची अट आहे का?</summary><p>पाल्य वर्गाच्या वयोगटाबद्दल मंडळ आपल्याला Classroom मध्ये कळवेल. नोंदणी करताना इयत्ता नक्की लिहा.</p></details>
+      <details><summary>पाल्याचे स्वतःचे gmail नसेल तर?</summary><p>पाल्याचा gmail रकाना रिकामा ठेवा. पालकांच्या मदतीने खाते कसे तयार करायचे किंवा दुसरा पर्याय काय, हे आम्ही तुम्हाला कळवू.</p></details>
+      <details><summary>एखादे सत्र चुकले तर?</summary><p>लेक्चरचे व्हिडिओ Classroom मध्ये उपलब्ध असतील. तरीही उपस्थिती बंधनकारक असल्याने अपरिहार्य कारण असल्यास पुढे मार्गदर्शकांना आधी कळवा.</p></details>
+      <details><summary>परीक्षा कशी असते?</summary><p>बहुपर्यायी प्रश्नपत्रिका, स्वाध्याय पुस्तिकेवर आधारित. उद्देश आपण किती समजलो हे पाहणे आणि प्रशस्तीपत्रकासाठी पात्रता ठरवणे.</p></details>
+      <details><summary>२०२७ च्या गणेशोत्सवात कोण सहभागी होऊ शकते?</summary><p>परीक्षा उत्तम रीतीने उत्तीर्ण झालेले पालक आणि पाल्य, पहिल्या आणि दुसर्‍या अध्यायावरील चर्चा आणि वादविवाद सत्रात.</p></details>
+      <details><summary>वेळ आणि दिवस कोणता असेल?</summary><p>नोंदणी पूर्ण झाल्यावर, सर्वांच्या सोयीचा विचार करून Classroom मध्ये कळवला जाईल.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <h3>लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे</h3>
+      <p>आळीची गीता (गीता स्वाध्याय): सभासद पालक आणि पाल्यांसाठी टिळकांच्या विचारांचा अभ्यास.</p>
+      <p>स्थापना १९२० (शके १८४२) · सार्वजनिक विश्वस्त निधी क्र. ए ३६ टी</p>
+    </div>
+    <div>
+      <h3>मार्गदर्शक</h3>
+      <p>पालक वर्ग: श्री. विवेक भास्कर साठे<br>पाल्य वर्ग: सौ. मानसी निखिलेश गोडबोले</p>
+    </div>
+    <div>
+      <h3>संपर्क</h3>
+      <p id="contactLine">नोंदणीच्या फॉर्ममधील मोबाइलवर आम्ही संपर्क करू.</p>
+      <p><a href="patrak.html">माहितीपत्रक (छापण्यासाठी)</a></p>
+    </div>
+  </div>
+  <div class="sig">॥ श्रीकृष्णार्पणमस्तु ॥</div>
+</footer>
+
+<script>
+/* ============ येथे फक्त हे बदला ============ */
+const CONFIG = {
+  // Google Apps Script "Web app" चा URL (apps-script.gs पाहा). रिकामा असल्यास फॉर्म WhatsApp वर पाठवतो.
+  FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycbxcubkFQAXsIus8IDVgCMdUgC75hy5th1PTFvWtnfUfs0vcdu5HJAZZBI96-J0R1nTVCw/exec",
+  // WhatsApp क्रमांक देशकोडासह, + किंवा जागेशिवाय. उदा. "919XXXXXXXXX"
+  WHATSAPP: "+917738198747",
+  CONTACT_PHONE: "+917498283702",          // फूटरमध्ये दाखवण्यासाठी (पर्यायी)
+  ENROLL_LAST_DATE: "३०-सेप्टेंबर-२०२६",       // उदा. "३० सप्टेंबर २०२६" (पर्यायी)
+  // खुले Classroom join दुवे. सार्वजनिक साइटवर हे टाकल्यास कोणीही जोडू शकतो; म्हणून सुरुवातीला false ठेवा.
+  SHOW_JOIN_LINKS: true,
+  CLASSROOM_JOIN_PARENTS: "https://classroom.google.com/c/ODczMjEzNzczMTEx?cjc=mlxflyfq",
+  CLASSROOM_JOIN_KIDS: "https://classroom.google.com/c/ODg2MDg5OTAzNDA2?cjc=6a5lbyjd"
+};
+/* ========================================= */
+
+const PRAKARANE = [
+  ["१. विषयप्रवेश","ग्रंथाची भूमिका: गीता का वाचायची आणि तिचा अर्थ कसा लावायचा."],
+  ["२. कर्मजिज्ञासा","कर्म करावे की सोडावे? अर्जुनाच्या पेचातून उभा राहणारा मूळ प्रश्न."],
+  ["३. कर्मयोगशास्त्र","कर्म कसे करावे याचे शास्त्र: नीती, कर्तव्य आणि साध्य-साधन."],
+  ["४. आधिभौतिक सुखवाद","‘अधिकांचे अधिक सुख’ या पाश्चात्य विचाराची तपासणी."],
+  ["५. सुखदुःखविवेक","खरे सुख कशात आहे आणि सुखदुःखांचा विवेक कसा करायचा."],
+  ["६. आधिदैवत पक्ष व क्षेत्रक्षेत्रज्ञविचार","देह आणि आत्मा, क्षेत्र आणि क्षेत्रज्ञ यांचा विचार."],
+  ["७. कापिल सांख्यशास्त्र अथवा क्षराक्षरविचार","सांख्यदर्शनातील प्रकृती-पुरुष आणि क्षर-अक्षर."],
+  ["८. विश्वाची उभारणी व संहारणी","सृष्टीची रचना आणि लय यांचा शास्त्रीय विचार."],
+  ["९. अध्यात्म","आत्मा, परमात्मा आणि ब्रह्म यांचे स्वरूप."],
+  ["१०. कर्मविपाक व आत्मस्वातंत्र्य","कर्मफळ आणि माणसाचे स्वातंत्र्य यांचा मेळ."],
+  ["११. संन्यास व कर्मयोग","संन्यासमार्ग आणि कर्ममार्ग यांची तुलना."],
+  ["१२. सिद्धावस्था व व्यवहार","ज्ञानी माणूस कसा वागतो: स्थितप्रज्ञाचे लक्षण."],
+  ["१३. भक्तिमार्ग","कर्मयोगात भक्तीचे स्थान."],
+  ["१४. गीताध्यायसंगती","अठरा अध्यायांची सुसंगत मांडणी."],
+  ["१५. उपसंहार","संपूर्ण विचाराचा सारांश."]
+];
+const GITA = ["अर्जुनविषादयोग","सांख्ययोग","कर्मयोग","ज्ञानकर्मसंन्यासयोग","कर्मसंन्यासयोग","ध्यानयोग","ज्ञानविज्ञानयोग","अक्षरब्रह्मयोग","राजविद्याराजगुह्ययोग","विभूतियोग","विश्वरूपदर्शनयोग","भक्तियोग","क्षेत्रक्षेत्रज्ञविभागयोग","गुणत्रयविभागयोग","पुरुषोत्तमयोग","दैवासुरसंपद्विभागयोग","श्रद्धात्रयविभागयोग","मोक्षसंन्यासयोग"];
+const MARATHI_NUM = n => String(n).replace(/\d/g,d=>"०१२३४५६७८९"[d]);
+const YEARS = [
+  {y:"वर्ष १",r:"२०२६–२७",ch:[1,2],t:"अर्जुनाचा पेच, आत्म्याचे स्वरूप, स्वधर्म, निष्काम कर्म आणि स्थितप्रज्ञ."},
+  {y:"वर्ष २",r:"२०२७–२८",ch:[3,4,5],t:"कर्मयोगाचा गाभा; ज्ञान, कर्म आणि संन्यास यांचा मेळ."},
+  {y:"वर्ष ३",r:"२०२८–२९",ch:[6,7,8],t:"ध्यान, ज्ञान-विज्ञान आणि अक्षरब्रह्म."},
+  {y:"वर्ष ४",r:"२०२९–३०",ch:[9,10,11],t:"राजविद्या, विभूती आणि विश्वरूपदर्शन."},
+  {y:"वर्ष ५",r:"२०३०–३१",ch:[12,13,14],t:"भक्ती, क्षेत्र-क्षेत्रज्ञ आणि गुणत्रय."},
+  {y:"वर्ष ६",r:"२०३१–३२",ch:[15,16,17],t:"पुरुषोत्तम, दैवी-आसुरी संपदा आणि श्रद्धा."},
+  {y:"वर्ष ७",r:"२०३२–३३",ch:[18],t:"मोक्षसंन्यास: पूर्णत्व, गीतारहस्याचा उपसंहार आणि समारोप."}
+];
+const CAL = [
+  {m:"नोव्हेंबर",s:"दिवाळीनंतर",a:"परिचय",d:"टिळक, मंडाले आणि गीतारहस्याची पार्श्वभूमी; गीतेचे स्वरूप. (गीतारहस्य: प्रकरण १)"},
+  {m:"डिसेंबर",a:"अध्याय १: अर्जुनविषादयोग",d:"अर्जुनाचा पेच: कर्म करावे की सोडावे? (गीतारहस्य: प्रकरण २, कर्मजिज्ञासा)"},
+  {m:"जानेवारी",a:"अध्याय २ (भाग १): आत्मतत्त्व",d:"देह आणि आत्मा; शोक का आणि कसा सोडायचा. (गीतारहस्य: प्रकरण ९, अध्यात्म, निवडक)"},
+  {m:"फेब्रुवारी",a:"अध्याय २ (भाग २): स्वधर्म आणि कर्मयोग",d:"‘कर्मण्येवाधिकारस्ते’ आणि निष्काम कर्म. (गीतारहस्य: प्रकरण ३, कर्मयोगशास्त्र)"},
+  {m:"मार्च",skip:true,a:"सुट्टी",d:"शाळांच्या परीक्षा."},
+  {m:"एप्रिल",a:"अध्याय २ (भाग ३): स्थितप्रज्ञ",d:"समबुद्धी आणि व्यवहार. (गीतारहस्य: प्रकरण १२, सिद्धावस्था व व्यवहार)"},
+  {m:"मे",a:"उजळणी",d:"पहिल्या दोन अध्यायांची उजळणी आणि जीवनाच्या चौकटीचा सराव."},
+  {m:"जून",tag:["परीक्षा","exam"],a:"बहुपर्यायी परीक्षा",d:"स्वाध्याय पुस्तिकेवर आधारित ऑनलाइन परीक्षा."},
+  {m:"जुलै",a:"वादसभेची तयारी",d:"विषय, गट आणि मांडणीची पद्धत."},
+  {m:"ऑगस्ट",a:"रंगीत तालीम",d:"प्रशस्तीपत्रकासाठी पात्र पालक आणि पाल्यांची अंतिम तयारी."},
+  {m:"सप्टेंबर २०२७",tag:["गणेशोत्सव","big"],a:"चर्चा आणि वादसभा",d:"गणेशोत्सवाच्या मंचावर अध्याय १ आणि २ वर चर्चा; प्रशस्तीपत्रक वितरण."}
+];
+
+/* --- प्रकरणे --- */
+(function(){
+  const box=document.getElementById('prakList');
+  PRAKARANE.forEach(([t,d])=>{
+    const el=document.createElement('details');el.className='prak';
+    const s=document.createElement('summary');s.textContent=t;
+    const p=document.createElement('p');p.textContent=d;
+    el.append(s,p);box.append(el);
+  });
+})();
+
+/* --- वर्ष-आराखडा --- */
+(function(){
+  const tabs=document.getElementById('yearTabs'), panel=document.getElementById('yearPanel');
+  function show(i){
+    [...tabs.children].forEach((b,j)=>b.setAttribute('aria-selected',String(i===j)));
+    const Y=YEARS[i];
+    panel.innerHTML='';
+    const h=document.createElement('h3');h.textContent=Y.y+" ("+Y.r+")";
+    const p=document.createElement('p');p.textContent=Y.t;p.style.color='var(--muted)';
+    const ul=document.createElement('ul');ul.className='chips';
+    Y.ch.forEach(n=>{const li=document.createElement('li');const b=document.createElement('b');b.textContent="अध्याय "+MARATHI_NUM(n);li.append(b,document.createTextNode(GITA[n-1]));ul.append(li);});
+    panel.append(h,p,ul);
+  }
+  YEARS.forEach((Y,i)=>{
+    const b=document.createElement('button');b.type='button';b.className='tab';b.setAttribute('role','tab');
+    b.textContent=Y.y;b.addEventListener('click',()=>show(i));tabs.append(b);
+  });
+  show(0);
+})();
+
+/* --- पहिल्या वर्षाचे वेळापत्रक --- */
+(function(){
+  const ol=document.getElementById('cal');
+  CAL.forEach(c=>{
+    const li=document.createElement('li');if(c.skip)li.className='skip-m';
+    const m=document.createElement('div');m.className='m';m.textContent=c.m;
+    if(c.s){const sm=document.createElement('small');sm.textContent=c.s;m.append(sm);}
+    const r=document.createElement('div');
+    const b=document.createElement('b');b.textContent=c.a;
+    if(c.tag){const t=document.createElement('span');t.className='tag '+c.tag[1];t.textContent=c.tag[0];b.append(t);}
+    const p=document.createElement('p');p.textContent=c.d;
+    r.append(b,p);li.append(m,r);ol.append(li);
+  });
+})();
+
+/* --- Config वर आधारित मजकूर --- */
+(function(){
+  if(CONFIG.ENROLL_LAST_DATE) document.getElementById('lastDate').textContent="नोंदणीची अंतिम तारीख: "+CONFIG.ENROLL_LAST_DATE;
+  if(CONFIG.CONTACT_PHONE) document.getElementById('contactLine').textContent="फोन / WhatsApp: "+CONFIG.CONTACT_PHONE;
+  if(CONFIG.SHOW_JOIN_LINKS && (CONFIG.CLASSROOM_JOIN_PARENTS||CONFIG.CLASSROOM_JOIN_KIDS)){
+    document.getElementById('crJoinNote').textContent="तुमच्या वर्गाचा दुवा येथे दाबा (नोंदणी केल्यानंतरच वापरा):";
+    const box=document.getElementById('crJoinBtns');
+    [["पालक वर्गात जा",CONFIG.CLASSROOM_JOIN_PARENTS,"btn-ink"],["पाल्य वर्गात जा",CONFIG.CLASSROOM_JOIN_KIDS,"btn-saffron"]].forEach(([t,u,c])=>{
+      if(!u)return;const a=document.createElement('a');a.className='btn '+c;a.href=u;a.target='_blank';a.rel='noopener';a.textContent=t;box.append(a);
+    });
+  }
+})();
+
+/* --- पाल्य ओळी --- */
+const kidsBox=document.getElementById('kids');
+const CLASSES=["इ. १ ली","इ. २ री","इ. ३ री","इ. ४ थी","इ. ५ वी","इ. ६ वी","इ. ७ वी","इ. ८ वी","इ. ९ वी","इ. १० वी","इ. ११ वी","इ. १२ वी","महाविद्यालय"];
+let kidCount=0;
+function addKid(){
+  kidCount++;const id=kidCount;
+  const d=document.createElement('div');d.className='kid';d.dataset.id=id;
+  d.innerHTML=`<div class="kh"><span>पाल्य <span class="kn"></span></span><button type="button" class="rm" aria-label="हा पाल्य काढा">काढा</button></div>
+  <div class="three">
+   <div class="f"><label for="kn${id}">पाल्याचे नाव</label><input id="kn${id}" data-k="name" autocomplete="off"></div>
+   <div class="f"><label for="kc${id}">इयत्ता</label><select id="kc${id}" data-k="cls"><option value="">निवडा</option>${CLASSES.map(c=>`<option>${c}</option>`).join('')}</select></div>
+   <div class="f"><label for="km${id}">पाल्याचा gmail <span class="hint">पर्यायी</span></label><input id="km${id}" data-k="mail" type="email" inputmode="email" autocomplete="off"><div class="err">@gmail.com ने संपणारा पत्ता लिहा किंवा रिकामा ठेवा.</div></div>
+  </div>`;
+  d.querySelector('.rm').addEventListener('click',()=>{d.remove();renumber();});
+  kidsBox.append(d);renumber();
+}
+function renumber(){
+  [...kidsBox.children].forEach((k,i)=>{
+    k.querySelector('.kn').textContent=String(i+1).replace(/\d/g,d=>"०१२३४५६७८९"[d]);
+    k.querySelector('.rm').style.display=kidsBox.children.length>1?'':'none';
+  });
+}
+document.getElementById('addKid').addEventListener('click',addKid);
+addKid();
+
+/* --- फॉर्म --- */
+const GMAIL=/^[a-z0-9._%+\-]+@gmail\.com$/i;
+function normMobile(v){return v.replace(/[\s\-()]/g,'').replace(/^(\+91|91|0)/,'');}
+function setBad(id,bad){const f=document.getElementById(id);if(f)f.classList.toggle('bad',bad);return bad;}
+function collect(){
+  const g=id=>document.getElementById(id).value.trim();
+  const kids=[...kidsBox.children].map(k=>({
+    name:k.querySelector('[data-k=name]').value.trim(),
+    cls:k.querySelector('[data-k=cls]').value,
+    mail:k.querySelector('[data-k=mail]').value.trim().toLowerCase(),
+    el:k
+  }));
+  return {
+    submittedAt:new Date().toISOString(),
+    website:document.querySelector('[name=website]').value,
+    parentName:g('pname'),parentGmail:g('pmail').toLowerCase(),parentMobile:normMobile(g('pmob')),
+    address:g('pflat'),membershipNo:g('pmem'),kids,
+    consentAttendance:document.getElementById('c1').checked,
+    consentParent:document.getElementById('c2').checked
+  };
+}
+function validate(d){
+  let first=null;
+  const flag=(id,bad,focusId)=>{if(setBad(id,bad)&&!first)first=focusId||id.replace('f-','');};
+  flag('f-pname',!d.parentName,'pname');
+  flag('f-pmail',!GMAIL.test(d.parentGmail),'pmail');
+  flag('f-pmob',!/^[6-9]\d{9}$/.test(d.parentMobile),'pmob');
+  d.kids.forEach(k=>{
+    const bad=k.mail && !GMAIL.test(k.mail);
+    k.el.querySelector('[data-k=mail]').closest('.f').classList.toggle('bad',!!bad);
+    if(bad&&!first)first=k.el.querySelector('[data-k=mail]').id;
+  });
+  const filled=d.kids.filter(k=>k.name&&k.cls);
+  const kidsBad=filled.length===0;
+  document.getElementById('kidsErr').style.display=kidsBad?'block':'none';
+  if(kidsBad&&!first)first=d.kids[0].el.querySelector('[data-k=name]').id;
+  const cBad=!(d.consentAttendance&&d.consentParent);
+  document.getElementById('cErr').style.display=cBad?'block':'none';
+  if(cBad&&!first)first='c1';
+  return first;
+}
+function summaryText(d){
+  const kids=d.kids.filter(k=>k.name).map((k,i)=>`${i+1}. ${k.name} (${k.cls||'इयत्ता ?'})${k.mail?' – '+k.mail:''}`).join('\n');
+  return `गीता स्वाध्याय नोंदणी – लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे\nपालक: ${d.parentName}\ngmail: ${d.parentGmail}\nमोबाइल: ${d.parentMobile}${d.address?'\nपत्ता: '+d.address:''}${d.membershipNo?'\nसभासद क्र.: '+d.membershipNo:''}\nपाल्य:\n${kids}`;
+}
+const okBox=document.getElementById('okBox'), failBox=document.getElementById('failBox');
+function hideResults(){okBox.classList.remove('show');failBox.classList.remove('show');}
+function ok(d,extra){
+  okBox.innerHTML='';
+  const h=document.createElement('h3');h.textContent='नोंदणी मिळाली';
+  const p=document.createElement('p');p.textContent='धन्यवाद, '+d.parentName+'. Google Classroom चे आमंत्रण '+d.parentGmail+' या पत्त्यावर येईल. त्यासाठी थोडा वेळ द्या.';
+  okBox.append(h,p);if(extra)okBox.append(extra);
+  okBox.classList.add('show');okBox.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function waLink(d){
+  return 'https://wa.me/'+CONFIG.WHATSAPP+'?text='+encodeURIComponent(summaryText(d));
+}
+document.getElementById('regForm').addEventListener('submit',async e=>{
+  e.preventDefault();hideResults();
+  const d=collect();
+  const first=validate(d);
+  if(first){const el=document.getElementById(first);if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.focus({preventScroll:true});}return;}
+  if(d.website) return;                       // spam सापळा
+  d.kids=d.kids.filter(k=>k.name).map(({name,cls,mail})=>({name,cls,mail}));
+  const btn=document.getElementById('submitBtn');
+  if(CONFIG.FORM_ENDPOINT){
+    btn.disabled=true;btn.textContent='पाठवत आहे…';
+    try{
+      await fetch(CONFIG.FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)});
+      ok(d);document.getElementById('regForm').reset();kidsBox.innerHTML='';addKid();
+    }catch(err){
+      failBox.innerHTML='';
+      const h=document.createElement('h3');h.textContent='नोंदणी पाठवता आली नाही';
+      const p=document.createElement('p');p.textContent='इंटरनेट तपासून पुन्हा प्रयत्न करा. तुम्ही भरलेली माहिती तशीच आहे.';
+      failBox.append(h,p);failBox.classList.add('show');
+    }finally{btn.disabled=false;btn.textContent='नोंदणी पाठवा';}
+    return;
+  }
+  /* ऑनलाइन साठवण जोडलेली नसल्यास: WhatsApp / कॉपी */
+  const wrap=document.createElement('div');
+  const pre=document.createElement('pre');pre.textContent=summaryText(d);wrap.append(pre);
+  const row=document.createElement('div');row.className='btn-row';
+  if(CONFIG.WHATSAPP){
+    const a=document.createElement('a');a.className='btn btn-ink';a.target='_blank';a.rel='noopener';a.href=waLink(d);a.textContent='WhatsApp वर पाठवा';row.append(a);
+  }
+  const c=document.createElement('button');c.type='button';c.className='linkbtn';c.textContent='माहिती कॉपी करा';
+  c.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(summaryText(d));c.textContent='कॉपी झाली';}catch(_){c.textContent='कॉपी होऊ शकली नाही; वरील मजकूर निवडून कॉपी करा';}});
+  row.append(c);wrap.append(row);
+  const h=document.createElement('h3');h.textContent='शेवटची पायरी: माहिती मंडळाला पाठवा';
+  okBox.innerHTML='';okBox.append(h);
+  const p=document.createElement('p');p.textContent=CONFIG.WHATSAPP?'खालील बटण दाबून ही माहिती WhatsApp वर पाठवा. तोपर्यंत नोंदणी पूर्ण होत नाही.':'खालील माहिती कॉपी करून मंडळाच्या संयोजकांना पाठवा. तोपर्यंत नोंदणी पूर्ण होत नाही.';
+  okBox.append(p,wrap);okBox.classList.add('show');okBox.scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+</body>
+</html>
