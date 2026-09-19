@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>गीता स्वाध्याय — CCK गीता स्वाध्याय · लोकमान्य गीताबोध</title>
+<meta name="description" content="गीता स्वाध्याय: तुमचा अभ्यासमार्ग निवडा. CCK गीता स्वाध्याय (डिजिटल अभ्यास साधन) किंवा लोकमान्य गीताबोध (लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे).">
+<meta name="theme-color" content="#15182B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="गीता स्वाध्याय: CCK गीता स्वाध्याय · लोकमान्य गीताबोध">
+<meta property="og:description" content="तुमचा अभ्यासमार्ग निवडा.">
+<meta property="og:url" content="https://gita-swadhyay.link/">
+<meta property="og:image" content="https://gita-swadhyay.link/lokmanya-ali/assets/mandal-banner.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15182B; --ink-2:#1E2340; --ink-3:#2B3160;
+  --gold:#C8962E; --gold-soft:#F3E4B8; --saffron:#E4700F; --saffron-deep:#B85606; --paper:#FCFAF5;
+  --serif:"Tiro Devanagari Marathi","Noto Serif Devanagari","Kohinoor Devanagari",serif;
+  --sans:"Noto Sans Devanagari","Mukta","Kohinoor Devanagari","Nirmala UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;background:var(--ink);color:#E9EAF6;font-family:var(--sans);font-size:17px;line-height:1.7;display:flex;flex-direction:column}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(900px 420px at 80% -8%,rgba(228,112,15,.26),transparent 70%),radial-gradient(700px 380px at 5% 105%,rgba(200,150,46,.14),transparent 70%)}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:4px;border-radius:6px}
+.wrap{position:relative;width:min(1080px,100% - 40px);margin-inline:auto}
+header{padding:64px 0 36px;text-align:center}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,8vw,4.6rem);line-height:1.2;color:#fff;margin:0 0 .15em}
+.sub{font-family:var(--serif);font-size:clamp(1.15rem,2.4vw,1.5rem);color:var(--gold-soft);margin:0}
+.rule{width:96px;height:3px;margin:22px auto 0;background:linear-gradient(90deg,var(--gold) 0 70%,var(--saffron) 70%)}
+
+main{flex:1;padding-bottom:56px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;border-radius:18px;overflow:hidden;border:1.5px solid rgba(243,228,184,.28);background:var(--ink-2);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;opacity:0;animation:rise .7s ease-out forwards}
+.card:nth-child(1){animation-delay:.15s}
+.card:nth-child(2){animation-delay:.35s}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.art{height:250px;display:grid;place-items:center;position:relative;overflow:hidden}
+.card.cck .art{background:radial-gradient(circle at 50% 55%,var(--ink-3),var(--ink-2) 72%)}
+.card.lok .art{background:linear-gradient(160deg,#F0A24A 0%,var(--saffron) 45%,var(--saffron-deep) 100%)}
+
+/* CCK: 18 अध्याय, ॐ */
+.ring{width:210px;height:210px}
+.ring .spin{transform-origin:100px 100px;animation:spin 90s linear infinite}
+.ring line{stroke:rgba(243,228,184,.25);stroke-width:1}
+.ring circle.g{fill:var(--gold)}
+.ring circle.s{fill:var(--saffron)}
+.ring .orbit{fill:none;stroke:rgba(243,228,184,.3);stroke-width:1;stroke-dasharray:2 5}
+.ring text{font-family:var(--serif);font-size:58px;fill:var(--gold-soft);text-anchor:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* लोकमान्य: शिल्प कमानीत */
+.arch{width:118px;height:236px;border-radius:59px 59px 6px 6px;overflow:hidden;border:3px solid var(--gold-soft);background:#FFE9C7;box-shadow:0 10px 30px rgba(0,0,0,.3);margin-top:22px;align-self:end}
+.arch img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 14%}
+.card.lok .art{align-items:end}
+.card.lok .art::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--gold-soft)}
+
+.body{padding:26px 28px 28px;display:flex;flex-direction:column;flex:1}
+.en{font-size:.86rem;letter-spacing:.06em;color:#AEB2D0;margin:0 0 2px}
+.card h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3.4vw,2.15rem);line-height:1.3;color:#fff;margin:0 0 .35em}
+.tag{font-family:var(--serif);color:var(--gold-soft);font-size:1.15rem;line-height:1.5;margin:0 0 .7em}
+.card p.d{margin:0 0 1em;color:#C9CCE3;font-size:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.chips li{font-size:.86rem;padding:4px 12px;border-radius:999px;border:1px solid rgba(243,228,184,.38);color:var(--gold-soft)}
+.go{margin-top:auto;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;font-weight:600;font-size:1rem;padding:13px 22px;border-radius:9px;background:var(--saffron);color:#fff;transition:background .2s ease,gap .2s ease}
+.card:hover .go{background:var(--saffron-deep);gap:16px}
+.card.cck .go{background:transparent;border:2px solid var(--gold-soft);color:var(--gold-soft);padding:11px 20px}
+.card.cck:hover .go{background:var(--gold-soft);color:var(--ink)}
+
+footer{position:relative;text-align:center;padding:0 0 40px;font-family:var(--serif);color:var(--gold-soft);font-size:1.15rem}
+footer small{display:block;font-family:var(--sans);font-size:.85rem;color:#8F94B8;margin-top:6px}
+
+@media (prefers-reduced-motion:reduce){
+  .card{animation:none;opacity:1;transition:none}
+  .card:hover{transform:none}
+  .ring .spin{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <h1>गीता स्वाध्याय</h1>
+  <p class="sub">तुमचा अभ्यासमार्ग निवडा</p>
+  <div class="rule" aria-hidden="true"></div>
+</header>
+
+<main class="wrap">
+  <div class="cards">
+
+    <a class="card cck" href="cck.html">
+      <div class="art" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 200 200" role="img" aria-label="">
+          <circle class="orbit" cx="100" cy="100" r="78"/>
+          <g class="spin">
+<line x1="100.0" y1="66.0" x2="100.0" y2="22.0"/>
+<line x1="111.6" y1="68.1" x2="126.7" y2="26.7"/>
+<line x1="121.9" y1="74.0" x2="150.1" y2="40.2"/>
+<line x1="129.4" y1="83.0" x2="167.5" y2="61.0"/>
+<line x1="133.5" y1="94.1" x2="176.8" y2="86.5"/>
+<line x1="133.5" y1="105.9" x2="176.8" y2="113.5"/>
+<line x1="129.4" y1="117.0" x2="167.5" y2="139.0"/>
+<line x1="121.9" y1="126.0" x2="150.1" y2="159.8"/>
+<line x1="111.6" y1="131.9" x2="126.7" y2="173.3"/>
+<line x1="100.0" y1="134.0" x2="100.0" y2="178.0"/>
+<line x1="88.4" y1="131.9" x2="73.3" y2="173.3"/>
+<line x1="78.1" y1="126.0" x2="49.9" y2="159.8"/>
+<line x1="70.6" y1="117.0" x2="32.5" y2="139.0"/>
+<line x1="66.5" y1="105.9" x2="23.2" y2="113.5"/>
+<line x1="66.5" y1="94.1" x2="23.2" y2="86.5"/>
+<line x1="70.6" y1="83.0" x2="32.5" y2="61.0"/>
+<line x1="78.1" y1="74.0" x2="49.9" y2="40.2"/>
+<line x1="88.4" y1="68.1" x2="73.3" y2="26.7"/>
+<circle class="g" cx="100.0" cy="22.0" r="4.6"/>
+<circle class="s" cx="126.7" cy="26.7" r="4.6"/>
+<circle class="g" cx="150.1" cy="40.2" r="4.6"/>
+<circle class="s" cx="167.5" cy="61.0" r="4.6"/>
+<circle class="g" cx="176.8" cy="86.5" r="4.6"/>
+<circle class="s" cx="176.8" cy="113.5" r="4.6"/>
+<circle class="g" cx="167.5" cy="139.0" r="4.6"/>
+<circle class="s" cx="150.1" cy="159.8" r="4.6"/>
+<circle class="g" cx="126.7" cy="173.3" r="4.6"/>
+<circle class="s" cx="100.0" cy="178.0" r="4.6"/>
+<circle class="g" cx="73.3" cy="173.3" r="4.6"/>
+<circle class="s" cx="49.9" cy="159.8" r="4.6"/>
+<circle class="g" cx="32.5" cy="139.0" r="4.6"/>
+<circle class="s" cx="23.2" cy="113.5" r="4.6"/>
+<circle class="g" cx="23.2" cy="86.5" r="4.6"/>
+<circle class="s" cx="32.5" cy="61.0" r="4.6"/>
+<circle class="g" cx="49.9" cy="40.2" r="4.6"/>
+<circle class="s" cx="73.3" cy="26.7" r="4.6"/>
+          </g>
+          <text x="100" y="121">ॐ</text>
+        </svg>
+      </div>
+      <div class="body">
+        <p class="en">CCK Gita Swadhyay</p>
+        <h2>CCK गीता स्वाध्याय</h2>
+        <p class="tag">अध्याय, संकल्पना आणि श्लोक, एका ठिकाणी</p>
+        <p class="d">अभ्यासगटाचे डिजिटल साधन: अध्यायनिहाय संकल्पना, मानस-चित्रे, श्लोक-संदर्भ आणि वादसभा.</p>
+        <ul class="chips">
+          <li>संकल्पना</li><li>मानस-चित्रे</li><li>श्लोक-संदर्भ</li><li>वादसभा</li>
+        </ul>
+        <span class="go">अभ्यास साधन उघडा <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <a class="card lok" href="lokmanya-ali/">
+      <div class="art" aria-hidden="true">
+        <div class="arch"><img src="lokmanya-ali/assets/lokmanya-statue.jpg" alt="" width="855" height="2000"></div>
+      </div>
+      <div class="body">
+        <p class="en">Lokmanya Gitabodh</p>
+        <h2>लोकमान्य गीताबोध</h2>
+        <p class="tag">लोकमान्यांचे गीतारहस्य, आजच्या जीवनाचा अर्थबोध</p>
+        <p class="d">लोकमान्य आळी गणेशोत्सव मंडळ, ठाणे यांचा उपक्रम: सभासद पालक आणि पाल्यांसाठी, ऑनलाइन, Google Classroom वर.</p>
+        <ul class="chips">
+          <li>पालक आणि पाल्य</li><li>ऑनलाइन सत्रे</li><li>नाव नोंदणी</li>
+        </ul>
+        <span class="go">माहिती आणि नाव नोंदणी <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+  </div>
+</main>
+
+<footer class="wrap">
+  ॥ श्रीकृष्णार्पणमस्तु ॥
+</footer>
+
+</body>
+</html>
